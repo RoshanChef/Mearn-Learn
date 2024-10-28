@@ -39,5 +39,9 @@ let output = promise_1.then(() => {
 
 console.log(output.then((val) => { console.log('value is ', val); }));
 
-
 // how to make any code async
+async function Hello() {
+    return "I am async code ..";
+}
+console.log('Returning to ', Hello());
+console.log("console ... ");
