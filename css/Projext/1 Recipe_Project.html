@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe Promo</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .container {
+            width: 100vw;
+            height: 100vh;
+
+        }
+
+        #navList {
+            list-style-type: none;
+            display: flex;
+            padding: 1rem;
+            background-color: #411515;
+            justify-content: space-between;
+        }
+
+        nav {
+            width: 100vw;
+        }
+
+
+        #logo {
+            font-size: 1.5rem;
+            color: #f58a33;
+        }
+
+        #claim {
+            display: flex;
+            gap: 15px;
+        }
+
+        #claim>a {
+            text-decoration: none;
+            user-select: none;
+            color: gold;
+        }
+
+        .footBox {
+            width: 100vw;
+            text-align: center;
+            background-color: #411515;
+            color: gold;
+            padding: .5rem;
+        }
+
+        .contentBox {
+            width: 70%;
+            background-color: #f58a33;
+            margin: auto;
+        }
+
+        .items {
+            border: 3px solid black;
+        }
+
+        .items {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        img {
+            margin: 1rem;
+            width: 200px;
+            height: 250px;
+        }
+
+        .content ul {
+            margin: 10px;
+        }
+
+        ul>li {
+            margin-left: 1rem;
+            list-style-type: none;
+        }
+
+        .content {
+            margin: 1rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <nav>
+            <ul id="navList">
+                <li>
+                    <p id="logo">Welcome Foodie</p>
+                </li>
+                <li>
+                    <div id="claim">
+                        <a href="#home">Home</a>
+                        <a href="#about">About</a>
+                        <a href="#contact">Contact</a>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+
+        <main>
+            <div class="contentBox">
+                <section>
+                    <div class="items">
+                        <div class="left">
+                            <h2>Gulab Jabun</h2>
+                            <div class="content">
+
+                                <h3>Ingridian</h3>
+                                <ul>
+                                    <li>Sugar</li>
+                                    <li>Milk</li>
+                                    <li>Malai</li>
+                                </ul>
+                                <h3>Process</h3>
+                                <ul>
+                                    <li>Add mildk </li>
+                                    <li>soaop all this things</li>
+                                    <li>Mix it to the Mixture and walk around it.. </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="right">
+                            <img src="../../html/Opposite.jpg" alt="">
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+
+        <footer>
+            <div class="footBox">
+                Copy &copy; Roshan Kalmathe
+            </div>
+        </footer>
+    </div>
+
+</body>
+
+</html>

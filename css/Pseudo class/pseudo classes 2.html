@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pseudo classes</title>
+    <style>
+        :root {
+            --m: blue;
+        }
+
+        * {
+
+            box-sizing: border-box;
+        }
+
+        input:focus {
+            outline: 3px solid rgb(191, 191, 241);
+            /* outline: none; */
+            border: 2px solid red;
+            border-radius: 2pc;
+            padding-inline-start: 1rem;
+            padding-inline-end: 1rem;
+        }
+
+        input[id="user"] {
+            color: red;
+        }
+
+        input[type='radio']:checked+label {
+            color: red;
+        }
+
+        input:optional {
+            color: blueviolet;
+            background-color: yellowgreen;
+        }
+
+        input:required {
+            color: rgb(99, 245, 201);
+            background-color: orange;
+        }
+
+        input:in-range {
+            background-color: rgb(161, 233, 217);
+        }
+
+        input:out-of-range {
+            background-color: orchid;
+        }
+
+        select {
+            width: 200px;
+            /* height: 20px; */
+        }
+
+        option:default {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+
+    <form action="">
+        <label for="user">User name</label>
+        <input type="text" required id="user">
+        <br>
+
+        <label for="">geneder</label>
+        <input type="radio" id="m" name="gen">
+        <label for="m">male</label>
+        <input type="radio" id="f" name="gen">
+        <label for="f">female</label>
+        <br>
+        <label for="phone">phone</label>
+        <input type="email">
+        <br>
+        <label for="">age</label>
+        <input type="number" name="" min="10" max="20">
+
+        <select>
+            <option value="hello">hello</option>
+            <option value="namste" selected>namste</option>
+            <option value="getting">getting</option>
+            <option value="lotion">lotion</option>
+        </select>
+
+
+    </form>
+
+</body>
+
+</html>

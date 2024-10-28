@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>type something</title>
+    <style>
+        .box::selection {
+            background: #333;
+            color: gold;
+        }
+
+        .box::first-letter {
+            color: rebeccapurple;
+            background-color: wheat;
+        }
+
+        .box::first-line {
+            color: red;
+            background-color: blue;
+        }
+
+        ::placeholder {
+            background-color: #b6b6b6;
+            color: gold;
+        }
+
+        /*
+               <div> 
+               	::before
+               	<tag> </tag> 
+               	::after
+               </div> 
+        */
+    </style>
+</head>
+
+<body>
+    <div class="con">
+        <div class="box">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam iste cumque corporis quibusdam ratione
+            excepturi magnam libero, veniam distinctio voluptas dolorem vero ipsam eligendi optio hic inventore fugiat
+            blanditiis id!
+        </div>
+    </div>
+    <form action="">
+        <label for="get">Username</label>
+        <input type="text" id="get" placeholder="kalmathe roshan chhotubhai">
+    </form>
+</body>
+
+</html>

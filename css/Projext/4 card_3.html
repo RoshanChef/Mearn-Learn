@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card Project</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .con {
+            background-image: linear-gradient(to right top, #051937, #004d7a, #008793, #00bf72, #a8eb12);
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .box {
+            width: 70vw;
+            height: 60vh;
+            background-color: white;
+            display: flex;
+            border-radius: 1rem;
+            box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
+            
+        }
+
+        .left,
+        .right {
+            width: 50%;
+            height: 100%;
+            border-radius: 1rem 0 0 1rem;
+        }
+
+        .left {
+            padding: 2rem;
+            background-color: rgb(59, 0, 59);
+            color: white;
+            text-align: justify;
+            display: flex;
+            flex-direction: column;
+            gap: 4rem;
+        }
+
+        .right img {
+            height: 100%;
+            width: 100%; 
+            border-radius: 0 1rem  1rem 0;
+        }
+        footer{
+            display: flex;
+            justify-content: space-between;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="con">
+        <div class="box">
+            <div class="left">
+                <h2>Get the right Opertunity for your work done in tme</h2>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Facere ullam fuga reiciendis placeat
+                    accusantium dolorem aut doloremque quidem, suscipit quae. Labore similique earum eaque minima id
+                    culpa optio dolor doloremque.</p>
+
+                <footer>
+                    <div class="lf">
+                        <h3>
+                            10K+
+                        </h3>
+                        <small>view</small>
+                    </div>
+                    <div class="mid">
+                        <h3>
+                            10K+
+                        </h3>
+                        <small>view</small>
+                    </div>
+                    <div class="rg">
+                        <h3>
+                            10K+
+                        </h3>
+                        <small>view</small>
+                    </div>
+                </footer>
+            </div>
+            <div class="right">
+                <img src="back.jpg" alt="">
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layout 4</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .con{
+            width: 100vw;
+            height: 100vh;
+            gap: 1rem;
+            padding:1rem;
+            display: grid;
+            background-color: #333;
+            justify-content: center;
+            align-content: center;
+            grid-template-columns: repeat(4,1fr);
+            grid-template-rows: 2fr 3fr 1fr;
+        }
+        .i1{
+            background-color: orange;
+            grid-column-start: 1;
+            grid-column-end: 3; 
+        }
+        .i2{
+            background-color: tomato;
+            grid-column-start: 3;
+            grid-column-end: 5;
+        }
+        .i3{
+            background-color: darkgreen;
+        }
+        .i4{
+            grid-column-start: 2;
+            grid-column-end: 5;
+            background-color: greenyellow;
+        }
+        .i5{
+            background-color: orangered;
+            grid-column-start: 1;
+            grid-column-end: 5  ;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="con">
+        <div class="box i1"></div>
+        <div class="box i2"></div>
+        <div class="box i3"></div>
+        <div class="box i4"></div>
+        <div class="box i5"></div>
+    </div>
+    
+</body>
+</html>

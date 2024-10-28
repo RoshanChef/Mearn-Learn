@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox</title>
+    <style>
+        .con {
+            background-color: beige;
+            text-align: center;
+            border: 3px solid black;
+            display: flex;
+            height: 500px;
+            /* flex-direction:row-reverse; */
+            flex-wrap: wrap;
+            justify-content: center;
+            align-content: center;
+            align-items: start;
+        }
+
+        .box {
+            width: 120px;
+            height: 120px;
+            line-height: 120px;
+            font-size: large;
+            margin: 5px;
+        }
+
+        #box1 {
+            background-color: yellowgreen;
+            order: 1;
+            /* flex-grow: 1; */
+            /* flex-shrink: 8; */
+            flex-basis: 80px;
+        }
+
+        #box2 {
+            background-color: rgb(110, 24, 247);
+            color: white;
+            order: 3;
+            /* flex-grow: 1; */
+     
+        }
+        
+        #box3 {
+            background-color: mediumspringgreen;
+            order: 2;
+            /* flex-grow: 1; */
+        }
+        
+        #box4 {
+            background-color: orange;
+            order: -2;
+            /* flex-grow: 1; */
+        }
+        
+        #box5 {
+            background-color: wheat;
+            /* flex-grow: 1;   */
+            order: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="con">
+        <div class="box" id="box1">1</div>
+        <div class="box" id="box2">2</div>
+        <div class="box" id="box3">3</div>
+        <div class="box" id="box4">4</div>
+        <div class="box" id="box5">5</div>
+    </div>
+</body>
+
+</html>

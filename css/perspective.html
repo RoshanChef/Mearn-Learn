@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Perspective code ... </title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+        .con {
+            background-color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 150px;
+            width: 150px;
+            perspective: 800px;
+            perspective-origin: left;
+            margin: 1rem;
+        }
+
+        .box {
+            width: 100%;
+            height: 100%;
+            border-radius: 5px;
+            background-color: orange;
+            font-size: 1em;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            /* transform:  perspective(700px) rotateX(15deg); */
+        }
+
+        @keyframes circle {
+            0% {
+                transform: rotateX(0deg);
+            }
+
+            100% {
+                transform: rotateX(360deg);
+            }
+        }
+
+        .box:hover {
+            animation: 3s infinite linear 0s forwards circle;
+            transition: 5s;
+        }
+
+        .box2 {
+            width: 100%;
+            height: 100%;
+            border-radius: 5px;
+            background-color: orange;
+            font-size: 1em;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .box2:hover {
+            animation: 3s infinite linear 0s forwards yaxis;
+            translate: 2s;
+        }
+
+        @keyframes yaxis {
+            0% {
+                transform: rotateY(0deg);
+            }
+
+            100% {
+                transform: rotateY(360deg);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="con">
+        <div class="box">
+            Rotate-X
+        </div>
+    </div>
+    <div class="con">
+        <div class="box2">
+            Rotate-Y
+        </div>
+    </div>
+</body>
+
+</html>

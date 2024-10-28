@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layout 5</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .con {
+            background-color: #333;
+            width: 100vw;
+            height: 100vh;
+            display: grid;
+            gap: 1rem;
+            grid-template-columns: repeat(6, 1fr);
+            grid-template-rows: repeat(3, 1fr);
+
+        }
+
+        .box{
+            background-color: yellowgreen;
+        }
+        .box:nth-child(2n+1) {
+            background-color: orangered;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="con">
+        <div class="box i1"></div>
+        <div class="box i2"></div>
+        <div class="box i3"></div>
+        <div class="box i4"></div>
+        <div class="box i5"></div>
+        <div class="box i6"></div>
+        <div class="box i7"></div>
+        <div class="box i8"></div>
+        <div class="box i9"></div>
+        <div class="box i10"></div>
+        <div class="box i11"></div>
+        <div class="box i12"></div>
+        <div class="box i13"></div>
+        <div class="box i14"></div>
+        <div class="box i15"></div>
+        <div class="box i16"></div>
+        <div class="box i17"></div>
+        <div class="box i18"></div>
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>layouts</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .con {
+            display: grid;
+            width: 100vw;
+            height: 100vh;
+            background-color: #333;
+            gap: 1rem;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: 1fr 3fr 1fr;
+            padding: 1rem;
+        }
+
+
+        .i1 {
+            grid-column-start: 1;
+            grid-column-end: 4;
+            background-color: orange;
+        }
+
+        .i2 {
+            background-color: green;
+        }
+
+        .i3 {
+            background-color: tomato;
+            grid-column-start: 2;
+            grid-column-end: 4;
+        }
+
+        .i4 {
+            grid-column-start: 1;
+            background-color: darkseagreen;
+            grid-column-end: 4;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="con">
+        <div class="box i1"></div>
+        <div class="box i2"></div>
+        <div class="box i3"></div>
+        <div class="box i4"></div>
+    </div>
+</body>
+
+</html>

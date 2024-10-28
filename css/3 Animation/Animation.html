@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animation</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .con {
+            height: 100vh;
+            width: 100vw;
+            background-color: beige;
+            border: 4px solid red;
+        }
+
+        .box {
+            height: 150px;
+            width: 250px;
+            background-color: blue;
+            margin: 10px;
+            border: 4px solid black;
+            animation-name: movement;
+            animation-duration: 2s;
+            animation-iteration-count: 1;
+            animation-delay: 1s;
+            animation-timing-function: linear;
+            position: relative;
+            /* animation-play-state: paused; */
+            animation-play-state: running;
+            animation-direction: alternate;
+            animation-fill-mode: both;
+            /* ********** animation     short hand properties *********  */
+        }
+
+        @keyframes movement {
+            from {
+                top: 0;
+                left: 0;
+            }
+
+            to {
+                top: 0;
+                left: 600px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="con">
+        <div class="box">
+
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animation one</title>
+    <style>
+        .con{
+            margin: 50px;
+            width: 100px;
+            height: 100px;
+            background-color: yellowgreen;
+            border-radius: 50%;
+            animation: 3s 4 linear 0s alternate forwards go;
+            position: relative;
+        }
+        @keyframes go {
+            0%{
+                top: 0;
+                left: 0;
+            }
+            100%{
+                top: 0;
+                left: 800px;
+                background-color: rebeccapurple;
+            }
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="con">
+
+    </div>
+    
+</body>
+</html>

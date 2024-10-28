@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Phases</title>
+    <style>
+        div {
+            padding: 2em;
+            background-color: wheat;
+        }
+
+        button {
+            background-color: greenyellow;
+            padding: .5em;
+            font-size: large;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div>
+        something
+        <button>click me</button>
+    </div>
+
+
+    <script>
+        /*
+            Event Phases
+                Bubbing Phase (Defult)
+                Capturing Phase
+                At Target Phase
+        */
+        let div = document.querySelector('div');
+        let button = document.querySelector('button');
+
+        // // Bubbling Phase
+        // div.addEventListener('click', () => {
+        //     console.log('div Event ');
+        // })
+
+        // button.addEventListener('click', (Event_obj) => {
+        //     // Event_obj.stopPropagation(); 
+        //     console.log("Button Event ");
+        // })
+
+        // //Capturing Phase
+        // div.addEventListener('click', () => {
+        //     console.log('div Event ');
+        // }, true)
+
+        // button.addEventListener('click', (Event_obj) => {
+        //     console.log("Button Event ");
+        // })
+
+        // // at target 
+        div.addEventListener('click', () => {
+            console.log('div Event ');
+        })
+
+        button.addEventListener('click', (Event_obj) => {
+            Event_obj.stopPropagation();
+            console.log("Button Event ");
+        })
+
+
+        /*  immediadate Propagation */
+        button.addEventListener('click', (Event_obj) => {
+            Event_obj.stopImmediatePropagation();
+            console.log("Button Event 1");
+        })
+        button.addEventListener('click', (Event_obj) => {
+            console.log("Button Event 2");
+        })
+
+    </script>
+
+</body>
+
+</html>

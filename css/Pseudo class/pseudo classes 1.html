@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Tesing code</title>
+    <style>
+        p:first-child {
+            color: red;
+        }
+
+        li:last-child {
+            color: blue;
+        }
+
+        /* li:nth-last-child(2n) {
+            color: red;
+        } */
+
+        /* p:nth-child(2n) {
+            color: red;
+        } */
+
+        li:nth-child(2n) {
+            color: red;
+        }
+
+        div:empty {
+            border: 3px solid orange;
+        }
+
+        /* p:not(.ok) {
+            color: orange;
+        } */
+
+        h3:lang(hindi) {
+            color: yellowgreen;
+        }
+
+        h3:lang(gujarati) {
+            color: red;
+        }
+
+        h3:lang(english) {
+            color: orangered;
+        }
+        p:target{
+            background-color: orange;
+            padding: 1rem;
+            transition: .5s;
+        }
+        a{
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <div> </div>
+    <ul>
+        <li>item=>1</li>
+        <li>item=>2</li>
+        <li>item=>3</li>
+        <li>item=>4</li>
+        <li>item=>5</li>
+        <li>item=>6</li>
+        <li>item=>7</li>
+        <li>item=>8</li>
+    </ul>
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolore iure, sit ullam dicta adipisci ea debitis
+        reprehenderit ipsa labore facilis eius hic incidunt accusamus rem laudantium amet placeat quos recusandae!</p>
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolore iure, sit ullam dicta adipisci ea debitis
+        reprehenderit ipsa labore facilis eius hic incidunt accusamus rem laudantium amet placeat quos recusandae!</p>
+    <p class="ok">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolore iure, sit ullam dicta adipisci ea
+        debitis
+        reprehenderit ipsa labore facilis eius hic incidunt accusamus rem laudantium amet placeat quos recusandae!</p>
+    <ul>
+        <li>box=>1</li>
+        <li>box=>2</li>
+        <li>box=>3</li>
+        <li>box=>4</li>
+    </ul>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut temporibus earum dolorem, mollitia voluptas quae
+        eius sit optio ipsum omnis a nobis consequatur veniam alias culpa provident quod! Eaque, voluptatem?</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut temporibus earum dolorem, mollitia voluptas quae
+        eius sit optio ipsum omnis a nobis consequatur veniam alias culpa provident quod! Eaque, voluptatem?</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut temporibus earum dolorem, mollitia voluptas quae
+        eius sit optio ipsum omnis a nobis consequatur veniam alias culpa provident quod! Eaque, voluptatem?</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut temporibus earum dolorem, mollitia voluptas quae
+        eius sit optio ipsum omnis a nobis consequatur veniam alias culpa provident quod! Eaque, voluptatem?</p>
+
+    <div>
+        <h3 lang="english">welcome</h3>
+        <h3 lang="hindi">Namste</h3>
+        <h3 lang="gujarati">km chho</h3>
+    </div>
+
+    <a href="#html">See something about HTML</a>
+    <a href="#css">See something about CSS</a>
+    <a href="#js">See something about JS</a>
+
+    <div class="content">
+        <p id="html">HTML is the best one of the html pages to write something</p>
+        <p id="css"> CSS is the only one to stying something on the page</p>
+        <p id="js">JS is the way to learn backend as well as frontend</p>
+    </div>
+</body>
+
+</html>

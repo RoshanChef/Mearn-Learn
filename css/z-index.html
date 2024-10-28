@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Z-INDEX</title>
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center ;
+            width: 100VW;
+            height: 100vh; 
+        }
+        .box{
+            border: 2px solid gray;
+            width: 400px;
+            height: 400px;
+            position: relative;
+            padding: 1rem;
+        }
+        .size{
+            width: 200px;
+            height: 200px;
+            color: white;
+            padding: 1em;
+            position: absolute;
+        }
+        .one{
+            background-color: tomato;
+        }
+        .two{
+            background-color: violet;
+            left: 60px;
+            top: 60px;
+            z-index: 3;
+        }
+        .three{
+            background-color: crimson;
+            left: 110px;
+            top: 110px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="size one">01</div>
+        <div class="size two">02</div>
+        <div class="size three">03</div>
+    </div>
+
+</body>
+
+</html>
