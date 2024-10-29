@@ -2,3 +2,4 @@ dispatch event listerner
 Concurency in js
 features of async code
 what get/post/delete/put 
+classes and export modules in js
