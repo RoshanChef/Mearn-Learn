@@ -88,4 +88,18 @@ async function utility_2() {
 // api
 // fetch('url' , [options]) for post , fetch('url') for get
 
+function namy() {
+    let i = 'Roshan';
+    function cally() {
+        console.log('function 2 .. ', i);
+    }
+    console.log('function 1 .. ');
+    return cally;
+}
+
+// closure => fnx + refrences of used var in fnx
+let fnx = namy();
+console.log(fnx);
+fnx();
+
 
