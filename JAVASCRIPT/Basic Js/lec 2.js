@@ -40,7 +40,7 @@ function home(len, bre) {
 //     }`); 
 
 //object creation using constructor function
-let obj1 = new home(30, 50); 
+let obj1 = new home(30, 50);
 
 // console.log('Lenght is ', obj1.length);
 // console.log('Breadth is ', obj1.breadth);
@@ -169,6 +169,4 @@ let a_obj = { val: 12, grade: 'A' };
 let b_obj = { ...a_obj };
 console.log('copy value is ', b_obj.val, '\n', b_obj.grade);
 
-
-
-
+// link with lecture 4

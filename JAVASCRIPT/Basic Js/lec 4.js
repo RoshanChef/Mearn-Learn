@@ -47,7 +47,7 @@ console.log(sum_2(10, 20, 30, 40, 50));
 
 
 // same thing using rest operator
-// function minus(...args) {
+// function minus(...args_name) {
 function minus(a, b, ...args) {
     // a , b and rest of the parameter goes to args (Array)
     console.log(args);

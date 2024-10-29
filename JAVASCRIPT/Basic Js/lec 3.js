@@ -1,6 +1,3 @@
-const { name } = require("commander");
-const { filter } = require("minimatch");
-
 // Math Object 
 console.log(Math.random());
 console.log(Math.floor(12.99));
@@ -155,8 +152,17 @@ console.log(arry);
 // combine the array
 let first = [1, 2, 3];
 let second = [4, 5, 6];
+// spread operator ...
 // let combine = first.concat(second);
 let combine = [...first, ...second];
+
+/*
+spread vs rest
+spread => 
+        copy or spread the values of some other elements
+rest =>
+        put the rest of the elements in one variable
+*/
 
 console.log('combine ', combine);
 console.log(combine.slice(2, 4));
