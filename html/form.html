@@ -22,13 +22,45 @@
         <label for="TELL">Email</label><br>
         <input type="tel" placeholder="somethings@gmail.com" id="TELL">
         <br>
-        <br> 
+        <br>
         <label for="Ht">Interest</label><br>
         <input type="checkbox" name="html" id="Ht">
         <label for="Ht">HTML</label><br>
         <input type="checkbox" name="html" id="CS">
         <label for="CS">CSS</label>
 
+    </form>
+    <!-- datalist vs select -->
+    <form action="https://www.google.com">
+        <input type="text" list="call">
+        <select id="call">
+            <option value="Gujarat">Gujarat</option>
+            <option value="Maharastra">Maharastra</option>
+            <option value="Madya Pradesh">Madya Pradesh</option>
+            <option value="Kerala">Kerala</option>
+        </select>
+    </form>
+
+
+    <form action="https://www.google.com">
+        <input type="text" list="call">
+        <datalist id="call">
+            <option value="Gujarat"></option>
+            <option value="Maharastra"></option>
+            <option value="Madya Pradesh"></option>
+            <option value="Kerala"></option>
+        </datalist>
+    </form>
+    
+    <!--    autocomplete defualt on  -->
+    <form action="" autocomplete="on">
+        <label for="fname">user Name</label>
+        <input type="text" id="fname">
+        <br>
+        <label for="lname">Last Name</label>
+        <input type="text" id="lname">
+        <br>
+        <input type="submit">
     </form>
 
 </body>
