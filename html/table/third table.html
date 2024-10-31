@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Zebra Stripes</title>
+    <style>
+        table.first :nth-child(even) {
+            background-color: rgb(165, 240, 52, .4);
+        }
+
+        table.first th:nth-child(even),
+        table.first td:nth-child(even) {
+            background-color: rgb(165, 240, 52, .4);
+        }
+
+        table.first td,
+        table.first th {
+            padding: 0 14px;
+            text-align: center;
+
+        }
+
+        table.first {
+            border-collapse: collapse;
+        }
+
+        .second {
+            margin: .4rem;
+        }
+
+        .second {
+            border-collapse: collapse;
+        }
+        .second tr {
+            border-bottom: .1rem solid blueviolet;
+        }
+
+        .second th,
+        .second td {
+            padding: 0 1rem;
+        }
+        tr:hover > td{
+            background-color: rgba(234, 253, 205, 0.479);
+        }
+
+    </style>
+</head>
+
+<body>
+    <!-- first -->
+    <table class="first">
+        <tr>
+            <th>A_no</th>
+            <th>B_no</th>
+            <th>C_no</th>
+            <th>D_no</th>
+            <th>E_no</th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+            <td>4</td>
+            <td>4</td>
+        </tr>
+        <tr>
+            <td>10</td>
+            <td>20</td>
+            <td>30</td>
+            <td>30</td>
+            <td>40</td>
+        </tr>
+        <tr>
+            <td>15</td>
+            <td>25</td>
+            <td>35</td>
+            <td>35</td>
+            <td>45</td>
+        </tr>
+        <tr>
+            <td>15</td>
+            <td>25</td>
+            <td>35</td>
+            <td>45</td>
+            <td>45</td>
+        </tr>
+    </table>
+
+    <!-- second -->
+    <table class="second">
+        <tr>
+            <th>First name</th>
+            <th>Last name</th>
+            <th>Saving</th>
+        </tr>
+        <tr>
+            <td>Roshan</td>
+            <td>Kalmath</td>
+            <td>120</td>
+        </tr>
+        <tr>
+            <td>Mihir</td>
+            <td>Dave</td>
+            <td>320</td>
+        </tr>
+        <tr>
+            <td>omkara</td>
+            <td>Dave</td>
+            <td>450</td>
+        </tr>
+        <tr>
+            <td>Tomar</td>
+            <td>Devas</td>
+            <td>650</td>
+        </tr>
+    </table>
+
+</body>
+
+</html>
