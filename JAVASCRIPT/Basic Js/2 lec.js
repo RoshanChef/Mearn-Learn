@@ -31,6 +31,8 @@ function home(len, bre) {
         }
 }
 
+//object creation using constructor function
+let obj1 = new home(30, 50);
 
 // // inbuit constructor in js 
 // let home = new Function('len', 'bre', ` this.length = len,
@@ -38,9 +40,6 @@ function home(len, bre) {
 //     this.draw = function () {
 //         console.log('Drawing is done using pen ...');
 //     }`); 
-
-//object creation using constructor function
-let obj1 = new home(30, 50);
 
 // console.log('Lenght is ', obj1.length);
 // console.log('Breadth is ', obj1.breadth);

@@ -19,6 +19,18 @@
             align-items: start;
         }
 
+        /*
+        display: flex vs inline-flex 
+            flex > outer div contain whole width
+            inline-flex > outer div contain only content width
+
+        align-content vs align-items
+            align-content : 
+                it will controls space when wrap is on (wrap is working with all the items)
+            align-items: 
+                it will similar to justify-content diff is cross axis (wrap is not working to all the items)
+        */
+
         .box {
             width: 120px;
             height: 120px;
@@ -40,21 +52,20 @@
             color: white;
             order: 3;
             /* flex-grow: 1; */
-     
         }
-        
+
         #box3 {
             background-color: mediumspringgreen;
             order: 2;
             /* flex-grow: 1; */
         }
-        
+
         #box4 {
             background-color: orange;
             order: -2;
             /* flex-grow: 1; */
         }
-        
+
         #box5 {
             background-color: wheat;
             /* flex-grow: 1;   */
