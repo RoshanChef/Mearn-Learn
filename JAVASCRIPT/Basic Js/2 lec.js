@@ -58,13 +58,13 @@ console.log(home.constructor);
         Number 
         string 
         Boolean 
-        undefine
+        undefine 
         Null 
 
     Reference
         object 
         array 
-        function
+        function 
         
     */
 
@@ -164,7 +164,7 @@ let src = { val: 10 };
 
 
 // //3 spread
-let a_obj = { val: 12, grade: 'A' };
+let a_obj = { val: 12, grade: 'A' };    
 let b_obj = { ...a_obj };
 console.log('copy value is ', b_obj.val, '\n', b_obj.grade);
 

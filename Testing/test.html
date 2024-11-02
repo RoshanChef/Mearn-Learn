@@ -12,23 +12,14 @@
 
     <script>
 
-        function hell() {
-            this.len = 23,
-                this.val = 33,
-                this.home = function () {
-                    console.log('roshan is there for some reason ');
-                }
-        }
-        let obj = new hell();
-        console.log(obj.val);
-        console.log(obj.len);
-        console.log(obj);
-        console.log(obj.constructor);
-        console.log(hell.constructor);
-
-        
-
-
+        let obj = {
+            val: 10,
+            tension: 'coding',
+            barrir: 20,
+            'box office': 100
+        };
+        let obj2 = { ...obj };
+        console.log('values are ', obj2);
 
 
 

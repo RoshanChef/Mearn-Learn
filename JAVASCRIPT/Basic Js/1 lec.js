@@ -1,3 +1,7 @@
+var g = 10, j = '10';
+console.log('value check == ', g == j);
+console.log('value and DT check === ', g === j);
+
 let a = 1;
 do {
     console.log(a++);
