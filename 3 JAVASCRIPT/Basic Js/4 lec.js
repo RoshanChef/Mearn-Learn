@@ -115,7 +115,9 @@ console.log('concept of ', ab);
 // sorting without digit wise
 let arr = [10, 5, 4, 20, 30, 35];
 arr.sort();
+
 console.log(arr);
+
 arr.sort((v1, v2) => {
     console.log(v1 - v2);
     return v1 - v2;
@@ -124,7 +126,7 @@ arr.sort((v1, v2) => {
 console.log(arr);
 
 function fnx(event_obj) {
-    // // add => similar tio append
+    // // add => similar to append
     // element.classList.add('wheat');
     // console.log('HTML content ', element);
 
@@ -132,7 +134,7 @@ function fnx(event_obj) {
     // element.classList.remove('text');
     // console.log('HTML content ', element);
 
-    // toggle => if switch the class
+    // toggle => it switch the class
     element.classList.toggle('text');
     console.log('HTML content ', element);
 
@@ -156,3 +158,48 @@ ele.addEventListener('click', () => {
     console.log(ele);
 })
 
+
+// Classes and objects 
+class Prani {
+    constructor(width, height) {
+        this.width = width;
+        this.height = height;
+    }
+    color() {
+        console.log('I have red color');
+    }
+}
+let obj = new Prani();
+console.log(obj);
+obj.color();
+
+class animal {
+    constructor(name, rol) {
+        this.rol = rol;
+        this.name = name
+    }
+
+    static myType() {
+        console.log('I am always animal ');
+    }
+    speak() {
+        console.log('speaking with mouth .. ');
+    }
+}
+
+// how can you call static method
+animal.myType();
+
+let dog = new animal('dog', 22);
+dog.speak();
+
+
+let timerId = setTimeout(print, (4000));
+function print(){
+    console.log('printing the values of the class I have to see');
+}
+
+setTimeout(clearTimeout(timerId) , 2000); 
+setTimeout(() => {
+    console.log('still working ');
+}, 5000);

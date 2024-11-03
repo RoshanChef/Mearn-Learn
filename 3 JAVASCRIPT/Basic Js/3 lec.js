@@ -6,12 +6,12 @@ console.log('Mininum ', Math.min(1, 2, -45, 5));
 console.log(Math.ceil(2.1));
 console.log('absolute ', Math.abs(-2));
 
-// string as object
 
 // primitive string 
 let user = 'Roshan';
 console.log(user);
 
+// string as object
 // strings are imutable
 let lastName = new String('Kalmathe');
 console.log(lastName);
@@ -32,6 +32,22 @@ console.log(val.trim());
 console.log(val.replace('ba', 'ca'));
 console.log('Index is ', val.indexOf('b'));
 
+
+let make = "hello world world ";
+let output = make.lastIndexOf('world');
+console.log(output);
+
+var wor = 'harrrikk prashad';
+console.log(wor.slice(2, 5)); // (start , end)
+console.log(wor.substr(2, 5)); // (start , length) 
+
+console.log(parseInt('20'));
+console.log(parseInt('10.22px'));
+console.log(parseInt('102.223'));
+
+console.log(parseFloat('120.99'));
+console.log(parseFloat("10.332px"));
+console.log(parseFloat("10px.2"));
 
 let message = "This is my new home";
 console.log(message.replaceAll(' ', ','));
@@ -69,6 +85,14 @@ console.log(date2);
 let date3 = new Date(2001, 5, 28, 10, 15, 47);
 console.log(date3);
 
+let dat = new Date();
+console.log(dat);
+console.log(dat.getDate());
+console.log(dat.getDay());
+console.log(dat.getHours());
+console.log(dat.getMinutes());
+console.log(dat.getSeconds());
+
 /*
 // Arrays 
     collection of items
@@ -79,7 +103,7 @@ let arr = [4, 5, 2, 7];
 console.log(arr);
 
 // Insertion
-//end
+//end   
 arr.push(102);
 console.log(arr);
 
@@ -113,21 +137,22 @@ let result = courses.find((val) => val.sub == 'computer networks')
 console.log("Result is ", result);
 
 
-
 // removing 
 let remove = [2, 3, 4, 5, 6, 7, 8, 9, 10];
 console.log('NORMAL', remove);
+
 //back 
 remove.pop();
 console.log('POP ', remove);
+
 //front
 remove.shift();
 console.log('SHIFT ', remove);
+
 //middle
 let num = [12, 2, 55, 33, 45, 56];
 num.splice(3, 2);
 console.log(num);
-
 
 // empty array 
 let arry = [23, 24, 22, 12, 211];
@@ -193,7 +218,8 @@ num = [{ no: 3, sub: 'os' }, { no: 1, sub: 'cn' }, { no: 2, sub: 'coa' }];
 num.sort((prev, cur) => {
     return prev.no > cur.no ? prev : cur;
 })
-console.log(num);
+
+console.log('value is ', num);
 num = [0, 10, 43, 40];
 num.sort();
 console.log(num);

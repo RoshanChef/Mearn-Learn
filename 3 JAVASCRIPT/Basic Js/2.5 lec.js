@@ -71,7 +71,7 @@ console.log("value is ", value);
 
 let arr = [20, 30, 40, 50, 'Rohan'];
 function printing(val, index, arry) {
-    console.log(val, ' = ', index, arry);
+    console.log(val, ' = ', index, arry);   
 }
 
 //forEach method take funtion as an argument
