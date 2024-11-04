@@ -22,7 +22,7 @@
 
 //         beforeend 
 //         afterend
-//     Using insertElement
+//     Using insertAdjacentElement
 // */
 
 // // before the element => siblings

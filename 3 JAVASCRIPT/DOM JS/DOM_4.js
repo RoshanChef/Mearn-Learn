@@ -45,7 +45,7 @@
 // console.log('Returning to ', Hello());
 // console.log("console ... ");
 
-// async await
+// async-await (used for any code dependent on asynronous code )
 //without async await
 async function utility() {
     // paralell promise
@@ -63,11 +63,20 @@ async function utility() {
 
     let dW = delhiWeather;
     let gW = gujaratWeather;
+
+    let tar = document.createElement('h3');
+    tar.textContent = `${dW} and ${gW}  `;
+    document.body.appendChild(tar);
+
     return [dW, gW];
 }
 
+val = utility();
+console.log(val);
+
 // with async await
-async function utility_2() {
+async function utility() {
+    // paralell promise
     let delhiWeather = new Promise((resolve, reject) => {
         setTimeout(() => {
             resolve('Delhi Weather ');
@@ -80,10 +89,18 @@ async function utility_2() {
         }, 6000);
     });
 
-    let dW = await delhiWeather;
-    let gW = await gujaratWeather;
+    let dW = await delhiWeather; // wait till delhiWeather not come 
+    let gW = await gujaratWeather; // wait till gujaratWeather not come
+
+    let tar = document.createElement('h3');
+    tar.textContent = `${dW} and ${gW}  `;
+    document.body.appendChild(tar);
+
     return [dW, gW];
 }
+
+let val = utility();
+console.log(val);
 
 // api
 // fetch('url' , [options]) for post , fetch('url') for get
@@ -102,4 +119,8 @@ let fnx = namy();
 console.log(fnx);
 fnx();
 
+/*
+closure =>
+     fn that retains access to variables from their containing scope ever after the parent fn has finished excutionf
+*/
 

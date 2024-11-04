@@ -15,6 +15,7 @@ announcement of browser => event
     event_type => click , double_click , scroll 
     fn => what to do 
 */
+
 // document.addEventListener('click', () => {
 //     document.querySelector('h2').style.cssText = "background-color:#333; color:gold;";
 //     console.log("hello Roshan");
@@ -55,21 +56,30 @@ goo.addEventListener('click', (event) => {
 console.log("document object is ... ' ", document);
 
 // add multiple event
-let my_div = document.createElement('div');
+let my_parent_div = document.createElement('div');
 
 function fnx(event) {
     console.log(event.target);
     console.log('This is an event Number .. ', event.target.textContent);
 }
 
-my_div.addEventListener('click', fnx);
+my_parent_div.addEventListener('click', fnx);
 
 for (let i = 1; i <= 100; i++) {
     let new_ele = document.createElement('p');
     new_ele.textContent = 'This is my Paragraph ' + i;
 
-    my_div.appendChild(new_ele);
+    my_parent_div.appendChild(new_ele);
 }
-document.body.appendChild(my_div);
+document.body.appendChild(my_parent_div);
 
 console.log(dcs.nodeName);
+
+// target event for the specific elements 
+let id = document.querySelector('#wrapper');
+id.addEventListener('click', (event) => {
+    if (event.target.nodeName === 'SPAN')
+        console.log('value is ', event.target.textContent);
+    event.stopPropagation();
+})
+

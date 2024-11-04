@@ -38,13 +38,17 @@
         let div = document.querySelector('div');
         let button = document.querySelector('button');
 
+        // document.body.addEventListener('click', () => {
+        //     console.log('body event');
+        // })
+
         // // Bubbling Phase
         // div.addEventListener('click', () => {
         //     console.log('div Event ');
         // })
 
         // button.addEventListener('click', (Event_obj) => {
-        //     // Event_obj.stopPropagation(); 
+        //     // Event_obj.stopPropagation();
         //     console.log("Button Event ");
         // })
 
@@ -55,27 +59,27 @@
 
         // button.addEventListener('click', (Event_obj) => {
         //     console.log("Button Event ");
+        // }, true)
+
+        // // at target
+        // div.addEventListener('click', () => {
+        //     console.log('div Event ');
         // })
 
-        // // at target 
-        div.addEventListener('click', () => {
-            console.log('div Event ');
-        })
-
-        button.addEventListener('click', (Event_obj) => {
-            Event_obj.stopPropagation();
-            console.log("Button Event ");
-        })
+        // button.addEventListener('click', (Event_obj) => {
+        //     Event_obj.stopPropagation();
+        //     console.log("Button Event ");
+        // })
 
 
-        /*  immediadate Propagation */
-        button.addEventListener('click', (Event_obj) => {
-            Event_obj.stopImmediatePropagation();
-            console.log("Button Event 1");
-        })
-        button.addEventListener('click', (Event_obj) => {
-            console.log("Button Event 2");
-        })
+        // /*  immediadate Propagation */
+        // button.addEventListener('click', (Event_obj) => {
+        //     console.log("Button Event 1");
+        //     Event_obj.stopImmediatePropagation();
+        // })
+        // button.addEventListener('click', (Event_obj) => {
+        //     console.log("Button Event 2");
+        // })
 
     </script>
 

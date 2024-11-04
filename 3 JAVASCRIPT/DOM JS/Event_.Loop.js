@@ -1,3 +1,6 @@
+/*
+    anycode which take some time js will consider all of that code as async code
+*/
 
 // Event Loop
 /*
@@ -24,8 +27,17 @@
 setTimeout(() => {
     console.log('three');
 }, 0);
+
 function frst() {
     console.log('one');
 }
 frst();
 console.log('two');
+
+// fetch
+// send data to another url and get the data from another url 
+// fetch('url').then(raw=>raw.json()).then(Response=>console.log(Response);)
+
+// axios => script cdn 
+// axios.get('url').then(result=>console.log(result);)
+

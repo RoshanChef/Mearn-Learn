@@ -20,7 +20,7 @@ let t2 = performance.now();
 
 console.log('Time of the code First ', (t2 - t1), 'ms');
 
-
+//task 2 
 let t3 = performance.now();
 
 let div = document.createElement('div');
@@ -30,6 +30,7 @@ for (let j = 0; j < 100; j++) {
     // didn't append yet 
     div.appendChild(para);
 }
+// 1 reflow 1 repaint
 document.body.appendChild(div);
 
 let t4 = performance.now();
