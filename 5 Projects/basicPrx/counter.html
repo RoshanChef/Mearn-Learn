@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Carding</title>
+    <link rel="stylesheet" href="../../icon/all.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            width: 100vw;
+            height: 100vh;
+            /* background-color: rgb(255, 255, 255); */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            gap: 1.1rem;
+        }
+
+        .box {
+            display: flex;
+            width: 12rem;
+            height: 3rem;
+            justify-content: space-evenly;
+            border-radius: 10px;
+        }
+
+        .item {
+            border-radius: inherit;
+            background-color: red;
+            padding: 1rem;
+            height: 100%;
+            width: 3.5em;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: .8s all ease;
+            border: none;
+        }
+
+        .minus:hover,
+        .plus:hover {
+            background-color: greenyellow;
+            transform: perspective(700px) translateZ(-50px);
+            box-shadow: 2px 2px -9px black;
+        }
+
+        .counter {
+            color: rgb(248, 248, 245);
+        }
+    </style>
+
+</head>
+
+<body>
+    <h2>counter</h2>
+    <div class="box">
+        <button class="minus item">
+            <i class="fa-solid fa-minus"></i>
+        </button>
+        <button class="counter item"> 0 </button>
+        <button class="plus item">
+            <i class="fa-brands fa-plus"></i>
+        </button>
+    </div>
+    
+    <script>
+        let minus = document.querySelector('.minus');
+        let plus = document.querySelector('.plus');
+        let value = document.querySelector('.counter');
+
+        minus.addEventListener('click', () => {
+            value.innerText = parseInt(value.innerText) - 1;
+        });
+
+        plus.addEventListener('click', () => {
+            value.innerText = parseInt(value.innerText) + 1;
+        })
+
+
+
+    </script>
+</body>
+
+</html>

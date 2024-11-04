@@ -1,3 +1,5 @@
+/*   changing css properties   */
+
 let obj = document.querySelector('.container');
 
 // single changes 

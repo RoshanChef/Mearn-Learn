@@ -1,0 +1,28 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    width: 100vw;
+    height: 100vh;
+    box-sizing: border-box;
+}
+.wrapper{
+    max-width: 90%;
+    margin: auto;
+}
+
+header{
+    justify-content: space-between;
+    display: flex;
+}
+nav ul 
+{
+    display: flex;
+    list-style-type: none;
+}
+.logo_container{
+    display: flex;
+    gap: 1rem;
+}

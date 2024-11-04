@@ -1,0 +1,144 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+}
+
+.wrapper {
+    max-width: 75%;
+    margin: 0 auto;
+    padding: .5em 2rem;
+}
+
+header {
+    padding: 1rem;
+    text-align: center;
+}
+
+header h3,
+header p {
+    margin: 0 1rem;
+}
+
+header p {
+    width: 40%;
+    color: gray;
+    margin: auto;
+}
+
+.main_container {
+    gap: 1rem;
+    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(346px, 400px ));
+}
+
+
+.card_container {
+    display: flex;
+    flex-direction: column;
+    border: 2px solid rgb(209, 207, 207);
+    border-radius: .5em;
+}
+
+.card_image_container {
+    position: relative;
+    overflow: hidden;
+    height: 11rem;
+}
+
+.card_image_container img {
+    object-fit: cover;
+    object-position: center;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+
+}
+
+.card_container:hover .imog {
+    transform: scale(1.1);
+    background-color: red;
+    transition: 2s all ease;
+}
+
+.card_title_container {
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem;
+}
+
+.card_title {
+    font-size: .9rem;
+    margin-bottom: .4rem;
+    color: black;
+}
+
+.card_title:hover {
+    color: rgb(61, 61, 252);
+}
+
+.card_title_container p {
+    font-size: .7rem;
+    color: rgb(114, 113, 113);
+}
+
+footer {
+    display: flex;
+    justify-content: space-between;
+    padding: .5rem;
+    align-items: flex-end;
+}
+
+.author_container {
+    display: flex;
+    gap: .5rem;
+    align-items: center;
+}
+
+.author_avatar {
+    height: 2rem;
+    width: 2rem;
+    border: 2px solid rgb(179, 178, 178);
+    border-radius: 50%;
+}
+
+.author_info {
+    color: rgb(95, 93, 93);
+    display: flex;
+    flex-direction: column;
+}
+
+.author_info span:first-child {
+    color: blue;
+    font-size: .8rem;
+}
+
+.author_info span:nth-child(2) {
+    color: rgb(61, 60, 60);
+    font-size: .7rem;
+}
+
+.tag_container {
+    font-size: .5rem;
+    padding: .4rem;
+    border: 2px solid rgb(88, 88, 88);
+    border-radius: .3rem;
+}
+
+.tag_container:hover {
+    background-color: black;
+    color: white;
+    border: 2px solid rgb(255, 255, 255);
+    transition: all .5s ease;
+}

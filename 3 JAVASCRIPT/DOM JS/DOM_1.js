@@ -1,3 +1,14 @@
+/*
+window
+    window object created by browser  
+    represent browser windos 
+
+document 
+    entire html code converted into object called as document
+*/
+
+
+
 // // // Add tag only 
 // let boxer = document.querySelector('.box');
 // // let content = document.createElement('p');
