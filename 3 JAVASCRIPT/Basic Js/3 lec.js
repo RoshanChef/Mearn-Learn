@@ -32,6 +32,10 @@ console.log(val.trim());
 console.log(val.replace('ba', 'ca'));
 console.log('Index is ', val.indexOf('b'));
 
+val = '10';
+console.log('type is ', typeof (val));
+val = toString(val);
+console.log('type is  ', typeof (val));
 
 let make = "hello world world ";
 let output = make.lastIndexOf('world');

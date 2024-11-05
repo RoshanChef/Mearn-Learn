@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Glass Effects </title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .wrapper {
+            MAX-width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 2rem;
+            color: white;
+            position: relative;
+            background-image: linear-gradient(45deg, #08001f, #30197d);
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 2px solid rgba(255, 255, 255, 0.4);
+            padding: 2rem;
+            border-radius: .5rem;
+            background-color: rgb(235, 0, 255, .111);
+            backdrop-filter: blur(1rem);
+        }
+
+        .item {
+            width: 8rem;
+            padding: 1rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .title {
+            margin: 1rem;
+            /* padding-left: .5rem; */
+            font-size: .8rem;
+        }
+
+        .colon {
+            font-size: 3rem;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="wrapper">
+        <div class="container">
+            <div class="hr">
+                <div class="item">
+                    <span class="box1"></span>
+                    <span class="title">HOURS</span>
+                </div>
+            </div>
+            <div class="colon">:</div>
+            <div class="min">
+                <div class="item">
+                    <span class="box3"></span>
+                    <span class="title">MINS</span>
+                </div>
+            </div>
+
+            <div class="colon">:</div>
+            <div class="sec">
+                <div class="item">
+                    <span class="box5"></span>
+                    <span class="title">
+                        SEC
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let hour = document.querySelector('.box1');
+        let minutes = document.querySelector('.box3');
+        let seconds = document.querySelector('.box5');
+
+        hour.innerText = Math.floor((new Date().getHours()) / 10) == 0 ? '0' + (new Date().getHours()) : (new Date().getHours());
+        minutes.innerText = Math.floor((new Date().getMinutes()) / 10) == 0 ? '0' + (new Date().getMinutes()) : (new Date().getMinutes());
+        seconds.innerText = Math.floor((new Date().getSeconds()) / 10) == 0 ? '0' + (new Date().getSeconds()) : (new Date().getSeconds())
+        setInterval(() => {
+            let val = new Date();
+            let y = val.getSeconds();
+
+            if (Math.floor(y / 10) == 0) {
+                seconds.innerText = '0' + y;
+            }
+            else
+                seconds.innerText = y;
+
+            if (y == 0) {
+                let x = val.getMinutes();
+                minutes.innerText = x;
+                if (val.getMinutes() == 0 && val.getSeconds() == 0) {
+                    hour.innerText = val.getHours();
+                }
+            }
+        }, 1000);
+
+    </script>
+
+</body>
+
+</html>
