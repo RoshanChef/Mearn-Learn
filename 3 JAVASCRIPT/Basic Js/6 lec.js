@@ -61,7 +61,29 @@ Local Storage
 
 // storage event => update in one tab and changes notified in another tab of the same page
 
-window.onstorage = (event_obj) => {
-    alert('change');
-    console.log(event_obj);
+// window.onstorage = (event_obj) => {
+//     alert('change');
+//     console.log(event_obj);
+// }
+
+
+// OOPs not understood
+let obj1 = {
+    name: "Roshan",
+    getName: function () {
+        return this.name;
+    },
+    getRoll: function () {
+        return this.roll;
+    }
 }
+console.log(obj1);
+
+let obj2 = {
+    roll: 2122,
+    name: 'Krishan',
+    __proto__: obj1
+}
+
+console.log(obj2.getName());
+console.log(obj2.getRoll()); 
