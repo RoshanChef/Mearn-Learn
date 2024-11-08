@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Glass Effects </title>
+    <title>Analog Clock </title>
     <style>
         * {
             margin: 0;
@@ -26,11 +26,11 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            border: 2px solid rgba(255, 255, 255, 0.4);
+            border: 2px solid rgba(128, 128, 128, 0.4);
             padding: 2rem;
             border-radius: .5rem;
-            background-color: rgb(235, 0, 255, .111);
-            backdrop-filter: blur(1rem);
+            background-color: rgba(150, 148, 148, 0.111);
+            backdrop-filter: blur(40PX);
         }
 
         .item {
@@ -51,6 +51,7 @@
         .colon {
             font-size: 3rem;
         }
+        
     </style>
 </head>
 
@@ -81,6 +82,9 @@
                     </span>
                 </div>
             </div>
+            <div class="clocking">
+                AM
+            </div>
         </div>
     </div>
 
@@ -88,10 +92,22 @@
         let hour = document.querySelector('.box1');
         let minutes = document.querySelector('.box3');
         let seconds = document.querySelector('.box5');
+        let am_pm = document.querySelector('.clocking');
 
-        hour.innerText = Math.floor((new Date().getHours()) / 10) == 0 ? '0' + (new Date().getHours()) : (new Date().getHours());
+        hour.innerText = new Date().getHours() % 12;
+
         minutes.innerText = Math.floor((new Date().getMinutes()) / 10) == 0 ? '0' + (new Date().getMinutes()) : (new Date().getMinutes());
         seconds.innerText = Math.floor((new Date().getSeconds()) / 10) == 0 ? '0' + (new Date().getSeconds()) : (new Date().getSeconds())
+
+
+        if (hour.innerText == 0) {
+            hour.innerText = 12;
+        }
+        else if (hour.innerText < 10) {
+            hour.innerText = '0' + hour.innerText;
+        }
+        // console.log('value is ' , hour.innerText);
+
         setInterval(() => {
             let val = new Date();
             let y = val.getSeconds();
@@ -110,6 +126,13 @@
                 }
             }
         }, 1000);
+
+
+        if (new Date().getHours() > 12) {
+            am_pm.innerText = 'PM';
+        }
+        else
+            am_pm.innerText = 'AM';
 
     </script>
 

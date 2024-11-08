@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Second</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            height: 100%;
+            width: 100%;
+        }
+
+        #page1,
+        #page2,
+        #page3 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #page1 {
+            width: 100%;
+            height: 100%;
+            background-color: beige;
+        }
+
+        #page2 {
+            width: 100%;
+            height: 100%;
+            background-color: wheat;
+            position: relative;
+        }
+
+        #page3 {
+            width: 100%;
+            height: 100%;
+            background-color: rgb(81, 127, 255);
+        }
+
+        #circle {
+            width: 300px;
+            height: 300px;
+            background-image: linear-gradient(orange, orangered);
+            border-radius: 50%;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="page1">
+        <div id="circle"></div>
+    </div>
+    <div id="page2">
+        <div id="circle"></div>
+    </div>
+    <div id="page3">
+        <div id="circle"></div>
+    </div>
+
+    <script src="../src/gsap.min.js"></script>
+    <script src="../src/ScrollTrigger.js"></script>
+    <script src="second.js"></script>
+</body>
+
+</html>

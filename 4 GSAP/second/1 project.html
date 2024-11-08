@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Project</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+        }
+
+        #page1 {
+            background-color: antiquewhite;
+            width: 100%;
+            height: 100%;
+        }
+
+        #page2 {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            background-color: wheat;
+        }
+
+        #page2 img {
+            object-fit: cover;
+            height: 100%;
+            width: 20%;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        #page3 {
+            width: 100%;
+            height: 100%;
+            background-color: burlywood;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="page1">
+
+    </div>
+    <div id="page2">
+        <img src="../../2 CSS/Projext/wall.jpg" alt="">
+    </div>
+    <div id="page3"></div>
+
+    <script src="../src/gsap.min.js"></script>
+    <script src="../src/ScrollTrigger.js"></script>
+    <script src="project.js"></script>
+</body>
+
+</html>

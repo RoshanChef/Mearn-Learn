@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>second</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            width: 100vw;
+            height: 100vh;
+            background-color: black;
+        }
+
+        .wraper nav {
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            padding: .5rem 1rem;
+            text-transform: uppercase;
+        }
+
+        nav h3 {
+            font-weight: 200;
+        }
+
+        .menu {
+            display: flex;
+            gap: 2rem;
+
+        }
+
+        .wraper h1 {
+            text-transform: uppercase;
+            color: white;
+            font-size: 7.5rem;
+            font-weight: 300;
+            width: 80%;
+            margin-left: 10%;
+            position: relative;
+            z-index: 1;
+        }
+
+        h1:nth-child(2) {
+            margin-top: 90px;
+        }
+
+        h1:nth-child(3) {
+            text-align: center;
+        }
+
+        h1:nth-child(4) {
+            text-align: center;
+        }
+
+        img {
+            border-radius: 1rem;
+            width: 19rem;
+            top: 12%;
+            left: 40%;
+            position: absolute;
+        }
+
+        .img1 {
+            rotate: 10deg;
+        }
+
+        .img2 {
+            rotate: 20deg;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="wraper">
+        <nav>
+            <div class="logo">
+                <h3>Information</h3>
+            </div>
+            <div class="menu">
+                <h3>Section</h3>
+                <h3>Info</h3>
+                <h3>About</h3>
+            </div>
+        </nav>
+        <h1>Hello I'm</h1>
+        <h1>Roshan</h1>
+        <h1>Try</h1>
+
+        <img src="../../2 CSS/Projext/back.jpg" class="imo img2">
+        <img src="../../2 CSS/Projext/wall.jpg" class="imo img1">
+        <img src="../../2 CSS/Projext/wall.jpg" class="imo img3">
+
+    </div>
+
+
+    <script src="../gsap_lib.js"></script>
+    <script src="second.js">
+
+    </script>
+
+</body>
+
+</html>
