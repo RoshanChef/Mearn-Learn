@@ -8,6 +8,7 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
         }
 
         html,
@@ -15,17 +16,49 @@
             width: 100%;
             height: 100%;
         }
+
+        body{
+            overflow-x: hidden;
+        }
+
+        #page1 {
+            width: 100%;
+            height: 100%;
+            background-color: black;
+        }
+
+        #page2 {
+            width: 100%;
+            height: 100%;
+            background-color: rgb(69, 198, 241);
+        }
+
+        #page3 {
+            width: 100%;
+            height: 100%;
+            background-color: black;
+        }
+
+        #page2 h1 {
+            text-transform: uppercase;
+            font-size: 41vw;
+            font-weight: 515;
+        }
     </style>
 </head>
 
 <body>
 
-
+    <div id="page1"></div>
+    <div id="page2">
+        <h1>Expertise</h1>
+    </div>
+    <div id="page3"></div>
 
 
     <script src="../src/gsap.js"></script>
     <script src="../src/ScrollTrigger.js"></script>
-    <script src="project 2.js"></script>
+    <script src="2 project 2.js"></script>
 </body>
 
 </html>
