@@ -159,33 +159,7 @@ ele.addEventListener('click', () => {
 })
 
 
-// Classes and objects 
-class Prani {
-    constructor(width, height) {
-        this.width = width;
-        this.height = height;
-    }
-    color() {
-        console.log('I have red color');
-    }
-}
-let obj = new Prani();
-console.log(obj);
-obj.color();
 
-class animal {
-    constructor(name, rol) {
-        this.rol = rol;
-        this.name = name
-    }
-
-    static myType() {
-        console.log('I am always animal ');
-    }
-    speak() {
-        console.log('speaking with mouth .. ');
-    }
-}
 
 // how can you call static method
 animal.myType();
