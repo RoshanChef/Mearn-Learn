@@ -1,9 +1,6 @@
 import './Card.css';
 
-function Card(pro) {
-    return<div>
-        {pro.children}
-    </div>;
+function Card(props) {
+    return <div>{props.children}</div>;
 }
-
 export default Card; 

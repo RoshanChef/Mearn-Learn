@@ -1,10 +1,14 @@
 import './Item.css'
 
-function Item(Properties) {
-    // const item_con = "Gulabo";
+function Item(company) {
+    const company_name = company.name;
     return (
-        <div className='item_con'>{Properties.name}</div>
+        <div>
+            <p>{company_name}
+            </p>
+            {company.children}
+        </div>
     );
 }
 
-export default Item;
+export default Item

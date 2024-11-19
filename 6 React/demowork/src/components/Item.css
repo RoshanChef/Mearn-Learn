@@ -1,7 +1,7 @@
-.item_con{
-    background-color: #bde4b1;
-    color: rgb(34, 32, 24);
-    font-size: large;
+p {
+    background-color: greenyellow;
     text-align: center;
-    font-weight: 700;
+    padding: 1vw;
+    font-weight:1000 ;
+    font-size: 2vw;
 }

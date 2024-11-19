@@ -1,8 +1,6 @@
-.box{
-    padding: 1rem;
+.date {
     display: flex;
-    gap: 1rem;
     justify-content: center;
-    font-weight: 600;
-    background-color: rgb(242, 250, 167);
+    gap: 1vw;
+    font-size: 3vw;
 }

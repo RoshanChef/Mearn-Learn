@@ -1,13 +1,16 @@
-import './ItemDate.css';
+import './ItemDate.css'
 
-function ItemDate(pros) {
+function ItemDate(properties) {
+    const day = properties.day;
+    const month = properties.month;
+    const year = properties.year;
+
     return (
-        <div className='box'>
-            <span>{pros.day}</span>
-            <span>{pros.month}</span>
-            <span>{pros.year}</span>
+        <div className='date'>
+            <span>{day}</span>
+            <span>{month}</span>
+            <span>{year}</span>
         </div>
-    )
+    );
 }
-
 export default ItemDate; 

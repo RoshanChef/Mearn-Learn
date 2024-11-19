@@ -38,6 +38,10 @@ console.log('two');
 // send data to another url and get the data from another url 
 // fetch('url').then(raw=>raw.json()).then(Response=>console.log(Response);)
 
+// url ('https://catfact.ninja/fact')
+
+// cdn <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.7.7/axios.min.js" integrity="sha512-DdX/YwF5e41Ok+AI81HI8f5/5UsoxCVT9GKYZRIzpLxb8Twz4ZwPPX+jQMwMhNQ9b5+zDEefc+dcvQoPWGNZ3g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
 // axios => script cdn 
-// axios.get('url').then(result=>console.log(result);)
+// axios.get('url').then(result=>console.log(result.data);)
 

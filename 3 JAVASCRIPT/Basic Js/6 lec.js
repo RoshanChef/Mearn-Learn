@@ -66,24 +66,3 @@ Local Storage
 //     console.log(event_obj);
 // }
 
-
-// OOPs not understood
-let obj1 = {
-    name: "Roshan",
-    getName: function () {
-        return this.name;
-    },
-    getRoll: function () {
-        return this.roll;
-    }
-}
-console.log(obj1);
-
-let obj2 = {
-    roll: 2122,
-    name: 'Krishan',
-    __proto__: obj1
-}
-
-console.log(obj2.getName());
-console.log(obj2.getRoll()); 
