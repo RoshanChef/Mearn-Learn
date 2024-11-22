@@ -1,7 +1,7 @@
 import './App.css';
 import Item from './components/Item';
 import ItemDate from './components/ItemDate';
-import Card from './Card'; 
+import Card from './components/Card';
 
 function App() {
   const res = [
