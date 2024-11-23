@@ -1,10 +1,10 @@
 import './NewProductForm.css'
 import NewProductForm from './NewProductForm'
 
-function NewProduct () {
+function NewProduct() {
   return (
     <div className='newProduct'>
-      <NewProductForm/>
+      <NewProductForm />
     </div>
   )
 }

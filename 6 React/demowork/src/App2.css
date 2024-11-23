@@ -6,7 +6,7 @@
   }
   
   .product {
-    background-color: rgb(102, 84, 46);
+    background-color: rgb(219, 184, 25);
     width: 35vw;
     padding: 0.1rem;
     border-radius: 0.45rem;
@@ -24,7 +24,7 @@
   }
   .date {
     border-radius: 0.5rem;
-    background-color: #333;
+    background-color: #333333;
     width: 9vw;
     padding: 0.51rem;
     color: white;
