@@ -2,4 +2,9 @@ dispatch event listerner
 Concurency in js
 features of async code
 what get/post/delete/put 
-classes and export modules in js
+
+
+//How to create react app 
+npx create-react-app App_name
+
+

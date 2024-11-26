@@ -121,6 +121,6 @@ fnx();
 
 /*
 closure =>
-     fn that retains access to variables from their containing scope ever after the parent fn has finished excutionf
+     fn that retains access to variables from their containing scope even after the parent fn has finished excutionf
 */
 

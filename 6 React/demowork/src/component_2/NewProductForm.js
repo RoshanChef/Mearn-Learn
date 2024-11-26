@@ -1,11 +1,10 @@
 import { useState } from 'react'
 import './NewProductForm.css'
-
-
+  
 // useState => hook => utility fnx
 // const[var_update_value,setter] = useState(initalize_value); 
 
-function NewProductForm() {
+function NewProductForm(props) {
   const [newTitle, setTitle] = useState('');
   const [newDate, setDate] = useState('');
 
@@ -25,7 +24,8 @@ function NewProductForm() {
       date: newDate,
     }
 
-    console.log(productData);
+    // console.log(productData);
+    props.saveProduct(productData);
     setTitle('');
     setDate('');
 

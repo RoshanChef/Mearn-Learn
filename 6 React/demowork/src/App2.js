@@ -2,7 +2,7 @@ import './App2.css'
 import Product from './component_2/Product'
 import NewProduct from './component_2/NewProduct'
 
-function App2 () {
+function App2() {
   const stores = [
     {
       id: 's1',
@@ -29,12 +29,16 @@ function App2 () {
       amount: 25
     }
   ]
+
+  function print_data(obj) {
+    console.log('print at App2', obj);
+  }
+
   return (
     <div className='App'>
-      <NewProduct/>
+      <NewProduct print={print_data} />
       <Product data={stores}></Product>
     </div>
   )
 }
-
 export default App2
