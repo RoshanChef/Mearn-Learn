@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import Card from "./Card";
 
 import { FiChevronLeft, FiChevronRight } from 'react-icons/fi'
-import { FaRegHandPointDown } from "react-icons/fa";
 function Testmonial(props) {
     let reviews = props.reviews;
     const [inx, setIndex] = useState(0);

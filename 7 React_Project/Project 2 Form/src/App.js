@@ -19,10 +19,9 @@ const App = () => {
 	*/
 
 	const [formData, setFormData] = useState({ firstName: "", lastName: "", email: "", comments: "", isVisible: false, gender: "", favCar: "" });
-	console.log(formData);
 
 	function changeHandler(event) {
-		let { name, value, checked, type } = event.target;
+	let { name, value, checked, type } = event.target;
 		setFormData((prev) => {
 			return {
 				...prev,
@@ -31,9 +30,16 @@ const App = () => {
 		})
 	}
 
+	function submitHandler(event) {
+		event.preventDefault();
+
+		console.log('Printing the Form Data');
+		console.log(formData);
+	}
+
 	return (
 		<div>
-			<form>
+			<form onSubmit={submitHandler}>
 				<input
 					type="text" placeholder="First Name" onChange={changeHandler} value={formData.firstName} name="firstName"
 				></input>
@@ -103,7 +109,7 @@ const App = () => {
 					<option value="Leborgini">Leborgini</option>
 				</select>
 				<br />
-				<input type="submit" value='submit'> submit</input>
+				<input type="submit" value="submit" />
 			</form>
 		</div>
 	)
