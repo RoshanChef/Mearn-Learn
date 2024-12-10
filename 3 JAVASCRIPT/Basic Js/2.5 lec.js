@@ -74,7 +74,7 @@ function printing(val, index, arry) {
     console.log(val, ' = ', index, arry);   
 }
 
-//forEach method take funtion as an argument
+//forEach method take funtion as an argument and run for each member return nothing
 arr.forEach(printing);
 
 // Practice Que
@@ -87,7 +87,7 @@ values.forEach((val) => {
 
 
 // map method in Array
-// array.map(fn(value , index , Array))
+// array.map(fn(value , index , Array))  return an array 
 let num = [10, 20, 30, 40, 50, 60, 70, 80];
 console.log('\n');
 num.map((val) => {
@@ -97,6 +97,7 @@ num.map((val) => {
 let new_arr = num.map((val) => {
     return val * 2;
 })
+
 console.log('\n');
 console.log(new_arr);
 

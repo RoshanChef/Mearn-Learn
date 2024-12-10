@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Motion</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .con {
+            width: 100vw;
+            height: 100vh;
+            background-color: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .box {
+            background-color: rgba(45, 45, 45, .5);
+            /* backdrop-filter: blur(2px); */
+            position: relative;
+            height: 320px;
+            width: 17rem;
+            border-radius: .5rem;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .box::before {
+            content: '';
+            opacity: 0;
+            position: absolute;
+            transform: translate(-50%, -50%);
+            left: var(--x);
+            top: var(--y);
+            width: 25rem;
+            height: 400px;
+            background: radial-gradient(var(--color), transparent, transparent);
+        }
+
+        .box:hover::before {
+            opacity: 1;
+
+        }
+
+        .box:hover {
+            transform: perspective(1000px) scaleZ(var(--rz)) rotateY(15deg);
+            transition: 2s;
+            perspective: 300px;
+        }
+
+        .box::after {
+            content: '';
+            inset: 2px;
+            border-radius: .5rem;
+            position: absolute;
+            background-color: rgba(45, 45, 45, .75);
+            /* backdrop-filter: blur(10px); */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="con">
+        <div class="box" style="--color:gold; padding: 1rem;">
+            <div style="position: absolute; z-index: 1; color: white; ">Card 1</div>
+        </div>
+        <div class="box" style="--color:crimson; padding: 1rem;">
+            <div style="position: absolute; z-index: 1; color: white;">Card 2</div>
+        </div>
+        <div class="box" style="--color:tomato; padding: 1rem;">
+            <div style="position: absolute; z-index: 1; color: white; text-align: center; ">Card 3</div>
+        </div>
+    </div>
+
+    <script>
+        let boxs = document.querySelectorAll('.box');
+        console.log(boxs)
+
+        boxs.forEach((box) => {
+            box.addEventListener('mousemove', (e) => {
+                let x = e.clientX - box.offsetLeft;
+                let y = e.clientY - box.offsetTop;
+                box.style.setProperty('--x', x + 'px');
+                box.style.setProperty('--y', y + 'px');
+                console.log(x, ' and ', y);
+
+            })
+
+        })
+    </script>
+</body>
+
+</html>

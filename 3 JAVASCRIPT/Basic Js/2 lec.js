@@ -1,4 +1,3 @@
-console.log('hello roshan');
 
 //object creation
 const person = {
@@ -93,7 +92,7 @@ array
 
 
 // //function
-// let Number = 10;
+// let Number = 10;+
 // function inc(Number) {
 //     Number++;
 // }
@@ -144,7 +143,7 @@ else
 
 
 //cloing of object  
-let src = { val: 10 };
+let src = { val: 10 };  
 
 // //1 iterable
 // let dest = {};

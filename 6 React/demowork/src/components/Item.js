@@ -4,8 +4,7 @@ function Item(company) {
     const company_name = company.name;
     return (
         <div>
-            <p>{company_name}
-            </p>
+            <p>{company_name}</p>
             {company.children}
         </div>
     );

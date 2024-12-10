@@ -8,6 +8,7 @@
 // // add the cookie
 // document.cookie = 'name=roshan';
 // document.cookie = 'name2=radha';
+
 // // update the cookie
 // document.cookie = 'name=Aakash';
 

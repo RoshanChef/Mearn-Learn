@@ -1,0 +1,424 @@
+* {
+    padding: 0;
+    box-sizing: border-box;
+    margin: 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+:root {
+    --item1-transform: translate(-100%, -5%) scale(1.5);
+    --item1-z-index: 11;
+    --item1-opacity: 0;
+    --item1-filter: blur(20px);
+
+    --item2-transform: translate(0, 0);
+    --item2-z-index: 10;
+    --item2-opacity: 1;
+    --item2-filter: blur(0px);
+
+    --item3-transform: translate(50%, 10%) scale(.7);
+    --item3-z-index: 9;
+    --item3-opacity: 1;
+    --item3-filter: blur(10px);
+
+    --item4-transform: translate(90%, 20%) scale(.3);
+    --item4-z-index: 8;
+    --item4-opacity: 1;
+    --item4-filter: blur(30px);
+
+    --item5-transform: translate(120%, 30%) scale(.3);
+    --item5-z-index: 7;
+    --item5-opacity: 0;
+    --item5-filter: blur(40px);
+}
+
+header nav {
+    font-size: 1.3rem;
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+
+    .logo {
+        font-weight: 600;
+        cursor: pointer;
+    }
+}
+
+ul {
+    color: #555;
+    list-style-type: none;
+    display: flex;
+    gap: 0 1rem;
+    font-weight: 500;
+    height: 5rem;
+    position: relative;
+    z-index: 10;
+}
+
+ul li {
+    cursor: pointer;
+    transition: all .2s;
+}
+
+ul li:hover {
+    color: black;
+    scale: 1.01;
+}
+
+.carosel {
+    margin-top: -7rem;
+    overflow: hidden;
+    height: 100vh;
+    position: relative;
+}
+
+.carosel .list {
+    position: absolute;
+    width: 1140px;
+    max-width: 90%;
+    height: 80%;
+    inset: 0;
+    margin: auto;
+}
+
+.carosel .list .item {
+    position: absolute;
+    width: 70%;
+    inset: 0;
+    font-size: 15px;
+    height: 100%;
+}
+
+
+.item .img img {
+    width: 50%;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    position: absolute;
+}
+
+.item .intro {
+    position: absolute;
+    width: 400px;
+    top: 30%;
+    pointer-events: none;
+    transform: translateY(-50%);
+    opacity: 0;
+}
+
+.item:nth-child(2) .intro {
+    opacity: 1;
+    pointer-events: auto;
+    transition: opacity 0.5s;
+}
+
+
+.list .item:nth-child(n+6) {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.list .item:nth-child(2) {
+    transform: translate(0, 0);
+    filter: blur(0px);
+    z-index: 10;
+    opacity: 1;
+}
+
+.list .item:nth-child(1) {
+    transform: var(--item1-transform);
+    filter: var(--item1-filter);
+    opacity: var(--item1-opacity);
+    pointer-events: none;
+    z-index: var(--item1-z-index);
+}
+
+.list .item:nth-child(3) {
+    filter: var(--item3-filter);
+    z-index: var(--item3-z-index);
+    transform: var(--item3-transform);
+    opacity: var(--item3-opacity);
+}
+
+.list .item:nth-child(4) {
+    filter: var(--item4-filter);
+    opacity: var(--item4-opacity);
+    z-index: var(--item4-z-index);
+    transform: var(--item4-transform);
+}
+
+.list .item .details {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.arrows {
+    position: absolute;
+    bottom: 10px;
+    width: 100vw;
+    max-width: 90%;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.arrows .next,
+.arrows .prev {
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    border-radius: 50%;
+    font-size: large;
+    border: 1px solid #555;
+}
+
+.arrows .reverse {
+    font-weight: 500;
+    border: none;
+    letter-spacing: 3px;
+    border-bottom: 1px solid #333;
+    opacity: 0;
+    pointer-events: none;
+    background-color: transparent;
+}
+
+.item .intro h2 {
+    font-weight: 500;
+    color: #555;
+    font-size: 2em;
+}
+
+.item .intro h1 {
+    font-weight: 600;
+    font-size: 2.5em;
+    margin: .3rem 0;
+}
+
+.intro button {
+    border: none;
+    margin-top: 1rem;
+    font-weight: bold;
+    padding-bottom: .2rem;
+    border-bottom: 2px solid black;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+
+.item:nth-child(2) .intro h2,
+.intro h1,
+.intro p,
+.intro button {
+    opacity: 0;
+    animation: showContent .5s .7s ease 1 forwards;
+}
+
+@keyframes showContent {
+    from {
+        transform: translateY(-50px);
+        filter: blur(30px);
+    }
+
+    to {
+        transform: translate(0);
+        filter: blur(0);
+        opacity: 1;
+    }
+}
+
+.item .intro h1 {
+    animation-delay: .9s;
+}
+
+.item .intro p {
+    animation-delay: 1.1s;
+}
+
+.item .intro button {
+    animation-delay: 1.3s;
+}
+
+
+/* ********  Next Button  ******** */
+.carosel.active .list .item:nth-child(1) {
+    animation: position2 .8s ease 1 forwards;
+}
+
+@keyframes position2 {
+    from {
+        transform: translate(0, 0);
+        filter: blur(0px);
+        z-index: 10;
+        opacity: 1;
+    }
+}
+
+.carosel.active .list .item:nth-child(2) {
+    animation: position3 .8s ease 1 forwards;
+}
+
+.item:nth-child(n+5) {
+    opacity: 0;
+    pointer-events: none;
+}
+
+@keyframes position3 {
+    from {
+        filter: var(--item3-filter);
+        z-index: var(--item3-z-index);
+        transform: var(--item3-transform);
+        opacity: var(--item3-opacity);
+    }
+}
+
+.carosel.active .list .item:nth-child(3) {
+    animation: position4 .8s ease 1 forwards;
+}
+
+@keyframes position4 {
+    from {
+        filter: var(--item4-filter);
+        z-index: var(--item4-z-index);
+        transform: var(--item4-transform);
+        opacity: var(--item4-opacity);
+    }
+}
+
+
+.carosel.active .list .item:nth-child(4) {
+    animation: position5 .8s ease 1 forwards;
+}
+
+@keyframes position5 {
+    from {
+        filter: var(--item5-filter);
+        opacity: var(--item5-opacity);
+        z-index: var(--item5-z-index);
+        transform: var(--item5-transform);
+    }
+}
+
+/* ********  Prev Button  ******** */
+.carosel.preActive .list .item:nth-child(2) {
+    animation: ani2 .8s ease 1 forwards;
+}
+
+@keyframes ani2 {
+    from {
+        transform: translate(-100%, -5%) scale(1.5);
+        z-index: 11;
+        opacity: 0;
+        filter: blur(20px);
+    }
+}
+
+.carosel.preActive .list .item:nth-child(3) {
+    animation: position2 .8s ease 1 forwards;
+}
+
+.carosel.preActive .list .item:nth-child(4) {
+    animation: position3 .8s ease 1 forwards;
+}
+
+.carosel .list .item {
+    transition: opacity .5s;
+}
+
+.carosel.seeDetails .list .item:nth-child(3),
+.carosel.seeDetails .list .item:nth-child(4) {
+    left: 100%;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.carosel.seeDetails .list .item:nth-child(2) {
+    width: 100%;
+}
+
+.carosel.seeDetails .list .item:nth-child(2) .intro {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.carosel .item:nth-child(2) img {
+    transition: right .7s ease;
+}
+
+.carosel.seeDetails .item:nth-child(2) img {
+    right: 50%;
+}
+
+.carosel.seeDetails .arrows .prev,
+.carosel.seeDetails .arrows .next {
+    opacity: 0;
+}
+
+.carosel.seeDetails .arrows .reverse {
+    opacity: 1;
+    pointer-events: auto;
+    cursor: pointer;
+}
+
+
+.carosel.seeDetails .item:nth-child(2) .details {
+    opacity: 1;
+    pointer-events: auto;
+    width: 50%;
+    position: absolute;
+    right: 0;
+    text-align: right;
+    top: 30%;
+    opacity: 0;
+
+    .side {
+        padding: 1rem;
+        display: flex;
+        gap: 1rem;
+        width: 100%;
+    }
+
+    .side p:nth-child(1) {
+        font-weight: 500;
+    }
+
+    .btn .add,
+    .btn .checkout {
+        border-radius: .35rem;
+        padding: .51rem;
+        background-color: transparent;
+        cursor: pointer;
+    }
+
+    .btn .checkout {
+        color: white;
+        background-color: #693eff;
+    }
+}
+
+.carosel.seeDetails .item:nth-child(2) .details {
+    animation: showContent .5s .81s ease-in-out 1 forwards;
+}
+
+.carosel::before {
+    content: '';
+    width: 15rem;
+    height: 15rem;
+    position: absolute;
+    z-index: -1;
+    border-radius: 50% 30%;
+    background-image: linear-gradient(red, purple);
+    transform: translate(220% , 30%);
+    filter: blur(7rem);
+    transition: transform .7s;
+}
+
+.carosel.seeDetails::before{
+    transform: translate(90%, 50%);
+}

@@ -1,23 +1,34 @@
-// let meraPromise = new Promise(function (resolve, reject) {
-//     console.log('Promise main hun .. ');
-//     resolve(101);
-//     // reject(new Error('Hello Roshan, How is the journey'));
-// })
+let meraPromise = new Promise(function (resolve, reject) {
+    let value = Math.random();
+    if (value > .5) {
+        resolve(value);
+    }
+    else {
 
-// meraPromise.then((val) => {
-//     console.log("Promise Resolve ", val);
-// })
+        reject(new Error('less than .5'));
+    }
 
-// meraPromise.catch((error) => {
-//     console.log('Promise Rejected => ', error);
-// })
+})
+
+meraPromise.then((val) => {
+    console.log("Promise Resolve ", val);
+})
+
+meraPromise.catch((error) => {
+    console.log('Promise Rejected => ', error);
+})
 
 // // then and catch in one line
+// meraPromise.then(
+//     (val) => { console.log("resolve val is ", val); },
+//     (error) => { console.log('error aayo .. ') })
+
+// // other way 
 // meraPromise.then((val) => {
-//     console.log("resolve val is ", val);
-// }, (error) => { console.log('error aayo .. ') })
-
-
+//     console.log(val);
+// }).catch((error) => {
+//     console.log(error);
+// })
 
 // // ******* Promises ***********
 // let promise_1 = new Promise((resolve, reject) => {

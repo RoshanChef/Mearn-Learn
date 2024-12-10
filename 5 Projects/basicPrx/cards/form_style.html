@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Element</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            width: 100vw;
+            height: 100vh;
+            background-color: #f2f2f2;
+            display: grid;
+            place-items: center;
+        }
+
+        .input_container {
+            position: relative;
+            width: 15rem;
+            border-radius: .4rem;
+            border: 2px solid rgba(0, 0, 0, 0.09);
+        }
+
+        .input_container input {
+            border-radius: .4rem;
+            outline: none;
+            padding: 1rem 2rem;
+            border: none;
+            background-color: #f2f2f2;
+            width: 100%;
+            color: #0051ff;
+            transition: .5s;
+            box-shadow: 0px 5px 10px rgb(197, 197, 197);
+        }
+
+        .input_container label {
+            position: absolute;
+            pointer-events: none;
+            padding: .1rem;
+            top: 50%;
+            left: 2.01rem;
+            background-color: #f2f2f2;
+            transform: translateY(-50%);
+            color: #9d9d9d;
+            transition: .5s ease;
+        }
+
+        input:focus~label {
+            top: 0;
+            scale: .9;
+            transform: translateY(-50%);
+            color: #0051ff;
+            background-color: #f2f2f2;
+        }
+
+        .in_bg {
+            position: absolute;
+            z-index: -1;
+            inset: -2px;
+            border-radius: .4rem;
+            transform: scaleX(0);
+            transition: 0.5s ease;
+        }
+
+        input:focus~.in_bg {
+            background-image: linear-gradient(to right, #0091ff, #ff00fb);
+            transform: scaleX(1);
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="input_container">
+        <input type="text" id="anime_in" />
+        <label for="anime_in">First Name</label>
+        <div class="in_bg"></div>
+
+    </div>
+    <div class="input_container">
+        <input type="text" id="anime_in" />
+        <label for="anime_in">First Name</label>
+        <div class="in_bg"></div>
+    </div>
+
+</body>
+
+</html>

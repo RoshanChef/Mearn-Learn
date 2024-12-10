@@ -75,7 +75,7 @@ let person = {
         if (typeof values != 'string') {
             throw new Error('Your message is not string ...');
         }
-        let parts = values.split(' ');
+        let parts = values.trim().split(' ');
         this.fName = parts[0];
         this.lName = parts[1];
     }
@@ -169,11 +169,11 @@ dog.speak();
 
 
 let timerId = setTimeout(print, (4000));
-function print(){
+function print() {
     console.log('printing the values of the class I have to see');
 }
 
-setTimeout(clearTimeout(timerId) , 2000); 
+setTimeout(clearTimeout(timerId), 2000);
 setTimeout(() => {
     console.log('still working ');
 }, 5000);

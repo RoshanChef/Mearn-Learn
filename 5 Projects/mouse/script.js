@@ -23,6 +23,7 @@ frames.forEach(frame => {
             duration: .3,
             y: "-5vw"
         })
+  
         var dims = frame.getBoundingClientRect();
 
         var frameStart = dims.x;
