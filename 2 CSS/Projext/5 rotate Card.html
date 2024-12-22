@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Argument</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .main {
+            width: 100vw;
+            height: 100vh;
+            display: grid;
+            perspective: 500px;
+            place-items: center;
+            background-image: linear-gradient(145deg, rgb(163, 107, 163), royalblue);
+        }
+
+        .con {
+            width: 15rem;
+            height: 20rem;
+            transition: all 1.5s;
+            transform-style: preserve-3d;
+            position: relative;
+        }
+
+        .con:hover {
+            transform: rotateY(180deg);
+        }
+
+        .fr,
+        .bc {
+            border-radius: 1rem;
+            color: white;
+            padding: 1rem;
+            position: absolute;
+            backface-visibility: hidden;
+            width: 100%;
+            height: 100%;
+        }
+
+        .fr {
+            background-color: crimson;
+        }
+
+        .bc {
+            background-color: rebeccapurple;
+            transform: rotateY(180deg);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <div class="con">
+            <div class="fr">
+                front
+            </div>
+            <div class="bc">
+                back
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

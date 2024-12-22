@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Calender</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .main {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100vw;
+            height: 100vh;
+            background-color: #000;
+
+        }
+
+
+        .card1 {
+            width: 10rem;
+            height: 12rem;
+            background-color: #fff;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            font-family: monospace;
+            border-radius:.5rem 0rem 0rem .5rem ;
+        }
+        
+        .card1 div:first-child {
+            font-size: 3rem;
+        }
+        
+        .card2 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+
+            font-size: large;
+            letter-spacing: .03rem;
+            font-family: monospace;
+            border-radius:0rem 0.5rem 0.5rem 0rem ;
+            height: 12rem;
+            width: 8rem;
+            background-color: orangered;
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="main">
+        <div class="card1">
+            <div></div>
+            <div></div>
+        </div>
+        <div class="card2">
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+
+    <script>
+        let c1 = document.querySelector('.card1');
+        let c2 = document.querySelector('.card2');
+
+        let days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+
+        console.log(c1.children[0]);
+        // Date and Time
+        let date = new Date();
+        c1.children[0].innerText = date.getDate();
+        c1.children[1].innerText = days[date.getDay()];
+
+        let month = ['Jan' , 'Feb' , 'March' , 'April' , 'May' ,'June' , 'July' , 'Aug' , 'Sept' , 'Oct' , 'Nov' ,'Dec']; 
+        c2.children[0].innerText = month[date.getMonth()]; 
+        c2.children[1].innerText = date.getFullYear();
+
+    </script>
+
+</body>
+
+</html>

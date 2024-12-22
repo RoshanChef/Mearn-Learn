@@ -21,7 +21,7 @@ const App = () => {
 	const [formData, setFormData] = useState({ firstName: "", lastName: "", email: "", comments: "", isVisible: false, gender: "", favCar: "" });
 
 	function changeHandler(event) {
-	let { name, value, checked, type } = event.target;
+		let { name, value, checked, type } = event.target;
 		setFormData((prev) => {
 			return {
 				...prev,
@@ -32,7 +32,6 @@ const App = () => {
 
 	function submitHandler(event) {
 		event.preventDefault();
-
 		console.log('Printing the Form Data');
 		console.log(formData);
 	}
@@ -41,19 +40,23 @@ const App = () => {
 		<div>
 			<form onSubmit={submitHandler}>
 				<input
-					type="text" placeholder="First Name" onChange={changeHandler} value={formData.firstName} name="firstName"
+					type="text" placeholder="First Name" onChange={changeHandler}
+					value={formData.firstName} name="firstName"
 				></input>
 				<br />
 				<br />
 				<br />
 				<input
-					type="text" placeholder="Last Name" value={formData.lastName} onChange={changeHandler} name="lastName"
+					type="text" placeholder="Last Name"
+					value={formData.lastName} onChange={changeHandler} name="lastName"
 				></input>
 				<br />
 				<br />
 				<br />
 				<input
-					type="email" value={formData.email} placeholder="xyz@gmail.com" onChange={changeHandler} name="email"
+					type="email"
+					value={formData.email} placeholder="xyz@gmail.com" 
+					onChange={changeHandler} name="email"
 				></input>
 
 				<br />
@@ -69,9 +72,7 @@ const App = () => {
 				<input onChange={changeHandler}
 					name="isVisible"
 					checked={formData.isVisible}
-					id="visible" type="checkbox"
-
-				>
+					id="visible" type="checkbox">
 				</input>
 				<label htmlFor="visible">Am I visible</label>
 

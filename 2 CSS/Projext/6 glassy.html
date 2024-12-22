@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .main {
+            width: 100vw;
+            height: 100vh;
+            display: grid;
+            background-color: black;
+            color: white;
+            place-items: center;
+            position: relative;
+        }
+
+        .con {
+            border: 1px solid gray;
+            width: 15rem;
+            height: 20rem;
+            border-radius: .5rem;
+            opacity: .5;
+            background-color: rgba(180, 164, 164, 0.1);
+            backdrop-filter: blur(30px);
+            position: absolute;
+            z-index: 3;
+        }
+
+        .circle1 {
+            z-index: 1;
+            width: 8rem;
+            height: 8rem;
+            border-radius: 50%;
+            background-color: yellow;
+            box-shadow: 0px 0px 14px yellow;
+            position: absolute;
+            top: 10%;
+            animation: lefty 5s 0s linear infinite alternate;
+        }
+
+        @keyframes lefty {
+            from {
+                left: 30%;
+            }
+
+            to {
+                left: 35%;
+            }
+        }
+
+        .circle2 {
+            box-shadow: 0px 0px 14px royalblue;
+            right: 45%;
+            bottom: 12%;
+            z-index: 2;
+            border-radius: 50%;
+            width: 10rem;
+            background-color: royalblue;
+            height: 10rem;
+            background-image: linear-gradient(purple);
+            position: absolute;
+            animation: righty 5s 0s linear infinite alternate;
+        }
+
+        @keyframes righty {
+            from {
+                right: 30%;
+            }
+
+            to {
+                right: 35%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <div class="circle1"></div>
+        <div class="con"> </div>
+        <div class="circle2"></div>
+    </div>
+
+</body>
+
+</html>

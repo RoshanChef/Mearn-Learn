@@ -5,7 +5,7 @@ tl.from('nav h3', {
     opacity: 0,
     delay: .4,
     duration: .8,
-    stagger: .3
+    // stagger: .3 //apply animation one after another
 })
 
 tl.from('h1', {
@@ -21,6 +21,6 @@ tl.from('img', {
     rotate: 45,
     x: 150,
     duration: .5,
-    stagger: .5
+    // stagger: .5
 
 })

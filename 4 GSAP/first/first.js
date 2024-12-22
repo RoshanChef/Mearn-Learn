@@ -18,7 +18,7 @@ let tl = gsap.timeline();
 tl.from('#box1', {
     x: 1000,
     duration: 2,
-    rotate: 360
+    rotate: 360  
 })
 
 tl.from('#box2', {

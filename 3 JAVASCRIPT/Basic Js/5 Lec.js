@@ -16,3 +16,28 @@ console.log(obj);
 let result = JSON.stringify(obj);
 console.log(result);
 console.log(typeof (result));
+
+// iife => Imediately invoked function
+(function () { console.log('fnx is called here ') })();
+
+
+// private variable
+(function () {
+    var a = 12;
+    console.log(a);
+})
+
+
+// how to change private variables
+let ans = (function(){
+    var a = 122; 
+    return {
+        getter:function(){
+            console.log(a);
+        } ,
+        setter:function(val){
+            a = val; 
+        }
+    }
+})
+
