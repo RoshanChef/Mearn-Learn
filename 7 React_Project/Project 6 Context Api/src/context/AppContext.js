@@ -2,8 +2,8 @@ import { Children, createContext } from "react";
 import { useState } from "react";
 import { baseUrl } from "../baseUrl";
 
+// step 1: create
 export const AppContext = createContext();
-
 
 const AppContextProvider = ({ children }) => {
     const [loading, setLoading] = useState(false);
@@ -13,7 +13,7 @@ const AppContextProvider = ({ children }) => {
 
 
 
-    // data filling pending
+    // data filling 
     async function fetchBlogData(page = 1) {
         setLoading(true);
         let url = `${baseUrl}?page=${page}`;
@@ -22,6 +22,7 @@ const AppContextProvider = ({ children }) => {
             const response = await fetch(url);
             const data = await response.json();
 
+            //check data 
             console.log(data);
 
             // set the states
@@ -37,9 +38,10 @@ const AppContextProvider = ({ children }) => {
     }
 
     function handlePageChange(page) {
-        setPage(page);
+        // setPage(page);
         fetchBlogData(page);
     }
+
     let value = [
         loading, setLoading,
         posts, setPosts,
@@ -47,5 +49,13 @@ const AppContextProvider = ({ children }) => {
         totalPages, setTotalPages,
         handlePageChange, fetchBlogData
     ]
-    return <AppContext.Provider value={value}> </AppContext.Provider>
+
+    // step 2: provide context
+    return (
+        <AppContext.Provider value={value}>
+            {children}
+        </AppContext.Provider>
+    )
 }
+
+export default AppContextProvider;
