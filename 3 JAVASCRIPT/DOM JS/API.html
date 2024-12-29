@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>val</title>
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        button {
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            position: absolute;
+            font-size: 1.5rem;
+            background-color: orange;
+            height: 5rem;
+            width: 20rem;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <button id="btn_post" type="button">POST</button>
+        <button id="btn_put" type="button">POST</button>
+        <button id="btn_delete" type="button">POST</button>
+
+    </div>
+
+    <script>
+        // Select the button element
+        let btn_post = document.getElementById("btn_post");
+        let btn_put = document.getElementById("btn_put");
+        let btn_delete = document.getElementById("btn_delete");
+
+        // Event listener for button click (Only one event handler needed)
+        btn_post.addEventListener('click', async () => {
+            let url = 'http://localhost:3000';
+
+            try {
+                let res = await fetch(url, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'password': 'kon hai'
+                    },
+                    body: JSON.stringify({ name: 'Roshan Kalmathe' })
+                });
+            } catch (error) {
+                console.log('Fetch error:', error);
+            }
+        });
+
+
+        btn_put.addEventListener('click', async () => {
+
+            try {
+                let url = 'http://localhost:3000';
+                let res = await fetch(url, {
+                    method: 'PUT',
+                    headers: {
+                        "GENDER": "MALE"
+                    },
+                    body: JSON.stringify({ name: 'Manoj' })
+                });
+            } catch (error) {
+                console.log('error:', error);
+            }
+
+        });
+
+        btn_delete.addEventListener('click', async () => {
+            try {
+                let url = 'http://localhost:3000';
+                let res = await fetch(url, {
+                    method: 'DELETE'
+                })
+            } catch (error) {
+                console.log('Error:', error);
+            }
+        })
+
+    </script>
+
+</body>
+
+</html>

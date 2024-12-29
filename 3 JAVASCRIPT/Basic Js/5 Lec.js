@@ -29,14 +29,14 @@ console.log(typeof (result));
 
 
 // how to change private variables
-let ans = (function(){
-    var a = 122; 
+let ans = (function () {
+    var a = 122;
     return {
-        getter:function(){
+        getter: function () {
             console.log(a);
-        } ,
-        setter:function(val){
-            a = val; 
+        },
+        setter: function (val) {
+            a = val;
         }
     }
 })

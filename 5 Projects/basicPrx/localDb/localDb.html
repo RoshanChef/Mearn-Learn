@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>val</title>
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            width: 20rem;
+            margin: 2rem;
+            gap: 1rem;
+        }
+
+        input {
+            padding: 1.1rem;
+        }
+
+        button {
+            padding: 1rem;
+
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <input type="text" id="name" placeholder="name">
+        <input type="text" id="fname" placeholder="first name">
+        <div>
+
+            <button id="enter_btn">
+                Add name
+            </button>
+            <button id="remove_btn">
+                Remove name
+            </button>
+        </div>
+        <div>
+            <button id="update_btn">
+                Update name
+            </button>
+            <button id="clear_btn">
+                clear All
+            </button>
+        </div>
+
+    </div>
+
+    <script>
+        let name = document.querySelector('#name');
+        let fname = document.querySelector('#fname');
+        let enter_btn = document.querySelector('#enter_btn');
+        let remove_btn = document.querySelector('#remove_btn');
+        let update_btn = document.querySelector('#update_btn');
+        let clear_btn = document.querySelector('#clear_btn');
+
+        enter_btn.addEventListener('click', () => {
+            console.log(name.value + ': ' + fname.value);
+            localStorage.setItem(name.value, fname.value);
+        })
+
+        remove_btn.addEventListener('click', () => {
+            localStorage.removeItem(name.value);
+        })
+
+        update_btn.addEventListener('click', () => {
+            localStorage.setItem(name.value, fname.value);
+        })
+        clear_btn.addEventListener('click', () => {
+            localStorage.clear();
+        })
+    </script>
+
+</body>
+
+</html>
