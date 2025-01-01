@@ -6,7 +6,7 @@ const users = [];
 app.use(express.json());
 
 function generateToken(length = 16) {
-    const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijkPlmnopqrstuvwxyz0123456789';
     let token = '';
     for (let i = 0; i < length; i++) {
         const randomIndex = Math.floor(Math.random() * characters.length);
@@ -71,7 +71,8 @@ app.get('/me', (req, res) => {
     if (foundUser) {
         res.json({
             username: foundUser.username,
-            password: foundUser.password
+            password: foundUser.password,
+            token: foundUser.token
         })
     } else {
         res.status(404).json({ message: 'Not found' });

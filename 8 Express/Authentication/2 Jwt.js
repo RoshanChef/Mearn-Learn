@@ -10,16 +10,6 @@ app.use(express.json())
 // in memory database
 const users = [];
 
-function generateToken(length = 16) {
-    const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-    let token = '';
-    for (let i = 0; i < length; i++) {
-        const randomIndex = Math.floor(Math.random() * characters.length);
-        token += characters[randomIndex];
-    }
-    return token;
-}
-
 
 app.post('/signUp', function (req, res) {
 
@@ -66,7 +56,7 @@ app.post('/signIn', function (req, res) {
 });
 
 app.get('/me', (req, res) => {
-    const token = req.headers.token;
+    const token = req.headers.token; //jwt
     // decode the username
     const decodeInformation = jwt.verify(token, JWT_SECRET); // {username : roshankalmthe@gmail.com}
     const username = decodeInformation.username;
