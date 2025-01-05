@@ -1,0 +1,20 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.btn button{
+    background-color: rgb(8, 8, 41);
+    color: white;
+    padding:1rem ;
+    font-weight: 500;
+    border-radius: .5rem;
+}

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Notes</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        main {
+            width: 100vw;
+            height: 100vh;
+            background-color: rgb(9, 9, 26);
+            padding: 1rem;
+            position: relative;
+            background-image: repeating-linear-gradient(to right, transparent 0px 50px, #fff1 0px 51px),
+                repeating-linear-gradient(to bottom, transparent 0 50px, #fff2 50px 51px);
+        }
+
+        form {
+            background-color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: max-content;
+            gap: 1rem;
+            border-radius: 2rem;
+            padding: .4rem;
+
+            input {
+                border-radius: 50%;
+                width: 2rem;
+                height: 2rem;
+                cursor: pointer;
+            }
+
+            button {
+                cursor: pointer;
+                border: none;
+                font-size: 1.5rem;
+                background-color: transparent;
+                width: 2rem;
+                height: 2rem;
+            }
+        }
+
+        form input::-webkit-color-swatch-wrapper {
+            padding: 0;
+        }
+
+        form input::-webkit-color-swatch {
+            border-radius: 50%;
+            border: none;
+        }
+
+        main textarea {
+            all: unset;
+            color: white;
+            padding: .5rem;
+        }
+
+        main .note {
+            width: max-content;
+            border-top: 2rem solid yellow;
+            background-color: #333;
+            box-shadow: 2px 2px 20px 12px rgba(0, 0, 0, .7);
+            position: absolute;
+            left: 30px;
+            top: 90px;
+            border-radius: .7rem;
+
+            span {
+                right: 1rem;
+                top: -1.7rem;
+                position: absolute;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <main>
+        <form action="https://www.google.com">
+            <input type="color" value="#2be811" id="color">
+            <button type="button" id="colorBtn">+</button>
+        </form>
+        <div id="list">
+            <div class="note">
+                <span class="close">&#10005</span>
+                <textarea rows="15" cols="30" placeholder="write content ..."></textarea>
+            </div>
+        </div>
+    </main>
+
+
+    <script src="./script.js"></script>
+</body>
+
+</html>
