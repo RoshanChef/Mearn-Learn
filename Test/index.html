@@ -39,15 +39,17 @@
 
     <script>
 
-        let con = document.querySelector('.con');
+        async function call(params) {
+            let timer = setTimeout(() => {
+                console.log('hello working');
+            }, 4000);
+            setTimeout(clearTimeout(timer), 4000);
+            setTimeout(() => {
+                console.log('working team');
+            }, 4000)
+        }
 
-        con.addEventListener('copy', (event) => {
-            event.preventDefault();
-            let text = 'Roshan text is copied from the clipboard';
-            event.clipboardData.setData('text/plain', text);
-            console.log("hello working");
-        })
-
+        call(); 
     </script>
 
 </body>

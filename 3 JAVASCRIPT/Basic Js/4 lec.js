@@ -167,7 +167,7 @@ animal.myType();
 let dog = new animal('dog', 22);
 dog.speak();
 
-
+// setTimout and clearTimout
 let timerId = setTimeout(print, (4000));
 function print() {
     console.log('printing the values of the class I have to see');
