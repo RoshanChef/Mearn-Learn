@@ -17,5 +17,9 @@
     padding: 1rem;
     border: none;
     cursor: pointer;
-    width: 10rem;
+    min-width: 10rem;
+}
+
+.App input{
+    color: #333;
 }
