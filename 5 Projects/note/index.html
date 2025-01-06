@@ -12,10 +12,11 @@
 
         main {
             width: 100vw;
-            height: 100vh;
+            min-height: 100vh;
             background-color: #0E1015;
             padding: 1rem;
             position: relative;
+            overflow: hidden;
             background-image: repeating-linear-gradient(to right, transparent 0px 50px, #fff1 0px 51px),
                 repeating-linear-gradient(to bottom, transparent 0 50px, #fff2 50px 51px);
         }
@@ -64,7 +65,7 @@
 
         main .note {
             width: max-content;
-            border-top: 2rem solid yellow;
+            border-top: 2rem solid #2be811;
             background-color: #333;
             box-shadow: 2px 2px 20px 12px rgba(19, 19, 19, 0.7);
             position: absolute;

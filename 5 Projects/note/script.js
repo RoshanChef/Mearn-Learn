@@ -9,9 +9,7 @@ colorBtn.addEventListener('click', function () {
                  <span class="close">&#10005</span>
                 <textarea rows="15" cols="30" placeholder="write content ..."></textarea>`;
     list.appendChild(note);
-    console.log(list.children.length);
     if (list.children.length > 1) {
-        console.log('close all list');
         note.style.cssText = `
         width: max-content;
         border-top: 2rem solid ${color.value || 'yellow'};
@@ -28,6 +26,55 @@ colorBtn.addEventListener('click', function () {
 document.addEventListener('click', (event) => {
     if (event.target.classList.contains('close')) {
         event.target.parentElement.remove();
-        cnt--;
+        if(list.children >0) cnt--; 
+        else cnt = 1;
     }
 });
+
+let cursor = {
+    x: null,
+    y: null,
+}
+
+let note = {
+    dom: null,
+    x: null,
+    y: null,
+}
+
+document.addEventListener('mousedown', (event) => {
+    if (event.target.classList.contains('note')) {
+        cursor = {
+            x: event.clientX,
+            y: event.clientY,
+        }
+        note = {
+            dom: event.target,
+            x: event.target.getBoundingClientRect().left,
+            y: event.target.getBoundingClientRect().top
+        }
+    }
+});
+
+
+document.addEventListener('mousemove', (event) => {
+    if (note.dom === null) return;
+    let currentCursor = {
+        x: event.clientX,
+        y: event.clientY,
+    }
+    let distance = {
+        x: currentCursor.x - cursor.x,
+        y: currentCursor.y - cursor.y,
+    }
+    note.dom.style.left = (note.x + distance.x) + 'px';
+    note.dom.style.top = (note.y + distance.y) + 'px';
+    note.dom.style.cursor = 'grab';
+});
+
+document.addEventListener('mouseup', (event) => {
+    if (note.dom === null) return;
+    note.dom.style.cursor = 'auto';
+    note.dom = null;
+})
+
