@@ -22,10 +22,10 @@ export default function App() {
     <div className="App">
       <button onClick={() => setCnt(cnt + 1)}>Increase</button>
       <h1>Count : {cnt}</h1>
-      <h1>Double : {doubleValue}</h1>
       <h3>Third : {increment}</h3>
       <button onClick={() => { setIncrement(increment + 1) }}> Third Btn</button>
 
+      <h1>Double : {doubleValue}</h1>
       <input type="number" placeholder='Enter the number' value={input} onChange={(e) => setInput(e.target.value)} />
 
 

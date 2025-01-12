@@ -16,40 +16,62 @@
             justify-content: center;
             align-items: center;
             display: flex;
+            position: relative;
         }
 
-        .con {
-            width: 13rem;
-            height: 13rem;
-            justify-content: center;
-            align-items: center;
-            display: flex;
-            background-color: orange;
-            cursor: pointer;
+        .rht {
+            opacity: 0;
+            border-radius: .7rem;
+            height: 18rem;
+            width: 15rem;
+            background-color: rgb(37, 37, 36);
+            position: absolute;
+            top: 0;
+            padding: 1rem;
+            color: white;
+            left: 0;
         }
     </style>
 </head>
 
 <body>
 
-    <div class="con">
-        Hello working Roshan
-
+    <div class="rht">
+        some ele
     </div>
+
 
     <script>
 
-        async function call(params) {
-            let timer = setTimeout(() => {
-                console.log('hello working');
-            }, 4000);
-            setTimeout(clearTimeout(timer), 4000);
-            setTimeout(() => {
-                console.log('working team');
-            }, 4000)
-        }
+        document.addEventListener('contextmenu', (e) => {
+            e.preventDefault();
+            let ele = document.querySelector('.rht');
+            ele.style.cssText = `
+            border-radius: .7rem;
+            height: 18rem;
+            box-shadow: 4px 4px 10px 1px rgba(0, 0, 0, 0.4); 
+            width: 15rem;
+            background-color: rgb(37, 37, 36);
+            position: absolute;
+            padding: 1rem;
+            color: white;
+            top: ${e.clientY}px;
+            opacity:1;
+            left: ${e.clientX}px;
+            `;
+            document.body.appendChild(ele);
+        })
 
-        call(); 
+        document.addEventListener('click', (e) => {
+
+            let ele = document.querySelector('.rht');
+            if (e.target.tagName.toLowerCase() == 'body') {
+                ele.style.setProperty('opacity', 0);
+            } else {
+                console.log('ele is not there');
+            }
+        })
+
     </script>
 
 </body>
