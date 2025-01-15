@@ -53,5 +53,5 @@ let parent_ele = document.querySelector('.parenty');
 let child_ele = document.querySelector('.childy');
 
 //Remove child element using parent
-parent_ele.remove(child_ele);
+parent_ele.removeChild(child_ele);
 
