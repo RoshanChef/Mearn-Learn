@@ -2,7 +2,7 @@
 let user = '{"name":"roshan" , "roll":30}';
 console.log(user);
 
-let charactor = JSON.parse(user);
+let charactor = JSON.parse(user); 
 
 console.log(charactor);
 console.log(typeof (charactor));
@@ -21,7 +21,7 @@ console.log(typeof (result));
 (function () { console.log('fnx is called here ') })();
 
 
-// private variable
+// private variable doesn't make sense w/o calling fnx
 (function () {
     var a = 12;
     console.log(a);

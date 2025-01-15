@@ -92,7 +92,7 @@ array
 
 
 // //function
-// let Number = 10;+
+// let Number = 10;
 // function inc(Number) {
 //     Number++;
 // }

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Form</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .container {
+            gap: 1rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: Arial, sans-serif;
+        }
+        input{
+            width: 70%;
+            padding: 1rem;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            outline: none;
+        }
+        textarea{
+            width: 70%;
+            padding: 1rem;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            outline: none;
+            height: 10rem;
+        }
+        button {
+            font-size: large;
+            padding: .5rem 2rem;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <input name="name" type="text" value="" placeholder="your name">
+        <input name="email" type="email" value="" placeholder="email">
+        <textarea name="message" placeholder="your message"></textarea>
+        <button type="submit">submit</button>
+    </div>
+
+
+</body>
+
+</html>

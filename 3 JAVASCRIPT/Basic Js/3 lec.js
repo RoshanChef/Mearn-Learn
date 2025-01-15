@@ -1,11 +1,17 @@
 // Math Object 
 console.log(Math.random());
 console.log(Math.floor(12.99));
+console.log(Math.ceil(2.1));
 console.log(Math.max(3, 2, 12, 2));
 console.log('Mininum ', Math.min(1, 2, -45, 5));
-console.log(Math.ceil(2.1));
 console.log('absolute ', Math.abs(-2));
+console.log('value of pi ', Math.PI);
 
+// how to range of random numbers
+let min = 5, max = 12;
+var value = Math.floor(Math.random() * ((max - min)) + 1) + min;
+
+console.log(value);
 
 // primitive string 
 let user = 'Roshan';
@@ -61,6 +67,13 @@ console.log(word[0]);
 console.log(word[1]);
 console.log(word[2]);
 console.log(word.length);
+
+
+// from ascii values to char
+val = String.fromCharCode(65);
+console.log(val);
+
+//Qn print 'a' to 'z' without using string use string methods
 
 
 // Template literal 
@@ -158,6 +171,25 @@ let num = [12, 2, 55, 33, 45, 56];
 num.splice(3, 2);
 console.log(num);
 
+var ar = [4, 10, 5, 6, 7, 8, 9, 10, 11, 12];
+var greater8 = (num) => num > 8;
+
+// index of first that passes the condition
+var value = arr.findIndex(greater8);
+console.log('value is ', value);
+
+ar = [10, 20, 30, 40, 50, 60, 70];
+
+// value of first that passes the condition
+value = ar.find((num) => num > 30);
+console.log(value);
+
+// //copyWithin
+arr = [10, 20, 30, 40, 50, 60, 70, 80];
+arr.copyWithin(2, 0, 2);
+console.log(arr);
+
+
 // empty array 
 let arry = [23, 24, 22, 12, 211];
 let arry2 = arry;
@@ -212,6 +244,7 @@ console.log(new_form);
 
 console.log(new_form.join(' '));
 
+// sort() => callback must return -ve , +ve or 0
 num = [2, 4, 5, 1, 8];
 num.sort();
 console.log('sorted ', num);
@@ -219,9 +252,13 @@ num.reverse();
 console.log('reverse ', num);
 
 num = [{ no: 3, sub: 'os' }, { no: 1, sub: 'cn' }, { no: 2, sub: 'coa' }];
+// sort as per the no in object 
+// wrong way 
 num.sort((prev, cur) => {
     return prev.no > cur.no ? prev : cur;
 })
+num.sort((cur, prev) => cur.no - prev.no);
+
 
 console.log('value is ', num);
 num = [0, 10, 43, 40];
@@ -229,7 +266,7 @@ num.sort();
 console.log(num);
 
 num = [40, 30, 20, 10];
-num.sort();
+num.sort((cur, prev) => prev - cur);
 console.log(num);
 num = num.map((val) => {
     return { value: val };

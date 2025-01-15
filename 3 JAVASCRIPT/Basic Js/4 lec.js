@@ -1,5 +1,7 @@
 /* Hoisting : Process of moving the fn defination into top of the file done automatically by JS Engine */
 
+// In JS function can be passed , assigned and returned 
+
 run();
 // fn defination or fn declaration
 function run() {

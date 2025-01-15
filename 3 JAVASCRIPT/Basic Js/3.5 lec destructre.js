@@ -1,0 +1,13 @@
+let ar = [3, 4, 5, 6, 7, 8, 9, 10, 11];
+let [a, b] = ar;
+console.log('a ', a, ' b ', b);
+let [first, , , ...args] = ar;
+console.log(first, args);
+
+let { name, fName } = { name: 'Roshan', fName: 'Kalmathe' };
+
+let { a_val, b_val } = { name: 'Roshan', fName: 'Kalmathe' };
+console.log(a_val, b_val);
+console.log(name, fName);
+
+

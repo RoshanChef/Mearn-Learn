@@ -26,7 +26,7 @@ colorBtn.addEventListener('click', function () {
 document.addEventListener('click', (event) => {
     if (event.target.classList.contains('close')) {
         event.target.parentElement.remove();
-        if(list.children >0) cnt--; 
+        if (list.children > 0) cnt--;
         else cnt = 1;
     }
 });
@@ -69,12 +69,18 @@ document.addEventListener('mousemove', (event) => {
     }
     note.dom.style.left = (note.x + distance.x) + 'px';
     note.dom.style.top = (note.y + distance.y) + 'px';
+
+    // //  this also works fine but see the lag
+    // note.dom.style.left = (event.clientX) + 'px';
+    // note.dom.style.top = ( event.clientY) + 'px';
+
+
     note.dom.style.cursor = 'grab';
 });
 
 document.addEventListener('mouseup', (event) => {
     if (note.dom === null) return;
-    note.dom.style.cursor = 'auto';
+    // note.dom.style.cursor = 'auto';
     note.dom = null;
 })
 

@@ -15,7 +15,6 @@ const App = () => {
 
 	/*
 		name attribute in input field must be same as per the useState
-
 	*/
 
 	const [formData, setFormData] = useState({ firstName: "", lastName: "", email: "", comments: "", isVisible: false, gender: "", favCar: "" });

@@ -63,6 +63,12 @@ function give(sum) {
     return sum;
 }
 
+// see how callbacks works
+function call(sum) {
+    console.log(arguments);
+    console.log(sum);
+}
+
 let value = give(sum(100, 20));
 console.log("value is ", value);
 
@@ -71,7 +77,7 @@ console.log("value is ", value);
 
 let arr = [20, 30, 40, 50, 'Rohan'];
 function printing(val, index, arry) {
-    console.log(val, ' = ', index, arry);   
+    console.log(val, ' = ', index, arry);
 }
 
 //forEach method take funtion as an argument and run for each member return nothing
@@ -131,20 +137,44 @@ const topper = marks.filter((val) => {
 })
 
 console.log(topper);
-let number = [];
-let n = (prompt('enter the number '));
+// let number = [];
+// let n = (prompt('enter the number '));
 
-for (i = 1; i <= n; i++) {
-    number[i - 1] = i;
-}
+// for (i = 1; i <= n; i++) {
+//     number[i - 1] = i;
+// }
 // sum all number in array using reduce 
-const summy = number.reduce((prev, cur) => {
-    return prev + cur;
-})
-console.log('Sum is ', summy);
-// product all number in array using reduce 
-const pro = number.reduce((prev, cur) => {
-    return prev * cur;
-})
-console.log('Product is ', pro);
+// const summy = number.reduce((prev, cur) => {
+//     return prev + cur;
+// })
+// console.log('Sum is ', summy);
 
+// product all number in array using reduce 
+// const pro = number.reduce((prev, cur) => {
+//     return prev * cur;
+// })
+// console.log('Product is ', pro);
+
+// // fn values()
+let ar = [10, 30, 40, 50, 55, 59, 60, 70];
+let iterator = ar.values();
+
+// for (let i of iterator) {
+//     console.log(i);
+// }
+
+// ar.reverse();
+console.log(ar.at(4));
+console.log(ar);
+
+
+
+// //from fnx => create array from Array like object
+// let obj = { 0: 'orange', 1: 'apple', 2: 'maroon', 3: 'Lemon', length: 4 };
+// ar = Array.from(obj);
+// console.log(ar);
+
+ar = [4, 10, 33, 5, 6, 7, 8];
+
+console.log(ar.some((a) => a > 10));
+console.log(ar.every((a) => a > 3));
