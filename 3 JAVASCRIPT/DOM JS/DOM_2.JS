@@ -28,7 +28,7 @@ announcement of browser => event
 // document.addEventListener('click', here);
 // document.removeEventListener('click', here);
 
-// diffrent refrence
+// diffrent refrence can't work
 document.addEventListener('click', () => {
     console.log("Kalmathe Roshan, How is all thing are going on ... ");
 })
@@ -58,12 +58,6 @@ console.log("document object is ... ' ", document);
 // add multiple event
 let my_parent_div = document.createElement('div');
 
-function fnx(event) {
-    console.log(event.target);
-    console.log('This is an event Number .. ', event.target.textContent);
-}
-
-my_parent_div.addEventListener('click', fnx);
 
 for (let i = 1; i <= 100; i++) {
     let new_ele = document.createElement('p');
@@ -72,6 +66,17 @@ for (let i = 1; i <= 100; i++) {
     my_parent_div.appendChild(new_ele);
 }
 document.body.appendChild(my_parent_div);
+
+my_parent_div.addEventListener('click', fnx);
+
+function fnx(event) {
+    console.log(event.target);
+    console.log('This is an event Number .. ', event.target.textContent);
+}
+
+/*
+Better understanding will be next file 
+*/
 
 console.log(dcs.nodeName);
 

@@ -13,6 +13,7 @@ let t1 = performance.now();
 for (let i = 0; i < 100; i++) {
     let para = document.createElement('p');
     para.textContent = 'Paragraph ' + i;
+
     // 1 reflow 1 repaint 
     document.body.appendChild(para);
 }
@@ -27,6 +28,7 @@ let div = document.createElement('div');
 for (let j = 0; j < 100; j++) {
     let para = document.createElement('p');
     para.textContent = 'Para' + (j + 100);
+    
     // didn't append yet 
     div.appendChild(para);
 }

@@ -1,3 +1,39 @@
+/*
+Promises handles any asynchronous tasks like api calls,
+                                             file loading, etc.. 
+
+Note : we handle asynchronous code that runs after synchronous code it will be run
+
+
+Contains three states
+
+Pending : initial state
+Fullfilled : task completed and result is available
+Rejected : task failed and result is unavailable
+
+ Syntaxt : 
+        let promise = new Promise(function(resolve, reject){
+
+        //perform asynchronous task
+
+        if(operation Success){
+            resolve('success full');
+        }else{
+            reject('task failed');
+        }
+
+        })
+
+        promise.then((message)=>{
+            console.log(message);
+        }); 
+
+
+
+*/
+
+
+
 let meraPromise = new Promise(function (resolve, reject) {
     let value = Math.random();
     if (value > .5) {
@@ -19,9 +55,11 @@ meraPromise.catch((error) => {
 })
 
 // // then and catch in one line
-// meraPromise.then(
-//     (val) => { console.log("resolve val is ", val); },
-//     (error) => { console.log('error aayo .. ') })
+// meraPromise.then((val) => {
+//      console.log("resolve val is ", val); },
+//     (error) => { console.log('error aayo .. ')
+//  }
+// )
 
 // // other way 
 // meraPromise.then((val) => {
@@ -103,9 +141,12 @@ async function utility() {
     let dW = await delhiWeather; // wait till delhiWeather not come 
     let gW = await gujaratWeather; // wait till gujaratWeather not come
 
+    // await after lines are on hold 
     let tar = document.createElement('h3');
     tar.textContent = `${dW} and ${gW}  `;
     document.body.appendChild(tar);
+
+    console.log('hello am i on hold');
 
     return [dW, gW];
 }
@@ -132,6 +173,6 @@ fnx();
 
 /*
 closure =>
-     fn that retains access to variables from their containing scope even after the parent fn has finished excutionf
+     fn that retains access to variables from their containing scope even after the parent fn has finished excution
 */
 

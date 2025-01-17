@@ -7,8 +7,8 @@
     callback stack  => Browser
             |             | wait
     callback stack  -  Event Queu
-    All event
-    waiting code
+                        All event
+                        waiting code
 */
 
 // // sync

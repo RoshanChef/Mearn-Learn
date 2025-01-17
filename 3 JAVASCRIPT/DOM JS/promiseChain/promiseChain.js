@@ -17,6 +17,8 @@ btn.addEventListener("click", () => {
             return addColor(head3, 'royalblue', 1000);
         })
 })
+
+
 function addColor(Element, Color, Time) {
     return new Promise((resolve, reject) => {
         if (Element) {

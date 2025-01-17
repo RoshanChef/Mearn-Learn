@@ -1,0 +1,12 @@
+ul {
+    display: flex;
+    gap: 1rem;
+    background-color: #e2ec56;
+    color: rgb(78, 55, 13);
+    justify-content: end;
+}
+
+ul li {
+    font-weight: 400;
+    padding: 1rem;
+}
