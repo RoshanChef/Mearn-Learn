@@ -3,9 +3,6 @@ import { FcLike, FcLikePlaceholder } from 'react-icons/fc'
 import path from './fall.jpg';
 import { toast } from 'react-toastify'
 
-
-
-
 const Card = (props) => {
   let course = props.course;
   let likedCourses = props.likedCourses;
@@ -38,7 +35,6 @@ const Card = (props) => {
           <button onClick={clickHandler} >
             {
               likedCourses.includes(course.id) ? (<FcLike fontSize='1.75rem' />) : <FcLikePlaceholder fontSize='1.75rem' />
-
             }
           </button>
         </div>

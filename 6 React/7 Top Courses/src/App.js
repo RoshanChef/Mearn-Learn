@@ -7,7 +7,6 @@ import Cards from "./Components/Cards";
 const App = () => {
 	const [category, setCategory] = useState(filterData[0].title);
 
-
 	return (
 		<div className="min-h-screen flex flex-col" >
 			<Navbar />
