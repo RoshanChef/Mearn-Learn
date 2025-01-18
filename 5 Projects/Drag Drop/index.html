@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .main {
+            width: 100vw;
+            height: 100vh;
+            background-color: royalblue;
+            display: grid;
+            place-content: center;
+        }
+
+        .con {
+            position: relative;
+            display: block;
+            background-color: white;
+            width: 22rem;
+            height: 15rem;
+            border-radius: .7rem;
+        }
+
+        .drag_view {
+            background-color: transparent;
+            position: absolute;
+            width: 90%;
+            inset: 1rem;
+            padding: 4rem;
+            height: 90%;
+            background-size: cover;
+        }
+
+        .drag_view img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            z-index: -1;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="main">
+        <div class="drag_area">
+            <label for="input_file" for="input_file" class="con">
+                <input type="file" id="input_file" accept="image/*" hidden>
+                <div class="drag_view">
+                    <img src="./drop.png" alt="image not found">
+                    <p>
+                        Drag and Drop your image
+                    </p>
+                </div>
+            </label>
+        </div>
+    </div>
+
+    <script src="./script.js"></script>
+
+</body>
+
+</html>
