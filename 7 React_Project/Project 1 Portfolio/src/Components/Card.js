@@ -20,7 +20,8 @@ function Card(props) {
             </div>
             <div>
                 <p>{review.text}</p>
-            </div>      <div>
+            </div>
+            <div>
                 <FaQuoteRight className='text-purple-400 mx-auto mt-3' />
             </div>
         </div>
