@@ -13,6 +13,11 @@ function App() {
     mount : component ui per load thay gayo 
     unmount : component ui per thi remove keri didhu 
 
+    useEffect hook 
+	    Allows you to perfom side effect in your components 
+	    accept two args useEffect(function, dependency)
+	    Runs after rendering components
+
     useEffect(()=>{
         //second
         return ()=>{

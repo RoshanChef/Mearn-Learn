@@ -1,31 +1,5 @@
 import React, { useState } from "react";
 
-
-
-/*
-useEffect hook 
-	Allows you to perfom side effect in your components 
-	accept two args useEffect(function, dependency)
-	Runs after rendering components
-
-	useEffect(()=>{
-		//Runs on every Render
-	})
-
-	useEffect(()=>{
-		//run only on first render
-		},[])
-
-	useEffect(
-	()=>{
-		//Runs on first render 
-		//any time when dependecy is changed
-		} , [props , state]
-		 ); 
-
-	*/
-
-
 const App = () => {
 	const [formData, setFormData] = useState({ firstName: "", lastName: "", email: "", country: "", state: "", notification: "", address: "", zip: "", comments: false, offers: false, candidates: false });
 

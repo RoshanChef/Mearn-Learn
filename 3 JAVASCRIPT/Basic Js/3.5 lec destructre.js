@@ -22,3 +22,9 @@ let data = { ...obj, age: 11 };
 console.log('first ', obj);
 console.log('second ', data);
 
+
+console.log('befor ', obj);
+
+delete obj.name
+
+console.log('after ', obj);
