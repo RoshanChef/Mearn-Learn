@@ -283,3 +283,13 @@ num = [-5, -1, 2, 6];
 //short form 
 let ans_positive = num.filter((val) => val > 0).map((val) => { return { value: val } });
 console.log("Answer is ", ans_positive);
+
+//filter in array of objects
+arr = [{ no: 4, subject: 'Math' }, { no: 3, subject: 'Gujarati' }, { no: 1, subject: 'Marathi' }, { no: 2, subject: 'English' }]
+let greater2 = arr.filter((val) => val.no > 2);
+console.log(greater2);
+
+// sort them 
+arr = [{ no: 4, subject: 'Math' }, { no: 3, subject: 'Gujarati' }, { no: 1, subject: 'Marathi' }, { no: 2, subject: 'English' }]
+arr.sort((cur, prev) => (cur.no - prev.no));
+console.log(arr);
