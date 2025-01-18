@@ -22,6 +22,9 @@ let data = { ...obj, age: 11 };
 console.log('first ', obj);
 console.log('second ', data);
 
+//Again different way 
+let now = { ...obj, ['name']: 'Krishan' };
+console.log(now);
 
 console.log('befor ', obj);
 

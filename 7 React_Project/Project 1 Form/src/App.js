@@ -1,8 +1,9 @@
 import React, { useState } from "react";
-import './App.css';
 
 const App = () => {
+
 	// const [firstName, setFirst] = useState(""); 
+	// const [lastName, setLast] = useState(""); 
 	// console.log(firstName);
 	// console.log(lastName);
 
@@ -13,103 +14,98 @@ const App = () => {
 	// 	setLast(event.target.value)
 	// }
 
+	//you can't make this for more and more input fields 
+
+
 	/*
 		name attribute in input field must be same as per the useState
 	*/
 
-	const [formData, setFormData] = useState({ firstName: "", lastName: "", email: "", comments: "", isVisible: false, gender: "", favCar: "" });
+	const [formData, setFormData] = useState({ firstName: "", lastName: "", email: "", comments: "", isVisible: true, mode: "", favCar: "" });
 
 	function changeHandler(event) {
-		let { name, value, checked, type } = event.target;
+		const { name, value, checked, type } = event.target;
 		setFormData((prev) => {
 			return {
 				...prev,
-				[name]: type === "checkbox" ? checked : value
+				[name]: type === 'checkbox' ? checked : value
 			}
 		})
+		// see the changes 
+		// console.log(formData);
 	}
 
 	function submitHandler(event) {
 		event.preventDefault();
-		console.log('Printing the Form Data');
 		console.log(formData);
 	}
 
 	return (
-		<div>
+		<div className="flex items-center justify-center gap-2">
 			<form onSubmit={submitHandler}>
-				<input
-					type="text" placeholder="First Name" onChange={changeHandler}
-					value={formData.firstName} name="firstName"
-				></input>
-				<br />
-				<br />
-				<br />
-				<input
-					type="text" placeholder="Last Name"
-					value={formData.lastName} onChange={changeHandler} name="lastName"
-				></input>
-				<br />
-				<br />
-				<br />
-				<input
-					type="email"
-					value={formData.email} placeholder="xyz@gmail.com" 
-					onChange={changeHandler} name="email"
-				></input>
 
-				<br />
-				<textarea
-					onChange={changeHandler}
-					value={formData.comments}
-					name="comments"
-					placeholder="Enter your comments Here ..."
-				/>
-
-				<br />
-				<br />
-				<input onChange={changeHandler}
-					name="isVisible"
-					checked={formData.isVisible}
-					id="visible" type="checkbox">
-				</input>
-				<label htmlFor="visible">Am I visible</label>
-
-				<br />
-				<br />
-				<input
-					type="radio"
-					onChange={changeHandler}
-					name="gender"
-					value="male"
-					id="male"
-					checked={formData.gender === 'male'}
-				></input>
-				<label htmlFor="male">Male</label>
-				<br />
-				<br />
-				<input
-					type="radio"
-					onChange={changeHandler}
-					name="gender"
-					value="female"
-					id="female"
-					checked={formData.gender === 'female'}
-				></input>
-				<label htmlFor="female">Female</label>
-				<br />
-				<br />
-				<label htmlFor="car">
-					Tell me your Fevourate Car
+				{/* <label htmlFor="firstName">First Name</label> */}
+				<label>
+					First Name 	<br />
+					<input type="text" name="firstName" onChange={changeHandler} placeholder="First Name" value={formData.firstName} />
 				</label>
-				<select name="favCar" value={formData.favCar} onChange={changeHandler} id="car" >
-					<option value="Maruti">Maruti</option>
-					<option value="Suzuki">Suzuki</option>
-					<option value="Audi">Audi</option>
-					<option value="Leborgini">Leborgini</option>
-				</select>
 				<br />
-				<input type="submit" value="submit" />
+				<br />
+				
+
+				<label>
+					Last Name 	<br />
+					<input type="text" name="lastName" onChange={changeHandler} placeholder="Last Name" value={formData.lastName} />
+				</label>
+				<br />
+				<br />
+
+				<label>
+					Email 	<br />
+					<input type="email" name="email" onChange={changeHandler} placeholder="Email" required value={formData.email} />
+				</label>
+				<br />
+				<br />
+
+				<label>
+					Address <br />
+					<textarea name="comments" placeholder="Enter your Address Here" onChange={changeHandler} required value={formData.comments} />
+				</label>
+				<br />
+				<br />
+				<br />
+
+				<label>
+					Check 	<br />
+					<input name="isVisible" onChange={changeHandler} checked={formData.isVisible} type="checkbox" />
+				</label>
+				<br />
+				<br />
+				<br />
+				<label>
+					Online Mode 
+					<input name="mode" onChange={changeHandler} value="Online Mode" checked={formData.mode === "Online Mode"} type="radio" />
+				</label>
+				<br />
+				<label>
+					Offline Mode
+					<input name="mode" onChange={changeHandler} value="Offline Mode" checked={formData.mode === "Offline Mode"} type="radio" />
+				</label>
+				<br />
+				<br />
+				<br />
+				<label>
+					Cars :
+					<select name="favCar" value={formData.favCar} onChange={changeHandler} >
+						<option value="Forturne">Forturne</option>
+						<option value="Thaar">Thaar</option>
+						<option value="BMW">BMW</option>
+						<option value="Audi">Audi</option>
+					</select>
+				</label>
+				<br />
+				<button className="bg-purple-400 p-2 m-2 rounded">Submit</button>
+
 			</form>
 		</div>
 	)
