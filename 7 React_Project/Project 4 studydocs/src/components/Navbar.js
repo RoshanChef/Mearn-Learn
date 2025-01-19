@@ -12,7 +12,7 @@ export default function Navbar(props) {
             <Link to="/">
                 <img src={logo} className='w-[10vw]' alt='logo'></img>
             </Link>
-            <nav className='flex gap-3text-xl'>
+            <nav className='flex gap-3 text-xl'>
                 <ul className='list-none flex gap-5 text-gray-300 '>
 
                     <li>
