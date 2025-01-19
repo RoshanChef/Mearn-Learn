@@ -36,11 +36,11 @@ export default function LoginForm({ setIsLoggedIn }) {
             name='email'
             value={formData.email}
             onChange={changeHandler} type='email'
-            style={{
-              boxShadow: "inset 0px -1px 0px rgba(255, 255, 255, 0.18)",
-            }}
-            className='bg-gray-800  text-[.775rem] rounded-[.5rem] w-full p-[.6rem] text-white'
-            placeholder='Enter Email Id'
+              style={{
+                boxShadow: "inset 0px -1px 0px rgba(255, 255, 255, 0.18)",
+              }}
+              className='bg-gray-800  text-[.775rem] rounded-[.5rem] w-full p-[.6rem] text-white'
+              placeholder='Enter Email Id'
           />
         </label>
 
