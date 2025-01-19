@@ -30,7 +30,7 @@ Eg ..
 
 ### controlled component 
 every component manages its own state
-Byusing value attribute
+By using value attribute
 
 
 ```
@@ -41,3 +41,7 @@ Byusing value attribute
 					<input type="text" id="firstName" name="firstName" onChange={changeHandler} placeholder="First Name" value={formData.firstName} />
         </label>
 ```
+
+
+### All things are same but different here is checkbox 
+which doesn't contains any ```value``` it contains ```checked``` which is either true or false

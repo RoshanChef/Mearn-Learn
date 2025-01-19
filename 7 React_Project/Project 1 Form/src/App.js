@@ -96,7 +96,7 @@ const App = () => {
 				<br />
 				<label>
 					Cars :
-					<select name="favCar" value={formData.favCar} onChange={changeHandler} >
+					<select name="favCar" value={formData.favCar} onChange={changeHandler} className="w-full">
 						<option value="Forturne">Forturne</option>
 						<option value="Thaar">Thaar</option>
 						<option value="BMW">BMW</option>

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 const App = () => {
-	const [formData, setFormData] = useState({ firstName: "", lastName: "", email: "", country: "", state: "", notification: "", address: "", zip: "", comments: false, offers: false, candidates: false });
+	const [formData, setFormData] = useState({ firstName: "", lastName: "", email: "", country: "", state: "", notification: "", address: "", zip: null, comments: false, offers: false, candidates: false });
 
 	function changeHandler(event) {
 		let { name, value, checked, type } = event.target;
