@@ -1,0 +1,59 @@
+1. String to Number Conversion
+   console.log(+'1234');
+
+2. Parsing a Non-Numeric String
+   console.log(+'hello123');
+
+3. Boolean to Number
+   console.log(+true);
+
+4. Null to Number
+   console.log(+null);
+
+5. Empty String to Number
+   console.log(+'');
+
+6. Undefined to Number
+   console.log(+undefined);
+
+7. String with Whitespace to Number
+   console.log(+'   56   ');
+
+8. Object to Number
+   console.log(+{});
+
+9. Array to Number
+   console.log(+[1, 2, 3]);
+
+10. String to Number with `parseInt()`
+    console.log(parseInt('123.45'));
+
+11. Adding a String and a Number
+    console.log('5' + 3);
+
+12. Subtraction with a String
+    console.log('10' - 5);
+    
+13. Comparison of Boolean Values
+    console.log(true == 1);
+    
+14. Strict Equality with Boolean and Number
+    console.log(true === 1);
+    
+15. Logical AND with Non-Boolean Values
+    console.log(0 && 'hello');
+    
+16. Logical OR with Non-Boolean Values
+    console.log('hello' || 5);
+    
+17. Array Indexing on an Empty Array
+    console.log([][0]);
+    
+18. Multiplication with a Non-Numeric String
+    console.log('hello' * 2);
+
+19. String Length Property
+    console.log('JavaScript'.length);
+
+20. Negative Infinity in Math Operations
+    console.log(Math.log(0));

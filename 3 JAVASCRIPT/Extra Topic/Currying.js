@@ -1,0 +1,28 @@
+function sum(a) {
+    return function (b) {
+        return a + b;
+    }
+}
+
+// without currying 
+let fnx = sum(10);
+console.log(fnx(20));
+
+// //with currying
+console.log('value is ', sum(10)(20));
+
+/*
+Infinite currying
+*/
+
+function add(a) {
+    return function (b) {
+        if (b) { return add(a + b); }
+        else { return a; }
+    }
+}
+
+let fn = add(10);  
+let res = fn(20);
+
+console.log(add(30));

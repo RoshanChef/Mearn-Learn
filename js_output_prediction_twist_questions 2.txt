@@ -1,0 +1,60 @@
+1. Double `typeof` Operator
+   console.log(typeof typeof 123);
+   
+2. Negation of an Array
+   console.log(![]);
+
+3. Negation of `null`
+   console.log(!null);
+
+4. Logical AND with a Boolean and Number
+   console.log(true && 0);
+
+5. String Plus a Boolean
+   console.log('Hello' + true);
+
+6. Array Addition
+   console.log([1] + [2]);
+
+7. Empty Object with String Concatenation
+   console.log({} + 'Hello');
+
+8. Subtracting `undefined` from a Number
+   console.log(10 - undefined);
+
+9. Comparison of an Object and an Array
+   console.log([] == {});
+
+10. Object Inside Array
+    console.log([{}] == [{}]);
+
+11. Unary Plus with Undefined
+    console.log(+undefined);
+
+12. Subtracting a String from a Boolean
+    console.log('5' - true);
+
+13. Adding Undefined to a String
+    console.log('Test' + undefined);
+
+14. Object Conversion to String
+    console.log({} == '[object Object]');
+
+15. Division of a String and a Number
+    console.log('10' / 2);
+
+16. String Plus a Number
+    console.log('10' + 2);
+
+17. Equality of NaN
+    console.log(NaN == NaN);
+
+18. Boolean OR with a String
+    console.log(false || 'Hello');
+
+19. Logical AND with `null` and a Boolean
+    console.log(null && true);
+
+20. String with `NaN` Comparison
+    console.log('NaN' == NaN);
+

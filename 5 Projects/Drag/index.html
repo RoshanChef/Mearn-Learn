@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .main {
+            width: 100vw;
+            height: 100vh;
+            background-color: royalblue;
+            display: grid;
+            place-items: center;
+        }
+
+        .wrapper {
+            width: 34rem;
+            height: 20rem;
+            position: relative;
+            display: flex;
+            justify-content: space-between;
+            gap: 1rem;
+        }
+
+        .bx1,
+        .bx2 {
+            border: .5rem solid white;
+            width: 45%;
+            height: 100%;
+            display: flex-column;
+            justify-items: center;
+            background-color: transparent;
+        }
+
+        .con {
+            margin: 1rem;
+            height: 3rem;
+            width: 90%;
+            border: .3rem solid black;
+            background-color: orange;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="main">
+        <div class="wrapper">
+            <div class="bx1">
+                <div class="con" draggable="true">con 1 </div>
+                <div class="con" draggable="true">con 2 </div>
+                <div class="con" draggable="true">con 3 </div>
+                <div class="con" draggable="true">con 4 </div>
+            </div>
+            <div class="bx2"></div>
+        </div>
+    </div>
+
+    <script>
+        let containter = document.querySelectorAll('.con');
+        let right = document.querySelector('.bx2');
+        let left = document.querySelector('.bx1');
+
+        containter.forEach(element => {
+            element.addEventListener('dragstart', e => {
+                let dom = e.target;
+                console.log(dom);
+                right.addEventListener('dragover', e => {
+                    e.preventDefault();
+                });
+                right.addEventListener('drop', e => {
+                    if (dom)
+                        right.append(dom);
+                    dom = null;
+                })
+                left.addEventListener('dragover', e => {
+                    e.preventDefault();
+                });
+                left.addEventListener('drop', e => {
+                    if (dom)
+                        left.append(dom);
+                    dom = null;
+                })
+            })
+        });
+    </script>
+
+</body>
+
+</html>

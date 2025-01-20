@@ -1,0 +1,60 @@
+1. Double `typeof` Operator
+   console.log(typeof typeof 123);
+   *What will be the output?*
+2. Negation of an Array
+   console.log(![]);
+   *What will be the output?*
+3. Negation of `null`
+   console.log(!null);
+   *What will be the output?*
+4. Logical AND with a Boolean and Number
+   console.log(true && 0);
+   *What will be the output?*
+5. String Plus a Boolean
+   console.log('Hello' + true);
+   *What will be the output?*
+6. Array Addition
+   console.log([1] + [2]);
+   *What will be the output?*
+7. Empty Object with String Concatenation
+   console.log({} + 'Hello');
+   *What will be the output?*
+8. Subtracting `undefined` from a Number
+   console.log(10 - undefined);
+   *What will be the output?*
+9. Comparison of an Object and an Array
+   console.log([] == {});
+   *What will be the output?*
+10. Object Inside Array
+    console.log([{}] == [{}]);
+    *What will be the output?*
+11. Unary Plus with Undefined
+    console.log(+undefined);
+    *What will be the output?*
+12. Subtracting a String from a Boolean
+    console.log('5' - true);
+    *What will be the output?*
+13. Adding Undefined to a String
+    console.log('Test' + undefined);
+    *What will be the output?*
+14. Object Conversion to String
+    console.log({} == '[object Object]');
+    *What will be the output?*
+15. Division of a String and a Number
+    console.log('10' / 2);
+    *What will be the output?*
+16. String Plus a Number
+    console.log('10' + 2);
+    *What will be the output?*
+17. Equality of NaN
+    console.log(NaN == NaN);
+    *What will be the output?*
+18. Boolean OR with a String
+    console.log(false || 'Hello');
+    *What will be the output?*
+19. Logical AND with `null` and a Boolean
+    console.log(null && true);
+    *What will be the output?*
+20. String with `NaN` Comparison
+    console.log('NaN' == NaN);
+    *What will be the output?*
