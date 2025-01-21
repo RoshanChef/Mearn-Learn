@@ -8,10 +8,10 @@ export default function App() {
 
   function startTimer() {
     timerId.current = setInterval(() => {
-      setTime((time) => time + 1);
+      setTime(time => time + 1);
     }, 1000);
   }
-
+  //lag because of the useState schedule
   function stopTimer() {
     clearInterval(timerId.current);
     timerId.current = null;
@@ -19,20 +19,24 @@ export default function App() {
 
   function resetTimer() {
     setTime(0);
-    stopTimer();
+    timerId.current = null;
   }
   return (
     <div className="App">
       <h1>StopWatch :{time} </h1>
+
       <button onClick={startTimer}>
         Start
       </button>
+
       <button onClick={stopTimer}>
         Stop
       </button>
+
       <button onClick={resetTimer}>
         Reset
       </button>
+
     </div>
   );
 }

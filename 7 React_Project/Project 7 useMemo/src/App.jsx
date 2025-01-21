@@ -2,33 +2,38 @@ import { useEffect, useMemo, useState } from 'react';
 import './app.css';
 
 export default function App() {
+  // useMemo :=> to Prevent unnecessary expensive tasks/operations/calculations 
+
   const [cnt, setCnt] = useState(0);
-  const [input, setInput] = useState(1);
-  const [increment, setIncrement] = useState(1);
+  const [input, setInput] = useState("");
 
+  function expensive(num) {
+    console.log('Inside expensive');
 
-  function expensiveTask(num) {
     for (let i = 0; i < 1000000000; i++) { }
     return num * 2;
   }
 
-  let doubleValue = useMemo(() => expensiveTask(input), [input]);
-  //every Refresh
-  useEffect(() => {
-    console.log('Render Happened ... ');
-  })
+  /* 
+    Syntax : 
+    useMemo(callback , [chagesVariable])
+  */
+  let value = useMemo(() => expensive(input), [input]);
 
   return (
     <div className="App">
-      <button onClick={() => setCnt(cnt + 1)}>Increase</button>
-      <h1>Count : {cnt}</h1>
-      <h3>Third : {increment}</h3>
-      <button onClick={() => { setIncrement(increment + 1) }}> Third Btn</button>
+      <button onClick={() => setCnt(cnt + 1)}>
+        Increment
+      </button>
 
-      <h1>Double : {doubleValue}</h1>
-      <input type="number" placeholder='Enter the number' value={input} onChange={(e) => setInput(e.target.value)} />
+      <div>
+        Count : {cnt}
+      </div>
 
-
+      <input type="number" value={input} onChange={(e) => setInput(e.target.value)} />
+      <div>
+        Expensive : {value}
+      </div>
     </div>
   );
 }
