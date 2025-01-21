@@ -13,12 +13,10 @@ const playpause = () => {
         audio.play();
         play.classList.remove('fa-play');
         play.classList.add('fa-pause');
-        console.log('play');
     } else {
         audio.pause();
         play.classList.remove('fa-pause');
         play.classList.add('fa-play');
-        console.log('pause');
     }
 }
 
