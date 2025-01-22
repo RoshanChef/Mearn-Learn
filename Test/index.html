@@ -2,91 +2,34 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Project</title>
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
         }
 
-        .main{
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin: 1rem;
-        }
-        .con {
-            height: fit-content;
-            width: fit-content;
-            background-color: #333;
-            margin: auto;
-            padding: 2rem;
-            color: gold;
-            text-align: justify;
-            filter: blur(10px);
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+            font-family: Georgia, 'Times New Roman', Times, serif;
         }
 
-        .else {
-            position: absolute;
-            color: white;
-            font-size: 2rem;
-            opacity: 1;
-        }
-
-        .main:focus .else {
-            opacity: 0;
-        }
-
-        .main:focus .con {
-            filter: blur(0px);
-        }
+      
     </style>
+    <link rel="stylesheet" href="./locomotive.css">
 </head>
 
 <body>
 
-    <div class="main" tabindex="0">
-        <div class="con">Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci minima, itaque
-            repellendus
-            sunt nemo sint eveniet commodi hic recusandae molestias aut vel saepe vitae? Assumenda voluptate deserunt
-            fugit nam eum?
-            Necessitatibus, veniam repudiandae velit laboriosam porro hic similique voluptatem repellat molestias
-            inventore dolore sit ab, ipsa delectus optio reprehenderit omnis! Qui vel reprehenderit necessitatibus modi
-            sit dolores ut perspiciatis laborum?
-            Architecto necessitatibus suscipit eligendi perspiciatis expedita dolor aliquam nisi, quis ab, dicta quam
-            molestias unde. Perferendis nobis voluptatibus ipsum aperiam distinctio, sit ipsa temporibus mollitia,
-            maxime, laboriosam assumenda cupiditate repellendus?
-            Voluptas, assumenda iure! Officiis consequuntur dolor excepturi, voluptas amet molestias, itaque dolorum
-            quam et, dolore ex eaque iure quod harum inventore minus quis cumque laudantium ipsa perspiciatis?
-            Architecto, sunt reprehenderit!
-            Dolores a illo soluta ipsam quas, nulla quos ratione laboriosam saepe quidem mollitia ut, aliquid ipsa,
-            sapiente possimus tenetur! Aspernatur incidunt expedita quasi nemo vitae quis natus quae eius voluptatibus!
-            Delectus exercitationem, harum magnam iusto voluptas tempora at rem odit fugiat, eaque nam fuga, vitae nisi
-            esse unde neque. Possimus enim sunt cum, neque culpa molestias quasi est natus aut.
-            Debitis eos distinctio qui cumque ea vero, laboriosam dignissimos provident sapiente architecto repellendus,
-            natus autem voluptatibus sint cum aperiam. Cupiditate ipsam atque blanditiis quos saepe dolores placeat
-            obcaecati dignissimos deserunt.
-            Sunt maiores veritatis ipsum facilis! Est, laudantium hic! Corporis itaque sed, officia consequuntur quis
-            magni accusantium debitis commodi saepe delectus ullam quam praesentium dicta unde natus iusto, possimus
-            repellat magnam.
-            Excepturi, dolores quos. Accusamus suscipit, assumenda illum, saepe facilis vero a id odit excepturi neque,
-            nesciunt velit et aut commodi error. Sint, fuga illo architecto magnam possimus cupiditate minus maxime.d
-            blanditiis iste ducimus.
-            dolorum commodi recusandae sequi eum corporis exercitationem provident in tempore ea! Ea dolorem corporis
-            porro quod!</div>
-        <div class="else">Click Me</div>
-    </div>
 
-    <div class="details">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque, reiciendis distinctio culpa unde aliquid
-        aperiam vel deleniti maiores, quaerat explicabo praesentium recusandae sapiente quia molestias corporis. Facilis
-        deserunt commodi itaque?
-    </div>
-    <script src="local.js"></script>
+
+    <script src="./locomotive.js"> </script>
+    <script src="./gsap_lib.js"></script>
+    <script src="./src/ScrollTrigger.js"></script>
+    <script src="./local.js"></script>
 </body>
 
 </html>

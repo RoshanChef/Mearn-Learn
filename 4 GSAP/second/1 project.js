@@ -1,7 +1,7 @@
 gsap.to('#page2 img', {
     width: '100%',
     scrollTrigger: {
-        trigger: '#page2 ', // for pin parent
+        trigger: '#page2', // for pin parent
         scroller: "body",
         markers: true,
         start: 'top 0%',
