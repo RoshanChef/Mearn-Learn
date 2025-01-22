@@ -21,7 +21,7 @@ app.get('/', (req, res) => {
 // create routes 
 // app.get('/', (request, response) => {
 //     // response.send('<h2>Get Request</h2>');
-//     response.send({
+//     response.json({
 //         name: 'Roshan'
 //     });
 // })
@@ -37,4 +37,4 @@ app.get('/', (req, res) => {
 
 
 
-app.listen(3000);
+app.listen(3000); // which port 
