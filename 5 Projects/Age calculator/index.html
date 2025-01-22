@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+            font-family: Arial, Helvetica, sans-serif;
+            background-image: linear-gradient(45deg, royalblue, purple);
+            overflow-x: hidden;
+        }
+
+        .main {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            margin-left: 2rem;
+            align-items: start;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        .header {
+            color: white;
+        }
+
+        .header p {
+            font-size: 4vw;
+            font-weight: 800;
+            display: flex;
+            flex-direction: column;
+        }
+
+        p span {
+            color: #ffff76;
+        }
+
+        .ageBar {
+            margin: 1rem 0rem;
+            padding: 2rem;
+            border-radius: 1rem;
+            background-color: rgba(255, 255, 255, 0.377);
+        }
+
+        .ageBar input {
+            position: relative;
+            padding: 1rem 4rem;
+            font-size: 1.3rem;
+            flex: 1;
+            outline: 0;
+            border: 0;
+            margin-right: 1rem;
+        }
+
+        .ageBar button {
+            cursor: pointer;
+            padding: 1.3rem 4rem;
+            border-radius: .7rem;
+            outline: 0;
+            border: 0;
+            font-size: 1.2rem;
+            font-weight: 600;
+            background-color: #ffff76;
+        }
+
+        .ageBar input::-webkit-calendar-picker-indicator {
+            position: absolute;
+            width: auto;
+            height: auto;
+            background-position: calc(100% - 10px);
+            inset: 0;
+            color: #333;
+            background-size: 1rem;
+            cursor: pointer;
+        }
+
+        .result {
+            color: white;
+            font-size: 1.4rem;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="main">
+        <div class="header">
+            <p>JavaScript <span>Age Calculator</span></p>
+        </div>
+        <form class="ageBar">
+            <input type="date" required>
+            <button>Calculate</button>
+        </form>
+        <div class="result">
+            <p> you are <span>30</span> years, <span>4</span> months and <span>21</span> days old</p>
+        </div>
+    </div>
+
+    <script>
+        let input = document.querySelector('input');
+        let button = document.querySelector('button');
+        let ageBar = document.querySelector('.ageBar');
+        let spans = document.querySelectorAll('.result span');
+
+        let date = new Date();
+        input.setAttribute('max', `${date.getFullYear()}-${date.getMonth() < 10 ? 0 : ''}${date.getMonth() + 1}-0${date.getDay()}`);
+
+        function calculateAge(date) {
+            let obj = new Date(input.value);
+
+            let oldMonth = obj.getMonth() + 1;
+            let oldYear = obj.getFullYear();
+            let oldToday = obj.getDate();
+
+            let today = new Date();
+
+            let todayMonth = today.getMonth() + 1;
+            let today_Day = today.getDate();
+            let today_Year = today.getFullYear();
+
+
+            let res_yr = today_Year - oldYear;
+            let res_mn;
+            let res_day;
+
+            if (todayMonth >= oldMonth) {
+                res_mn = todayMonth - oldMonth;
+            }
+            else {
+                res_yr--;
+                res_mn = 12 + (todayMonth - oldMonth);
+            }
+
+            if (today_Day >= oldToday) {
+                res_day = today_Day - oldToday;
+            } else {
+                res_day = getLastDayOfMonth(today_Year, todayMonth) + today_Day - oldToday;
+            }
+            let anwser = {
+                day: res_day,
+                month: res_mn,
+                year: res_yr
+            }
+
+            return anwser;
+        }
+
+        function getLastDayOfMonth(year, month) { return new Date(year, month, 0).getDate(); }
+
+        ageBar.addEventListener('submit', e => {
+            e.preventDefault();
+            let object = calculateAge();
+            spans[0].innerText = object.year;
+            spans[1].innerText = object.month;
+            spans[2].innerText = object.day;
+        });
+
+
+
+    </script>
+
+</body>
+
+</html>

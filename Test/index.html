@@ -14,21 +14,68 @@
         body {
             width: 100%;
             height: 100%;
-            font-family: Georgia, 'Times New Roman', Times, serif;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            /* background-image: linear-gradient(45deg, royalblue, purple); */
         }
 
-      
+        ul {
+            width: 100%;
+            border-bottom: 1px solid white;
+            position: fixed;
+            backdrop-filter: blur(10px);
+            right: 1rem;
+            list-style-type: none;
+            font-size: 1.4rem;
+            font-weight: 600;
+            display: flex;
+            gap: 2rem;
+            justify-content: flex-end;
+        }
+
+        .main {
+            width: 100%;
+            height: 100%;
+        }
+
+        .page1 {
+            width: 100%;
+            height: 100%;
+            background-color: greenyellow;
+        }
+
+        .page2 {
+            width: 100%;
+            height: 100%;
+            background-color: gold;
+        }
+
+        .page3 {
+            width: 100%;
+            height: 100%;
+            background-color: rgb(31, 32, 29);
+        }
     </style>
-    <link rel="stylesheet" href="./locomotive.css">
 </head>
 
 <body>
 
+    <nav>
+        <ul>
+            <li>Home</li>
+            <li>About</li>
+            <li>Contact</li>
+        </ul>
+    </nav>
+
+    <div class="main">
+
+        <div class="page1"></div>
+        <div class="page2"></div>
+        <div class="page3"></div>
+
+    </div>
 
 
-    <script src="./locomotive.js"> </script>
-    <script src="./gsap_lib.js"></script>
-    <script src="./src/ScrollTrigger.js"></script>
     <script src="./local.js"></script>
 </body>
 
