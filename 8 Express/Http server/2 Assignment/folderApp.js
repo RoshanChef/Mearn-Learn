@@ -13,6 +13,7 @@ app.get('/:folder', (req, res) => {
     let folder_path = path.join(__dirname, '../' + folder)
 
     if (fs.existsSync(folder_path)) {
+        console.log(fs.readdir(folder_path));
         let files = fs.readdirSync(folder_path);
         files.forEach((file) => {
             console.log(file);
