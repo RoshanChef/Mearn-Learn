@@ -1,7 +1,18 @@
-function calc(n) {
-    if (n == 1)
-        return 1;
-    return n + calc(n - 1);
+function getOtp() {
+    let ar = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
+    let otp = '';
+    for (let i = 0; i <6; i++) {
+        otp += Math.floor(Math.random() * ar.length);
+    }
+    return Number(otp);
 }
-console.log('value ', calc(10));
+
+
+let btn = document.querySelector('.btn');
+let text = document.querySelector('#text');
+btn.addEventListener('click', e => {
+    text.value = getOtp();
+    text.select();
+    document.execCommand('copy');
+});
 

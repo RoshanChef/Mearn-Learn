@@ -1,1 +1,59 @@
-utf-8
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            width: 100vw;
+            height: 100vh;
+            background: linear-gradient(royalblue, purple);
+        }
+
+        button {
+            background-color: #ffff76;
+            border-radius: 1rem;
+            font-size: 1.2rem;
+            padding: 1rem 2rem;
+        }
+    </style>
+<link rel="stylesheet" href="../icon/all.min.css">
+</head>
+
+<body>
+
+    <input type="text" name="" id="text">
+    <i class="fa-regular fa-copy"></i>
+    <button class="btn">click Me</button>
+
+    <script>function getOtp() {
+            let ar = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
+            let otp = '';
+            for (let i = 0; i < 6; i++) {
+                otp += Math.floor(Math.random() * ar.length);
+            }
+            return Number(otp);
+        }
+
+
+        let btn = document.querySelector('.btn');
+        let text = document.querySelector('#text');
+        btn.addEventListener('click', e => {
+            text.value = getOtp();
+            text.select();
+            document.execCommand('copy');
+        });
+
+    </script>
+
+</body>
+
+</html>
