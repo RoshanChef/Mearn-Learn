@@ -5,5 +5,3 @@ function calc(n) {
 }
 console.log('value ', calc(10));
 
-let arr = [3, 5, 4, 2, 1];
-
