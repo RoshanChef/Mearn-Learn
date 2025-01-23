@@ -13,66 +13,53 @@ let users = [{
 // routes
 app.get('/', (req, res) => {
     let Johan = users[0];
-    let Johan_kidney = Johan.kidneys;
-    let noOfkidney = Johan_kidney.length;
-    let noOfHealthy = 0;
+    let kidneys = Johan.kidneys;
+    let total = kidneys.length;
 
-    for (let i = 0; i < noOfkidney; i++) {
-        if (Johan_kidney[i].health) {
-            noOfHealthy++;
-        }
-    }
-    let noOfUnHealthy = noOfkidney - noOfHealthy;
-    let num = 12;
-    res.json({
-        Total: noOfkidney,
-        Healthy: noOfHealthy,
-        UnHealth: noOfUnHealthy,
-
+    let Healthy_kid = 0;
+    //Healthy kidneys 
+    kidneys.forEach((kid) => {
+        if (kid.health)
+            Healthy_kid++;
     })
+    let Unhealthy_kid = total - Healthy_kid;
+    res.send(`Total ${total} \n\n Healthy ${Healthy_kid}\nUnhealthy ${Unhealthy_kid}`);
 })
+
 
 // middleware
 app.use(express.json());
+
 app.post('/', (req, res) => {
-    let isHealthy = req.body.isHealthy;
-    users[0].kidneys.push({
-        health: isHealthy
-    })
-
-    res.json({
-        msg: 'done'
-    })
+    let isHealth = req.body.health;
+    users[0].kidneys.push({ health: isHealth });
+    res.send('Successfully added');
 })
-
 
 app.put('/', (req, res) => {
-    let kidneys = users[0].kidneys;
-    for (let i = 0; i < kidneys.length; i++) {
-        kidneys[i].health = 1;
-    }
-
-    res.json({
-        update: 'sucess'
-    })
+    let total = users[0].kidneys;
+    total.forEach((kid) => {
+        kid.health = 1;
+    });
+    res.json({ "Unhealthy": "remove" });
 })
 
-// calll something do it. 
 app.delete('/', (req, res) => {
-    let kidneys = users[0].kidneys;
-    let new_kidneys = [];
-    for (let index = 0; index < kidneys.length; index++) {
-        if (kidneys[index].health) {
-            new_kidneys.push(kidneys[index]);
+    let total = users[0].kidneys;
+
+    if (total.length) {
+        let replacements = total.filter((ele) => { return ele.health === true });
+        if (replacements.length === users[0].kidneys.length) {
+            res.send('No Unhealthy kindeys are Present')
+        } else {
+            users[0].kidneys.length = 0;
+            users[0].kidneys = replacements;
+            res.send('Unhealthy removed');
         }
-
+    } else {
+        res.send('Kidneys are not Present in your body')
     }
-    users[0].kidneys = new_kidneys; 
-    console.log(users[0].kidneys);
-
-    res.json({
-        "remove": "done"
-    })
 })
+
 
 app.listen(80); 
