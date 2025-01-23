@@ -32,6 +32,7 @@ app.get('/', (req, res) => {
     })
 })
 
+// middleware
 app.use(express.json());
 app.post('/', (req, res) => {
     let isHealthy = req.body.isHealthy;

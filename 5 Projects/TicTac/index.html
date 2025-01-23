@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Tic Tac</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+
+        .con {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            background-image: linear-gradient(to right, purple, royalblue);
+        }
+
+        .col {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 4rem;
+            height: 4rem;
+            font-weight: 600;
+            border: .1rem solid #fff;
+            color: #ffff76;
+            font-size: 2rem;
+        }
+
+        .row {
+            display: flex;
+        }
+
+
+        .winner {
+            margin-top: 1rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+
+            button {
+                background-color: #ffff76;
+                padding: .8rem 2rem;
+                border-radius: .4rem;
+            }
+
+            .anounce {
+                color: #ffff76;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="con">
+        <div class="row">
+            <div class="col" id="0"></div>
+            <div class="col" id="1"></div>
+            <div class="col" id="2"></div>
+        </div>
+        <div class="row">
+            <div class="col" id="3"></div>
+            <div class="col" id="4"></div>
+            <div class="col" id="5"></div>
+        </div>
+        <div class="row">
+            <div class="col" id="6"></div>
+            <div class="col" id="7"></div>
+            <div class="col" id="8"></div>
+        </div>
+
+        <div class="winner">
+            <button>Reset</button>
+            <div class="anounce">Welcome to TicTac</div>
+        </div>
+
+    </div>
+
+    <script>
+
+        let columns = document.querySelectorAll('.col');
+        let arr = Array(9).fill(null);
+
+        function checkwinner() {
+            if (arr[0] !== null && arr[0] === arr[1] && arr[1] === arr[2] ||
+                arr[3] !== null && arr[3] === arr[4] && arr[4] === arr[5] ||
+                arr[6] !== null && arr[6] === arr[7] && arr[7] === arr[8] ||
+                arr[0] !== null && arr[0] === arr[3] && arr[3] === arr[6] ||
+                arr[1] !== null && arr[1] === arr[4] && arr[4] === arr[7] ||
+                arr[2] !== null && arr[2] === arr[4] && arr[4] === arr[6] ||
+                arr[0] !== null && arr[0] === arr[4] && arr[4] === arr[8] ||
+                arr[2] !== null && arr[2] === arr[5] && arr[5] === arr[8]
+            ) {
+                console.log(currentPlayer, ' is winner');
+                document.querySelector('.anounce').innerText = `${currentPlayer} is winner`;
+                return 1;
+            }
+            if (arr.every(e => e != null)) {
+                console.log('Match is Draw');
+                document.querySelector('.anounce').innerText = 'Match is Draw';
+                return 1;
+            }
+            return 0;
+        }
+        let currentPlayer = 'X';
+        columns.forEach(element => {
+            element.addEventListener('click', e => {
+                if (checkwinner()) return;
+                let id = Number(e.target.id);
+                if (arr[id] === null) {
+                    arr[id] = currentPlayer;
+                    currentPlayer = currentPlayer === 'X' ? '0' : 'X';
+                    e.target.innerText = currentPlayer;
+                }
+                if (checkwinner()) return;
+            })
+        });
+
+        document.querySelector('.winner button').addEventListener('click', e => {
+            location.href = location.href;
+        })
+
+    </script>
+
+
+</body>
+
+</html>
