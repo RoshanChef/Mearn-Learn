@@ -1,6 +1,8 @@
 const express = require('express');
 const app = express();
 
+// error handing middleware
+
 // count number of errors 
 let error_cnt = 0;
 
