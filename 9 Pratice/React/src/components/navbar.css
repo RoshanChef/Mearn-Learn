@@ -1,0 +1,38 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+img {
+    width: 8rem;
+}
+
+.options {
+    display: flex;
+    text-transform: uppercase;
+    font-weight: 500;
+    gap: 2rem;
+}
+
+.navbar {
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    height: 3rem;
+    display: flex;
+    padding-inline: 2rem;
+}
+
+.login {
+    background-color: red;
+    cursor: pointer;
+    color: white;
+    padding: .5rem 1.7rem;
+    border-radius: .59rem;
+}
+
+.login:hover {
+    background-color: rgba(255, 0, 0, 0.9);
+    color: white;
+}
