@@ -31,3 +31,16 @@ console.log('befor ', obj);
 delete obj.name
 
 console.log('after ', obj);
+
+
+
+function call(){
+    let surname = 'Vanela'; 
+    let age  = 10; 
+
+    return {age , surname}; 
+}
+
+
+let val = call(); 
+console.log(val);
