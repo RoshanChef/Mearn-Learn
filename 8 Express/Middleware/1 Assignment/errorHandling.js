@@ -12,11 +12,11 @@ app.get('/user', (req, res) => {
     res.send('success');
 })
 
-
-// error handling middle 
+// error handling middleware
 app.use((err, req, res, next) => {
     res.status(404).send({});
     error_cnt++;
+    console.log(error_cnt);
 })
 
 app.listen(80); 
