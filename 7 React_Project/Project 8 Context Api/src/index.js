@@ -1,12 +1,16 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import App from "./App";
 import "./index.css";
-import AppContextProvider from "./context/AppContext";
+import App from "./App";
+import { BrowserRouter } from 'react-router-dom';
+import { Toaster } from "react-hot-toast";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <AppContextProvider>
-    <App />
-  </AppContextProvider>
+    <BrowserRouter>
+        <App />
+        <Toaster />
+    </BrowserRouter>
 );
+
+// link : https://excalidraw.com/#json=5Jmxvl9bKQSqqi8Kbz7vE,UtayCf1GTdTy92Hwuv_yfw
