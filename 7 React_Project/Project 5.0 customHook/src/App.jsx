@@ -33,8 +33,6 @@ function useIncrease() {
 //   )
 // }
 
-
-
 const App = function () {
 
 	const [cnt, setCnt] = useState(0);
