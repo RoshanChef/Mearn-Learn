@@ -6,11 +6,11 @@ import { baseUrl } from "../baseUrl";
 export const AppContext = createContext();
 
 const AppContextProvider = ({ children }) => {
+
     const [loading, setLoading] = useState(false);
     const [posts, setPosts] = useState([]);
     const [page, setPage] = useState(1);
     const [totalPages, setTotalPages] = useState(null);
-
 
 
     // data filling 
