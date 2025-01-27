@@ -1,28 +1,47 @@
 const express = require('express');
-const app = express();
 const cors = require('cors');
+const path = require('path');
 
-app.use(express.json());
-app.use(cors());
+const app = express();
+
+// Middleware
+app.use(express.json()); // Parses incoming JSON requests
+// it's middleware without this it will show error 
+app.use(cors());// Enables CORS for cross-origin requests
 
 
-// //serve on the same port 
-// app.get("/" , (req, res)=>{
-//     res.sendFile(__dirname+'/index.html'); 
-// })
+/*   
+By Default CORS are not allowed
+    It's about background request
 
-//cross origin resource sharing  
+    If you want to allow specific domains then 
+        
+        app.use(cors({
+            domains: ["http://localhost:3000"]
+        }));
+*/
+// Serve the HTML file
+app.get('/', (req, res) => {
+    const filePath = path.join(__dirname, '/index.html');
+    res.sendFile(filePath);
+});
 
-app.post('/sum', (req, res) => {
-    let a = parseInt(req.body.a);
-    let b = parseInt(req.body.b);
-    res.json({
-        result: a + b
-    });
-})
+// POST route for addition
+app.post('/', (req, res) => {
+    const obj = req.body;
+    const ans = parseInt(obj.a) + parseInt(obj.b);
+    console.log('Object is:', obj);
+    res.json({ ans: ans });
+});
 
-app.get('/hello', (req, res) => {
-    res.send("hello roshan");
-})
+// POST route for /call
+app.post('/call', (req, res) => {
+    const obj = req.body;
+    console.log('Received object:', obj);
+    res.json(obj); // Send the same object back as response
+});
 
-app.listen(3000); 
+// Start the server
+app.listen(80, () => {
+    console.log("Server is running on port 80");
+});

@@ -2,36 +2,38 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CORS</title>
+</head>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.7.7/axios.min.js"
-        integrity="sha512-DdX/YwF5e41Ok+AI81HI8f5/5UsoxCVT9GKYZRIzpLxb8Twz4ZwPPX+jQMwMhNQ9b5+zDEefc+dcvQoPWGNZ3g=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<body>
+
+    <input type="number" value="" id="a" placeholder="First Value"> </input>
+    <input type="number" value="" id="b" placeholder="Second Value"> </input>
+
+    <button onclick="sendReq()">click Here</button>
     <script>
         async function sendReq() {
             let a_val = document.querySelector('#a').value;
             let b_val = document.querySelector('#b').value;
-            let response = await axios.post('http://localhost:3000/sum', {
-                a: a_val,
-                b: b_val
-            });
-            console.log(response.data);
+            console.log(a_val, ' ', b_val);
+
+            let url = 'http://localhost';
+
+            try {
+                console.log(typeof a_val);
+                let res = await fetch(url, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'password': 'kon hai'
+                    },
+                    body: JSON.stringify({ a: a_val  , b : b_val })
+                });
+            } catch (error) {
+                console.log('Fetch error:', error);
+            }
         }
     </script>
-</head>
-
-
-<input type="text" value="" id="a" placeholder="First Value"> </input>
-<input type="text" value="" id="b" placeholder="Second Value"> </input>
-
-<button onclick="sendReq()">click Here</button>
-
-
-
-
-
 </body>
 
 </html>

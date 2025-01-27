@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nore</title>
+</head>
+
+<body>
+    <h1>POST Request Example</h1>
+    <input type="text" placeholder="First value" id="first" value="">
+    <input type="text" placeholder="Last value" id="last" value="">
+    <button onclick="sendRequest()">Send Request</button>
+
+    <script>
+        async function sendRequest() {
+            // Get the values from the input fields
+            const first_val = document.querySelector('#first').value;
+            const last_val = document.querySelector('#last').value;
+
+            try {
+                let url = 'http://localhost/call'; 
+
+                // Send the POST request
+                const response = await fetch(url, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json', // Content-Type for JSON data
+                    },
+                    body: JSON.stringify({
+                        first: first_val,
+                        last: last_val
+                    })
+                });
+
+                // Parse the JSON response
+                const data = await response.json();
+                console.log('Response from server:', data);
+            } catch (error) {
+                console.error('Error:', error);
+            }
+        }
+    </script>
+</body>
+
+</html>
