@@ -11,15 +11,19 @@
             padding: 0;
         }
 
-        button {
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            position: absolute;
-            font-size: 1.5rem;
-            background-color: orange;
-            height: 5rem;
-            width: 20rem;
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 3rem;
+            height: 100vh;
+        }
+
+        button{
+            border-radius: .3rem;
+            color: white;
+            background-color: royalblue;
+            padding: .52rem 2rem;
         }
     </style>
 </head>
@@ -30,7 +34,7 @@
         <button id="btn_post" type="button">POST</button>
         <button id="btn_put" type="button">PUT</button>
         <button id="btn_delete" type="button">DELETE</button>
-        
+
     </div>
 
     <script>

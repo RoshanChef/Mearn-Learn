@@ -1,15 +1,17 @@
 ### How to create simple https server
 
-
+```res.send(string message)``` if you are not sending these it will be hung.
 ```
 const express = require('express');
 const app = express();
 
 app.get('/', (req, res) => {
-    res.send("<h1>welcome</h1>");
+    res.send(string message);
 });
 
+
 app.listen(1180); 
+
 ```
 
 ### Different res methods
@@ -23,17 +25,16 @@ app.get('/', (req, res) => {
         age: 23
     });
 });
+```
 
 OR 
-
+```
 app.get('/', (req, res) => {
     res.send({
         name: 'Roshan',
         age: 23
     });
 });
-
-
 ```
 
 ### How to get Input from query parameters
@@ -84,7 +85,7 @@ req.body.health
 ## You can also send status code with response
 eg .. 
 
-res.status(status_code).send('message'); 
+```res.status(status_code).send('message'); ```
 
 ## How do you pass the parameters in url of request
 
@@ -93,6 +94,7 @@ res.status(status_code).send('message');
 ```http://localhost/239  58208 dhk/adklj   lkj al```
 
 for getting these parameters
+
 ```
 app.get('/:first/:second', (req, res) => {
     let a = req.params.first;
@@ -100,5 +102,4 @@ app.get('/:first/:second', (req, res) => {
     console.log('first ', a, '\nsecond ', b);
     res.send('Any request here handles');
 })
-
 ```
