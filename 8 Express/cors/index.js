@@ -5,7 +5,8 @@ const path = require('path');
 const app = express();
 
 // Middleware
-app.use(express.json()); // Parses incoming JSON requests
+app.use(express.json());
+
 // it's middleware without this it will show error 
 app.use(cors());// Enables CORS for cross-origin requests
 
