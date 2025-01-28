@@ -1,12 +1,14 @@
 const express = require('express');
 const app = express();
 
-// for the users array 
-const users = [];
+// Middleware
 app.use(express.json());
 
+// for the users array (InMemory storage)
+const users = [];
+
 function generateToken(length = 16) {
-    const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijkPlmnopqrstuvwxyz0123456789';
+ 
     let token = '';
     for (let i = 0; i < length; i++) {
         const randomIndex = Math.floor(Math.random() * characters.length);
@@ -57,7 +59,8 @@ app.post('/signIn', function (req, res) {
         })
     }
 });
-
+    
+// authenticated endpoint
 app.get('/me', (req, res) => {
     const token = req.headers.token;
     let foundUser = null;

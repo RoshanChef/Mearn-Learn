@@ -55,6 +55,7 @@ app.post('/signIn', function (req, res) {
     }
 });
 
+// authenticated endpoint
 app.get('/me', (req, res) => {
     const token = req.headers.token; //jwt
     // decode the username

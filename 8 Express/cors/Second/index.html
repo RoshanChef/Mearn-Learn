@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Index</title>
+</head>
+
+<body>
+
+
+    <input type="text" value="" placeholder="first number" id="first">
+    <input type="text" value="" placeholder="Second number" id="second">
+    <button onclick="cello()">Click Me</button>
+
+
+    <script>
+        async function cello() {
+            let first = document.getElementById('first').value;
+            let second = document.getElementById('second').value;
+
+
+            try {
+                let url = 'http://localhost/keep';
+                // Send the POST request
+                const res = await fetch(url, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json', // Content-Type for JSON data
+                    },
+                    body: JSON.stringify({
+                        first: first,
+                        second: second
+                    })
+                });
+                let data = await res.text();
+                console.log("Data ", data);
+            } catch (error) {
+                console.log('Error: ' + error);
+            }
+        }
+
+    </script>
+</body>
+
+</html>
