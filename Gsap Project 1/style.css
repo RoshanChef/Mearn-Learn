@@ -1,0 +1,169 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+    padding: 0;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+#main {
+    overflow: hidden;
+}
+
+#page1,
+#page2,
+#page3,
+#page4 {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    height: 100vh;
+    width: 100vw;
+}
+
+/* ******************** Page 1 ******************** */
+#page1 {
+    background-color: #000;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: #fff;
+    align-items: center;
+    font-weight: 700;
+    font-size: 4.25vw;
+
+    h1 {
+        text-transform: uppercase;
+        line-height: 8vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        i {
+            background-color: rgb(76, 133, 50);
+            font-size: 1.25vw;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            width: 5.23vw;
+            height: 5.23vw;
+        }
+    }
+
+    .desc {
+        margin-top: 3.8vw;
+        text-align: center;
+    }
+
+    .page1_something {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        column-gap: .5rem;
+    }
+
+    .page1_something h4 {
+        box-shadow: .1rem .11rem .3rem rgba(230, 228, 228, 0.178);
+        font-weight: 150;
+        border: 1px solid #585757;
+        border-radius: 2rem;
+        padding: .2rem .4rem;
+        font-size: 1.21vw;
+    }
+
+    h4:nth-child(3) {
+        border: none;
+        box-shadow: none;
+    }
+
+    h3 {
+        text-transform: none;
+        font-weight: 200;
+        font-size: 1.21vw;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    }
+}
+
+/* **********   navbar   *********** */
+nav {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    position: fixed;
+    padding: 1rem 8rem;
+    height: 9vh;
+    color: white;
+    width: 100%;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+
+    button {
+        color: white;
+        border-radius: 3rem;
+        background-color: rgb(76, 133, 50);
+        padding: .7rem 1rem;
+        display: flex;
+        gap: 1rem;
+    }
+
+    h1 {
+        text-transform: uppercase;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+}
+
+nav .nav_part2 {
+    text-transform: uppercase;
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+    padding: 1.1vh 0;
+    height: 12vh;
+    cursor: pointer;
+    position: relative;
+    z-index: 12;
+
+    h4 {
+        font-weight: 700;
+        font-size: .6rem;
+    }
+
+    h5 {
+        font-size: .57rem;
+        font-weight: 400;
+        margin-top: 1.6vw;
+        display: none;
+        overflow: hidden;
+
+        span {
+            transform: translateY(20vw);
+            display: inline-block;
+        }
+    }
+}
+
+.nav_part3 {
+    border-bottom: 1px solid white;
+    width: 81%;
+    height: 0vh;
+    /* height: 19vh; */
+    display: block;
+    background-color: black;
+    top: 100%;
+    position: absolute;
+    z-index: 9;
+}
+
+
+#page2 {
+    background-color: gold;
+}
+
+#page3 {
+    background-color: red;
+}
