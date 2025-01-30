@@ -59,7 +59,7 @@ app.get('/me', (req, res) => {
     let decondedInfromation = jwt.verify(token, JWT_SECRET); // {username : roshankalmthe@gmail.com}
     let username = decondedInfromation.username;
 
-        // find the other data
+    // find the other data
     let inx = users.findIndex(user => user.username === username);
 
     if (inx !== -1) {
