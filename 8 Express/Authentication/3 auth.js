@@ -2,11 +2,14 @@ const express = require('express');
 const jwt = require('jsonwebtoken');
 const JWT_SECRET_KEY = 'afajflajf;akjdf';
 const app = express();
+const cors = require('cors');
+
+app.use(cors()); 
 app.use(express.json());
 
 let users = [];
 function logger(req, res, next) {
-    console.log(req.method + ' method come');
+    console.log(req.method + ' method came');
     next();
 }
 

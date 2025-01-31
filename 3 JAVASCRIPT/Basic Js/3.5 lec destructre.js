@@ -34,13 +34,16 @@ console.log('after ', obj);
 
 
 
-function call(){
-    let surname = 'Vanela'; 
-    let age  = 10; 
+function call() {
+    let surname = 'Vanela';
+    let age = 10;
 
-    return {age , surname}; 
+    return { age, surname };
 }
 
 
-let val = call(); 
+let val = call();
 console.log(val);
+
+let { length } = 'calling work';
+console.log('len ', length);
