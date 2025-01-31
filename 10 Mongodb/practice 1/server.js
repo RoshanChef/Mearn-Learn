@@ -1,8 +1,11 @@
 const express = require('express');
-const mongoose = require('mongoose');
 const app = express();
+
+const mongoose = require('mongoose');
+
 const jwt = require('jsonwebtoken');
 const JWT_SECRET = 'DLALDKFALFJAL';
+
 const ObjectId = mongoose.ObjectId;
 
 const { UserModel, TodoModel } = require('./db');
@@ -16,6 +19,12 @@ app.post('/signup', async function (req, res) {
     const password = req.body.password;
     const name = req.body.name;
 
+
+    if (await UserModel.findOne({ email: email })) {
+        res.json({ message: 'already logged in' });
+        return;
+    }
+
     await UserModel.create({ email: email, password: password, name: name });
 
     res.json({ message: 'Successfully logged in' });
@@ -28,7 +37,7 @@ app.post('/signin', async function (req, res) {
     let user = await UserModel.findOne({ email: email, password: password });
 
     if (user) {
-        let token = jwt.sign({ id: user.id }, JWT_SECRET);
+        let token = jwt.sign({ id: user._id }, JWT_SECRET);
         res.json({
             token: token
         })
@@ -37,18 +46,28 @@ app.post('/signin', async function (req, res) {
     }
 });
 
-app.post('/todo', async function (req, res) {
-    const title = req.body.title;
-    const done = Boolean(req.body.done);
+function auth(req, res, next) {
 
     const token = req.headers.token; //jwt
     const decodedUserId = jwt.verify(token, JWT_SECRET);
     let id = decodedUserId.id;
+    
+    if (decodedUserId) {
+        req.userId = id;
+        next();
+    } else {
+        res.status(403).json({ message: 'user not found first signin' })
+    }
+}
 
-    //find the user is exist or not
-    let founder = await UserModel.findOne({ _id: id });
-    if (founder) {
-        await TodoModel.create({ userId: founder._id, done: done, title: title });
+app.post('/todo', auth, async function (req, res) {
+    const title = req.body.title;
+    const done = Boolean(req.body.done);
+
+    let userId = req.userId;
+
+    if (userId) {
+        await TodoModel.create({ userId: userId, done: done, title: title });
         res.json({
             message: "todo created successfully"
         })
@@ -58,24 +77,15 @@ app.post('/todo', async function (req, res) {
             message: "UserId not found"
         })
     }
-
 });
-app.get('/todos', async function (req, res) {
 
-    let token = req.headers.token;
-    let decode = jwt.verify(token, JWT_SECRET);
-    let id = decode.id;
-    console.log('id is ', id);
+app.get('/todos', auth, async function (req, res) {
+    let userId = req.userId;
 
-    let founder = await TodoModel.findOne({ userId: id });
-    console.log(founder);
-    founder = await TodoModel.findOne({ userId: id });
-    console.log(founder);
+    let Todos = await TodoModel.find({ userId: userId });
 
-    if (founder) {
-        res.json({
-            message: founder
-        })
+    if (userId) {
+        res.json(Todos)
     } else {
         res.json({ message: 'signin in again' });
     }

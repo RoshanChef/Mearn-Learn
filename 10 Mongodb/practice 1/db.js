@@ -2,6 +2,7 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 const ObjectId = mongoose.ObjectId;
 
+// schema
 const User = new Schema({
     name: String,
     email: String,
@@ -15,6 +16,13 @@ const Todo = new Schema({
 });
 
 
+/*  
+    why schema ? 
+    because we want to our application to strict
+*/
+// mongoose.model(Collection , Schema)
+
+// Data model
 const UserModel = mongoose.model('users', User);
 const TodoModel = mongoose.model('todos', Todo);
 
