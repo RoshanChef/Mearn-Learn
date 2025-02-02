@@ -25,10 +25,10 @@ nav {
     height: 6vh;
 }
 
-nav h1:nth-child(1)::before {
+nav h1:nth-child(1)::after {
     content: '';
     height: 1.45rem;
-    width: .21rem;
+    width: .1rem;
     top: -1rem;
     right: 1.5rem;
     position: absolute;
@@ -45,7 +45,7 @@ nav h1:nth-child(1)::before {
 .page1 {
     background-color: wheat;
     overflow: hidden;
-    background-color: rgb(37, 37, 36);
+    background-color: rgb(0, 0, 0);
     position: relative;
     color: white;
 
@@ -87,4 +87,12 @@ nav h1:nth-child(1)::before {
     object-fit: cover;
     top: -9rem;
     left: -40rem;
+}
+.content h2{
+    position: relative;
+    z-index: 100; 
+    color: #ffff76;
+    text-align: center;
+    top: 4rem;
+    scale: 0;
 }

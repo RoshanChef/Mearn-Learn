@@ -17,6 +17,10 @@ function animation() {
         x: -100,
         rotate: '30deg'
     })
+    gsap.to('.page1 .content h2', {
+        scale: 2,
+        duration: 1
+    })
 }
-animation(); 
+animation();
 
