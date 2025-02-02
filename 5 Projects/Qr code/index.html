@@ -1,9 +1,146 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "JetBrains Mono", monospace;
+        }
+
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+        }
+
+        .main {
+            width: 100vw;
+            height: 100vh;
+            background-color: #000000;
+            background-image: linear-gradient(0deg, #000000 0%, #340a47 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* CSS */
+        .button-30 {
+            align-items: center;
+            appearance: none;
+            background-color: #FCFCFD;
+            border-radius: 4px;
+            border-width: 0;
+            box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+            box-sizing: border-box;
+            color: #36395A;
+            cursor: pointer;
+            display: inline-flex;
+            font-family: "JetBrains Mono", monospace;
+            min-    height: 3rem;
+            justify-content: center;
+            line-height: 1;
+            list-style: none;
+            overflow: hidden;
+            padding-left: 1rem;
+            padding-right: 1rem;
+            position: relative;
+            text-align: left;
+            text-decoration: none;
+            transition: box-shadow .15s, transform .15s;
+            user-select: none;
+            -webkit-user-select: none;
+            touch-action: manipulation;
+            white-space: nowrap;
+            will-change: box-shadow, transform;
+            font-size: 1.22rem;
+            width: 80%;
+        }
+
+        .button-30:focus {
+            box-shadow: #D6D6E7 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+        }
+
+        .button-30:hover {
+            box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+            transform: translateY(-2px);
+        }
+
+        .button-30:active {
+            box-shadow: #D6D6E7 0 3px 7px inset;
+            transform: translateY(2px);
+        }
+
+        .card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border: 2px solid #ccc;
+            width: 25rem;
+            min-height: 10rem;
+            max-height: 20rem;
+            transition: .2s all ease;
+            gap: .8rem;
+            background: rgba(255, 255, 255, 0.135);
+            border-radius: 16px;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+            padding: 1rem;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .card input {
+            font-size: 1.12rem;
+            color: #ffff76;
+            background: rgba(221, 219, 224, 0.6);
+            border-radius: 16px;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(11.7px);
+            -webkit-backdrop-filter: blur(11.7px);
+            border: 1px solid rgba(221, 219, 224, 0.3);
+            border: 2px solid #fff1;
+            width: 80%;
+            border-radius: .5rem;
+            padding: 1rem;
+            outline: none;
+        }
+    </style>
 </head>
+
 <body>
-    
+
+    <div class="main">
+        <div class="card">
+            <input type="text" class="text">
+            <button class="button-30 btn" role="button">Generate</button>
+            <img src="" alt="" class="lock">
+        </div>
+    </div>
+
+
+
+
+    <script>
+        let text = document.querySelector('.text');
+        let img = document.querySelector('img');
+        let btn = document.querySelector('.btn');
+
+        btn.addEventListener('click', e => {
+            console.log('welcome');
+            if (text.value) {
+                let api = 'https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=' + text.value;
+                img.src = api;
+                img.style.height = '29rem';
+                console.log(api);
+            }
+        })
+
+    </script>
+
 </body>
+
 </html>
