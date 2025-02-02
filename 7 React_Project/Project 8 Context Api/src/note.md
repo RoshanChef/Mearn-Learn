@@ -10,3 +10,5 @@
 
 constext api and RollingUp both are different
 
+#### step 1 : required for consume the context
+#### step 2 : required for wrapping up the parent component

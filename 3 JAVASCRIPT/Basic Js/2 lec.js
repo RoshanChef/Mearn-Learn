@@ -7,6 +7,15 @@ const person = {
         console.log("do something to learn new things ..");
     }
 };
+let age = 10, name = 'Roshan', argument = 'Lohan', marco = "sun";
+
+let value = {
+    age,
+    name,
+    argument, marco
+}
+
+console.log(value);
 
 //factory function
 function createFun() {
