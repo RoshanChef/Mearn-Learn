@@ -1,9 +1,12 @@
 import React from 'react'
+import "./spinner.css"
 
-function Spinner() {
-    return (
-        <div className='spinner'></div>
-    )
+const Spinner = () => {
+  return (
+    <div className='w-full h-screen top-12 flex items-center justify-center'>
+      <span className="loader"></span>
+    </div>
+  )
 }
 
 export default Spinner

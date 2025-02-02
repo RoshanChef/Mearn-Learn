@@ -6,14 +6,14 @@ import { AppContext } from './context/AppContext';
 import { useContext } from 'react';
 
 export default function App() {
-  const { fetchBlogData } = useContext(AppContext);
-
+  const { fetchBlogPosts } = useContext(AppContext);
   useEffect(() => {
-    fetchBlogData();
+    console.log('running...');
+        fetchBlogPosts();
   }, []);
 
   return (
-    <div className='background w-full flex flex-col h-screen '>
+    <div className='w-full flex flex-col h-screen overflow-x-hidden'>
       <Header />
       <Blogs />
       <Pagination />

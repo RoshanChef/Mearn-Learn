@@ -1,54 +1,59 @@
-import { Children, createContext } from "react";
+import {  createContext } from "react";
 import { useState } from "react";
 import { baseUrl } from "../baseUrl";
 
 // step 1: create
 export const AppContext = createContext();
 
-const AppContextProvider = ({ children }) => {
+function AppContextProvider({ children }){
 
-    const [loading, setLoading] = useState(false);
+    const [loading, setLoading] = useState(false);  
     const [posts, setPosts] = useState([]);
-    const [page, setPage] = useState(1);
+    const [page, setPage] = useState(0);
     const [totalPages, setTotalPages] = useState(null);
 
 
     // data filling 
-    async function fetchBlogData(page = 1) {
+    async function fetchBlogPosts(page = 1) {
         setLoading(true);
-        let url = `${baseUrl}?page=${page}`;
+        const url = `${baseUrl}?page=${page}`;
+
         try {
-            // fetch the data
             const response = await fetch(url);
             const data = await response.json();
-
-            //check data 
-            console.log(data);
-
-            // set the states
             setPage(data.page);
-            setPosts(data.posts);
             setTotalPages(data.totalPages);
-        } catch (e) {
-            console.log('Fetching data failed');
-
+            setPosts(data.posts);
+        } catch (error) {
+            console.trace(error);
+            console.log(error);
+            setPage(1);
+            setTotalPages(null);
+            setPosts([]);
+        }finally{
+            setLoading(false);
         }
 
-        setLoading(false);
     }
 
     function handlePageChange(page) {
-        // setPage(page);
-        fetchBlogData(page);
+        setPage(page);
+        fetchBlogPosts(page);
     }
 
-    let value = [
-        loading, setLoading,
-        posts, setPosts,
-        page, setPage,
-        totalPages, setTotalPages,
-        handlePageChange, fetchBlogData
-    ]
+    const value = {
+        loading,
+        setLoading,
+        posts,
+        setPosts,
+        page,
+        setPage,
+        totalPages,
+        setTotalPages,
+        fetchBlogPosts,
+        handlePageChange,
+    };
+
 
     // step 2: provide context
     return (
