@@ -1,7 +1,6 @@
-let con = document.querySelector('.con');
-let plus = document.querySelector('.plus');
+// let con = document.querySelector('.con');
+// let plus = document.querySelector('.plus');
 
-con.addEventListener('click', (e) => {
-   con.classList.toggle('len'); 
-})
-
+// con.addEventListener('click', (e) => {
+//    con.classList.toggle('len'); 
+// })
