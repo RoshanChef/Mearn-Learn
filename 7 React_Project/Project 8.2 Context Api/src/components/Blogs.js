@@ -8,7 +8,7 @@ function Blogs() {
     console.log(posts, 'value: ' + posts.length);
     console.log(typeof posts.length);
     return (
-        <div className="w-11/12 max-w-[670px] flex flex-col gap-y-6 py-3 mx-auto my-[4rem] items-center  ">
+        <div className="w-11/12 max-w-[670px] h-screen flex flex-col gap-y-6 py-3 mx-auto my-[4rem] items-center  ">
             {
                 loading ? (<Spinner />) :
                     (
