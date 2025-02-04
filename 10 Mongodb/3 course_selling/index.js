@@ -7,6 +7,7 @@ const { userRouter } = require('./Routes/user');
 
 app.use('/user', userRouter);
 app.use('/course', courseRouter);
+app.use('/admin' ,adminRouter); 
 
 
 app.listen(80, () => {
