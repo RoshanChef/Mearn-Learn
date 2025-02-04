@@ -128,7 +128,6 @@ app.get('/todos', auth, async function (req, res) {
     } else {
         res.json({ message: 'signin in again' });
     }
-
 });
 
 app.listen(80, () => {

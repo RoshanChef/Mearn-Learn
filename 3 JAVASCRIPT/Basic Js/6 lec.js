@@ -58,7 +58,7 @@ Local Storage
 // sessionStorage.setItem(key, value);
 // sessionStorage.getItem(key);
 // sessionStorage.removeItem(key);
-// sessionStorage.clear(); 
+// sessionStorage.clear();
 
 // storage event => update in one tab and changes notified in another tab of the same page
 
@@ -67,3 +67,10 @@ Local Storage
 //     console.log(event_obj);
 // }
 
+/*
+localstorage : can survive refresh , reload and closing broser window/tab
+sessionstorage : can survive refresh , reload , not aclosing broser window/tab 
+cookie : can survive survive refresh , reload 
+    session cookie : which don't have expires
+    persistent cookie : which has expires 
+*/
