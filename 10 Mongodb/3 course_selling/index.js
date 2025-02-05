@@ -7,9 +7,15 @@ const { userRouter } = require('./Routes/user');
 
 app.use('/user', userRouter);
 app.use('/course', courseRouter);
-app.use('/admin' ,adminRouter); 
+app.use('/admin', adminRouter);
 
+async function main() {
 
-app.listen(80, () => {
-    console.log('server listening on port ', 80);
-})
+    await mongoose.connect('mongodb://localhost:27017/courseSell');
+
+    app.listen(80, () => {
+        console.log('server listening on port ', 80);
+    })
+
+}
+main();

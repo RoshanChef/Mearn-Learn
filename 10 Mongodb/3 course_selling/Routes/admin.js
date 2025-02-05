@@ -3,6 +3,10 @@ const Router = express.Router;
 
 const adminRouter = Router();
 
+function auth(req, res, next) {
+
+}
+
 adminRouter.post('/signup', function (req, res) {
     res.json({ message: 'Sign Up Endpoint' })
 })
