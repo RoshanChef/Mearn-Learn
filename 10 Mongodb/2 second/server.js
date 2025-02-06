@@ -32,7 +32,10 @@ app.post('/signup', async function (req, res) {
     //         password : string
     //     }
     // */
+
     const parsedDataWithSuccess = requiredBody.safeParse(req.body);
+    
+
 
     if (!parsedDataWithSuccess.success) {
         res.json({
