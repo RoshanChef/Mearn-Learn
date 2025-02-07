@@ -56,7 +56,7 @@ export default function Page1Content() {
 
 
     return (
-        <div className='h-[calc(90vh)] relative top-[3.4rem] px-[3em] w-screen overflow-x-hidden ' >
+        <div className='h-screen relative top-[3.4rem] px-[3em] w-screen overflow-x-hidden ' >
 
             <div className='text flex w-full justify-between font-mono relative top-7'>
                 <div className='text-[3rem] whitespace-pre' ref={(ele) => { target.current[2] = ele }}>

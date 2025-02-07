@@ -1,4 +1,4 @@
-import { comments, sliderSettings } from '../utils/data';
+import { comments} from '../utils/data';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import './slider.css';
@@ -17,14 +17,14 @@ const settings = {
 
 function Page5() {
     return (
-        <div className='w-screen h-screen bg-[#ebd3a557] flex flex-col justify-center gap-5'>
+        <div className='w-screen h-screen bg-[#ebd3a542] flex flex-col justify-center gap-5 p-4'>
             <h1 className='text-5xl font-semibold text-center mb-8'>People talk about us </h1>
             <div>
                 <p className='text-center'>I got a job was in accordance with the salary and field of work</p>
                 <p className='text-center'>The Process of submitting an aplication was quite copy.</p>
             </div>
             <div className='p-16 pt-[4rem] h-[35rem] .box'>
-                <Slider {...settings} arrows={false} >
+                <Slider {...settings} >
                     {
                         comments.map((comment, inx) => (
                             <div key={inx} className='text-center shadow-lg w-[6rem] py-3 flex gap-4 rounded-md cursor-pointer h-[18rem] card'>
