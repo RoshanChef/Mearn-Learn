@@ -1,0 +1,12 @@
+
+.slick-slide>div {
+    margin: 0 2rem;
+    display: flex;
+    gap: 1rem;
+}
+
+.card{
+    background-color: white;
+    display: flex;
+    gap: 3;
+}
