@@ -8,7 +8,7 @@ function userMiddleware(req, res, next) {
     let decode = jwt.verify(token, JWT_USER_SECRET);
 
     if (decode) {
-        req.userId = decode;
+        req.userId = decode.id; 
         next();
     }
     else {

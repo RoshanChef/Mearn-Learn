@@ -3,6 +3,7 @@ const Router = express.Router;
 const { z } = require('zod');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
+
 const { JWT_ADMIN_SECRET } = require('../config.js');
 
 
@@ -68,13 +69,15 @@ adminRouter.post('/course', adminMiddleware, async function (req, res) {
 
 adminRouter.put('/course', adminMiddleware, async function (req, res) {
     const adminId = req.adminId;
-    const { title, description, price, imageUrl } = req.body;
-    await courseModel.updateOne({ creatorId: adminId }, { title, description, price, imageUrl });
+    const { title, description, price, imageUrl, courseId } = req.body;
+    await courseModel.updateMany({ _id: courseId, creatorId: adminId }, { title, description, price, imageUrl });
     res.json({ message: 'course update sucessfully' })
 })
 
-adminRouter.get('/course/bluk', function (req, res) {
-    res.json({ message: 'course see Enpoint' })
+adminRouter.get('/course/bluk', adminMiddleware, async function (req, res) {
+    let adminId = req.adminId;
+    let data = await courseModel.find({ creatorId: adminId });
+    res.json({ data: data })
 })
 
 module.exports = { adminRouter: adminRouter }

@@ -10,10 +10,10 @@ app.use('/user', userRouter);
 app.use('/course', courseRouter);
 app.use('/admin', adminRouter);
 
-
+require('dotenv').config();
 async function main() {
 
-    await mongoose.connect('mongodb://localhost:27017/courseSell');
+    await mongoose.connect(process.env.MONGO_URL);
 
     app.listen(80, () => {
         console.log('server listening on port ', 80);

@@ -4,16 +4,13 @@ const { z } = require('zod');
 const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
-const {JWT_USER_SECRET} = require('../config'); 
+const { JWT_USER_SECRET } = require('../config');
 
-
-const { userModel } = require('../Database/db');
-
-
+const { userModel, purchaseModel } = require('../Database/db');
+const { userMiddleware } = require('../Midddleware/user');
 
 // it handles incoming requests
 const userRouter = Router();
-
 
 userRouter.post('/signup', async (req, res) => {
     const requiredBody = z.object({
@@ -47,7 +44,7 @@ userRouter.post('/signup', async (req, res) => {
 
 userRouter.post('/signin', async (req, res) => {
     const { email } = req.body;
-    let user = await userModel.findOne({ email });
+    let user = await userModel.findOne({ email});
     if (user) {
         let token = jwt.sign({ id: user._id }, JWT_USER_SECRET);
         res.header({ token });
@@ -56,11 +53,12 @@ userRouter.post('/signin', async (req, res) => {
     else {
         res.status(403).json({ message: 'invalid credentials' })
     }
-
 })
 
-userRouter.get('/purchases', (req, res) => {
-    res.json({ message: "purchases" });
+userRouter.get('/purchases', userMiddleware, async (req, res) => {
+    const userId = req.userId;
+    const purchases = await purchaseModel.find({ userId }); 
+    res.json({ purchases });
 })
 
 module.exports = {
