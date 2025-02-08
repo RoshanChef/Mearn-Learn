@@ -1,7 +1,8 @@
 import { useGSAP } from '@gsap/react';
 import { PiPhoneCallDuotone } from 'react-icons/pi';
-import { useRef } from 'react';
+import { Link} from "react-router";
 import gsap from 'gsap';
+import { useRef } from 'react';
 
 
 function Navbar() {
@@ -20,7 +21,8 @@ function Navbar() {
             </div>
             <div className="nav text-sm">
                 <ul className='flex gap-3 uppercase items-center' ref={(ele) => { target.current[1] = ele }} >
-                    <li>services</li>
+                    <li>
+                        </li>
                     <li>exprience</li>
                     <li>portfolio</li>
                     <li>testimonials</li>
