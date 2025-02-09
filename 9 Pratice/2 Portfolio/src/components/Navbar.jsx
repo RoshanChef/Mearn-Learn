@@ -22,6 +22,7 @@ function Navbar() {
             <div className="nav text-sm">
                 <ul className='flex gap-3 uppercase items-center' ref={(ele) => { target.current[1] = ele }} >
                     <li>
+                        <Link></Link>
                         </li>
                     <li>exprience</li>
                     <li>portfolio</li>

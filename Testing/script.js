@@ -21,3 +21,9 @@
 // session.addEventListener('click', (e) => {
 //     sessionStorage.name = 'session';
 // })
+
+
+let arr = []; 
+if (arr) {
+    console.log('yes it is there for some reason ... ');
+}

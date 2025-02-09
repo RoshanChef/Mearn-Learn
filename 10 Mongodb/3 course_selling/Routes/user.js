@@ -6,7 +6,7 @@ const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const { JWT_USER_SECRET } = require('../config');
 
-const { userModel, purchaseModel } = require('../Database/db');
+const { userModel, purchaseModel, courseModel } = require('../Database/db');
 const { userMiddleware } = require('../Midddleware/user');
 
 // it handles incoming requests
@@ -44,7 +44,7 @@ userRouter.post('/signup', async (req, res) => {
 
 userRouter.post('/signin', async (req, res) => {
     const { email } = req.body;
-    let user = await userModel.findOne({ email});
+    let user = await userModel.findOne({ email });
     if (user) {
         let token = jwt.sign({ id: user._id }, JWT_USER_SECRET);
         res.header({ token });
@@ -57,8 +57,10 @@ userRouter.post('/signin', async (req, res) => {
 
 userRouter.get('/purchases', userMiddleware, async (req, res) => {
     const userId = req.userId;
-    const purchases = await purchaseModel.find({ userId }); 
-    res.json({ purchases });
+    const purchases = await purchaseModel.find({ userId });
+    const courseData = await courseModel.find({ _id: { $in: purchases.map(x => x.courseId) } });
+    console.log(courseData);
+    res.json({ purchases, courseData });
 })
 
 module.exports = {
