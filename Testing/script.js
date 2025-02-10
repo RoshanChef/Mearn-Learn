@@ -4,26 +4,3 @@
 // con.addEventListener('click', (e) => {
 //     con.classList.toggle('len');
 // })
-
-
-// let cookie = document.querySelector('.cookie');
-// let local = document.querySelector('.local');
-// let session = document.querySelector('.session');
-
-// cookie.addEventListener('click', (e) => {
-//     document.cookie = 'name = dhara ';
-// })
-
-// local.addEventListener('click', (e) => {
-//     localStorage.name = 'lacal';
-// })
-
-// session.addEventListener('click', (e) => {
-//     sessionStorage.name = 'session';
-// })
-
-
-let arr = []; 
-if (arr) {
-    console.log('yes it is there for some reason ... ');
-}

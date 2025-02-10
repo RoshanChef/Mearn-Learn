@@ -1,12 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html,
+        body,
+        .main {
+            width: 100%;
+            height: 100%;
+        }
+
+        .page1 {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 2rem;
+            text-transform: uppercase;
+            width: 100%;
+            height: 100%;
+            background-color: royalblue;
+
+            button {
+                padding: 1rem;
+                background-color: #ffff76;
+                border: none;
+                cursor: pointer;
+                border-radius: 1em;
+            }
+        }
+    </style>
 </head>
+
 <body>
 
 
-    <script src="./Currying.js"></script>
-    
+    <div class="page1">
+        <button class="cookie">cookie</button>
+        <button class="local">localstoage</button>
+        <button class="session">sessionstorage</button>
+    </div>
+
+    <!-- <script src="./Currying.js"></script> -->
+     <script src="cookie.js"></script>
+
+
 </body>
+
 </html>
