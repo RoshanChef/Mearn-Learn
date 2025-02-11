@@ -24,71 +24,6 @@ body {
     width: 100vw;
 }
 
-/* ******************** Page 1 ******************** */
-#page1 {
-    background-color: #000;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    color: #fff;
-    align-items: center;
-    font-weight: 700;
-    font-size: 4.25vw;
-
-    h1 {
-        text-transform: uppercase;
-        line-height: 8vw;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-
-        i {
-            background-color: rgb(76, 133, 50);
-            font-size: 1.25vw;
-            display: inline-flex;
-            justify-content: center;
-            align-items: center;
-            border-radius: 50%;
-            width: 5.23vw;
-            height: 5.23vw;
-        }
-    }
-
-    .desc {
-        margin-top: 3.8vw;
-        text-align: center;
-    }
-
-    .page1_something {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        display: flex;
-        column-gap: .5rem;
-    }
-
-    .page1_something h4 {
-        box-shadow: .1rem .11rem .3rem rgba(230, 228, 228, 0.178);
-        font-weight: 150;
-        border: 1px solid #585757;
-        border-radius: 2rem;
-        padding: .2rem .4rem;
-        font-size: 1.21vw;
-    }
-
-    h4:nth-child(3) {
-        border: none;
-        box-shadow: none;
-    }
-
-    h3 {
-        text-transform: none;
-        font-weight: 200;
-        font-size: 1.21vw;
-        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    }
-}
-
 /* **********   navbar   *********** */
 nav {
     display: flex;
@@ -100,6 +35,7 @@ nav {
     color: white;
     width: 100%;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+    z-index: 10;
 
 
     button {
@@ -158,6 +94,124 @@ nav .nav_part2 {
     position: absolute;
     z-index: 9;
 }
+
+
+/* ******************** Page 1 ******************** */
+#page1 {
+    background-color: #000;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: #fff;
+    align-items: center;
+    font-weight: 700;
+    font-size: 4.25vw;
+    position: relative;
+
+    h1 {
+        text-transform: uppercase;
+        line-height: 8vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        i {
+            background-color: rgb(76, 133, 50);
+            font-size: 1.25vw;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            width: 5.23vw;
+            height: 5.23vw;
+        }
+    }
+
+    .desc {
+        margin-top: 3.8vw;
+        text-align: center;
+    }
+
+    .page1_something {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        column-gap: .5rem;
+    }
+
+    .page1_something h4 {
+        box-shadow: .1rem .11rem .3rem rgba(230, 228, 228, 0.178);
+        font-weight: 150;
+        border: 1px solid #585757;
+        border-radius: 2rem;
+        padding: .2rem .4rem;
+        font-size: 1.21vw;
+    }
+
+    h4:nth-child(3) {
+        border: none;
+        box-shadow: none;
+    }
+
+    h3 {
+        text-transform: none;
+        font-weight: 200;
+        font-size: 1.21vw;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    }
+}
+
+#moving_div {
+    position: absolute;
+    bottom: 3%;
+    width: 44%;
+    margin-top: 10vw;
+    overflow: hidden;
+    white-space: nowrap;
+    transition: all .6s linear;
+
+    #move {
+        display: inline-block;
+        animation: infinite_scroll 12s linear 0s infinite forwards;
+    }
+
+    img {
+        height: 2vw;
+        margin: 0 1vw;
+    }
+
+    .move_left {
+        height: 100%;
+        width: 20%;
+        position: absolute;
+        top: 0%;
+        left: 0%;
+        background: linear-gradient(to right, #000, transparent);
+        z-index: 2;
+    }
+    
+    .move_right {
+        z-index: 2;
+        height: 100%;
+        width: 20%;
+        position: absolute;
+        top: 0%;
+        right: 0%;
+        background: linear-gradient(to right, transparent, #000);
+    }
+}
+
+@keyframes infinite_scroll {
+    0% {
+        transform: translateX(0%);
+    }
+
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
 
 
 #page2 {
