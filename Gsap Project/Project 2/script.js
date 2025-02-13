@@ -15,6 +15,7 @@ function animation() {
     gsap.from('nav h1:nth-child(1)', {
         duration: 1,
         x: -100,
+        opacity: 0,
         rotate: '30deg'
     })
     gsap.to('.page1 .content h2', {

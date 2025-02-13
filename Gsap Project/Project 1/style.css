@@ -17,11 +17,10 @@ body {
 
 #page1,
 #page2,
-#page3,
-#page4 {
+#page3 {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     height: 100vh;
-    width: 100vw;
+    width: 100%;
 }
 
 /* **********   navbar   *********** */
@@ -33,6 +32,7 @@ nav {
     padding: 1rem 8rem;
     height: 9vh;
     color: white;
+    background-color: black;
     width: 100%;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     z-index: 10;
@@ -58,7 +58,7 @@ nav .nav_part2 {
     display: flex;
     gap: 1rem;
     align-items: flex-start;
-    padding: 1.1vh 0;
+    padding: 3vh 0;
     height: 12vh;
     cursor: pointer;
     position: relative;
@@ -172,6 +172,7 @@ nav .nav_part2 {
     transition: all .6s linear;
 
     #move {
+        transition: all .6s linear;
         display: inline-block;
         animation: infinite_scroll 12s linear 0s infinite forwards;
     }
@@ -190,7 +191,7 @@ nav .nav_part2 {
         background: linear-gradient(to right, #000, transparent);
         z-index: 2;
     }
-    
+
     .move_right {
         z-index: 2;
         height: 100%;
@@ -213,11 +214,268 @@ nav .nav_part2 {
 }
 
 
-
+/* ******************** Page 2 ******************** */
 #page2 {
-    background-color: gold;
+    background-color: #000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2vw 10vw;
+    padding-bottom: 8vw;
+    border-top: 1px solid #ccc;
+
+    .page2_left {
+        height: 100%;
+        width: 40%;
+        color: #ccc;
+        display: flex;
+        align-items: flex-start;
+        flex-direction: column;
+        justify-content: space-between;
+
+        div {
+            font-weight: 400;
+            font-size: 1.1vw;
+        }
+
+        p:last-child {
+            font-size: 1.3vw;
+            width: 75%;
+        }
+
+    }
+
+    .page2_right {
+        /* background-color: rebeccapurple; */
+        height: 100%;
+        width: 50%;
+        color: white;
+
+
+        .right_ele {
+            display: flex;
+            position: relative;
+            padding-top: 2vw;
+            padding-bottom: 5vw;
+            cursor: pointer;
+            border-bottom: 1px solid #333;
+
+            img {
+                height: 7vw;
+                width: 7vw;
+                border-radius: 50%;
+                object-fit: cover;
+                position: absolute;
+                top: 0;
+                left: 0;
+                opacity: 0;
+                scale: 0;
+
+            }
+
+            div {
+                font-size: .81rem;
+                align-items: center;
+                display: flex;
+                gap: 1rem;
+                color: gray;
+
+                i {
+                    color: #fff;
+                    rotate: 45deg;
+                }
+            }
+
+            h3 {
+                width: 75%;
+                font-weight: 200;
+            }
+
+        }
+    }
 }
 
+
+/* ******************** Page 3 ******************** */
 #page3 {
-    background-color: red;
+    background-image: url('./Images/video.jpg');
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+
+    .page3_center {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    i {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 2vw;
+        color: white;
+        background-color: rgb(113, 199, 74);
+        height: 8vw;
+        width: 8vw;
+        border-radius: 50%;
+        cursor: pointer;
+    }
+
+    h5 {
+        margin: 1rem 0rem;
+        font-weight: 200;
+        text-transform: uppercase;
+        font-size: .9vw;
+        padding: .3rem 1rem;
+        border-radius: 1rem;
+        transition: all ease .5s;
+        transform: translateY(10%);
+        opacity: 0;
+        background-color: rgb(113, 199, 74);
+    }
+
+    video {
+        width: 100vw;
+        height: 100vh;
+        position: absolute;
+        object-fit: cover;
+        transform: scaleX(0.7) scaleY(0);
+        border-radius: 2rem;
+        /* transition: all ease 1s; */
+        opacity: 0;
+        z-index: 100;
+    }
+
+    .page3_center:hover h5 {
+        opacity: 1;
+        transform: translateY(0%);
+    }
+}
+
+
+/* ******************** Page 4 ******************** */
+#page4 {
+    min-height: 100vh;
+    width: 100%;
+    position: relative;
+    padding-bottom: 13vh;
+
+    .section {
+        width: 100%;
+        height: 76vh;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        position: relative;
+        padding: 17vh 10vw;
+        padding-bottom: 0;
+
+        .left {
+            height: 100%;
+            width: 25%;
+            border-top: .2rem solid black;
+            display: flex;
+            padding-top: 1.4rem;
+
+            h2 {
+                font-weight: 200;
+                font-size: 2.2vw;
+            }
+
+            flex-direction: column;
+            gap: 6vw;
+        }
+
+        .right {
+            height: 100%;
+            width: 70%;
+            position: relative;
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+
+            video {
+                height: 100%;
+                width: 100%;
+                position: absolute;
+                left: 0;
+                top: 0;
+                /* opacity: 0; */
+                object-fit: cover;
+            }
+        }
+    }
+}
+
+/* ******************** Page 5 ******************** */
+#page5 {
+    position: relative;
+    min-height: 100vh;
+    width: 100%;
+    background-color: #000;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 5vh 10.5vw;
+
+    button {
+        padding: .9vw 2.5vw;
+        font-weight: 600;
+        border-radius: 1rem;
+        border: none;
+        color: white;
+        background-color: #4C8532;
+        cursor: pointer;
+    }
+
+    #page5_right {
+        width: 70%;
+        color: white;
+        font-family: Arial; 
+        p {
+            font-weight: 100;
+            font-size: 2.1vw;
+
+            span {
+                display: flex;
+                align-items: flex-start;
+                font-size: 1vw;
+                width: 15vw;
+                display: inline-block;
+            }
+        }
+
+        #page5_content {
+            background: red;
+            width: 100%;
+            margin-top: 5vh;
+            padding: 5vh 0;
+            border-top: .12rem solid #fff;
+            .uiux {
+                h1{
+                    font-size: 3vw;
+                }
+                #flex {
+                    display: flex;
+                    gap: 0.2rem;
+                    margin-top: 5vh;
+
+                    h4 {
+                        font-size: .85rem;
+                        font-weight: 200;
+                        padding: .2rem .5rem;
+                        border-radius: 3rem;
+                        border: .12rem solid #ccc;
+                    }
+                }
+            }
+        }
+    }
 }

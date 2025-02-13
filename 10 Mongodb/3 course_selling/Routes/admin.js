@@ -80,4 +80,4 @@ adminRouter.get('/course/bluk', adminMiddleware, async function (req, res) {
     res.json({ data: data })
 })
 
-module.exports = { adminRouter: adminRouter }
+module.exports = { adminRouter }

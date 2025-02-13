@@ -64,5 +64,5 @@ userRouter.get('/purchases', userMiddleware, async (req, res) => {
 })
 
 module.exports = {
-    userRouter: userRouter
+    userRouter
 }
