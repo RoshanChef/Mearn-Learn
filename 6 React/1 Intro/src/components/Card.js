@@ -1,8 +1,8 @@
 
-function Card(pack) {
+function Card({children}) {
     return (
         <div>
-            {pack.children}
+            {children}
         </div>
     )
 }

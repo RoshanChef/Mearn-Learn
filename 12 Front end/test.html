@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Hello Roshan Kalmathe</h1>
+    <button class="btn">click here</button>
+    <button class="btn2">Me endpoint</button>
+
+
+    <script>
+        let btn = document.querySelector('.btn');
+        let obj = {
+            "email": "kalmatheroshan@gmail.com",
+            'password': "Ro$han2001"
+        };
+        let str = JSON.stringify(obj)
+        console.log(str);
+        btn.addEventListener('click', async (event) => {
+            let res = await fetch('http://localhost/signin', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: str
+            })
+            let data = await res.json();
+            console.log(data);
+        })
+
+
+    </script>
+</body>
+
+</html>
