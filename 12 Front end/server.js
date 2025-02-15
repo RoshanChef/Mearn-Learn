@@ -11,6 +11,7 @@ const path = require('path');
 const cookieParser = require('cookie-parser');
 
 app.use(cors());
+app.use(express.static(path.join(__dirname, 'build')));
 app.use(express.json());
 app.use(cookieParser());
 
@@ -19,9 +20,10 @@ async function connection() {
 }
 connection();
 
+
+
 app.get('/', function (req, res) {
-    let pathh = path.join(__dirname, './test.html');
-    res.sendFile(pathh);
+    res.sendFile(path.join(__dirname, 'build', 'index.html'));
 });
 
 app.post('/signup', async (req, res) => {

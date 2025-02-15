@@ -5,7 +5,7 @@ import { Route, Routes, useNavigate } from "react-router-dom";
 
 
 function Signup() {
-    const { register, handleSubmit, watch, formState: { errors, isSubmitting } } = useForm();
+    const { register, handleSubmit, formState: { errors, isSubmitting } } = useForm();
     const [password, setConfirm] = useState({ "pass": false, "conf": false });
     const navigate = useNavigate();
 
