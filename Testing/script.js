@@ -5,11 +5,8 @@
 //     con.classList.toggle('len');
 // })
 
-let arr = [{ name: 'Roshan', age: 22 }, { name: 'Rohit', age: 23 }];
+let arr = { name: 'Roshan', age: 22 };
 
-console.log(arr);
 
-let obj = { name: 'Mohit', age: 28 };
-arr = [...arr, obj];
-
-console.log(arr);
+let obj = { ...arr, ['name']: "Mohan" };
+console.log(obj);

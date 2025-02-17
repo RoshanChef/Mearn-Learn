@@ -18,7 +18,11 @@ export default function App() {
     Syntax : 
     useMemo(callback , [chagesVariable])
   */
+  // with useMemo
   let value = useMemo(() => expensive(input), [input]);
+
+  // without useMemo
+  // let value = expensive(input);
 
   return (
     <div className="App">

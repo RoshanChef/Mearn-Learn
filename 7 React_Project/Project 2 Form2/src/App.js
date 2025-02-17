@@ -56,7 +56,7 @@ const App = () => {
 				<label htmlFor="city" className="cursor-pointer font-semibold">City</label>
 				<input onChange={changeHandler} type="text" id="city" name="city" className="p-1 border-gray-300 border-2 rounded" placeholder="Ahemdabad"></input>
 				<label htmlFor="zip" className="cursor-pointer font-semibold">Zip/Postral code</label>
-				<input onChange={changeHandler} type="number" id="zip" name="zip" className="p-1 border-gray-300 border-2 rounded" placeholder="382345"></input>
+				<input onChange={changeHandler} type="number" id="zip" name="zip" className="p-1 border-gray-300 border-2 rounded" placeholder="382345" value={formData.zip}></input>
 				<fieldset className="font-semibold">
 					<label htmlFor="mode">By Email</label>
 					<br />
