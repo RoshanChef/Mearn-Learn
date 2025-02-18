@@ -4,7 +4,7 @@ import usePrev from './hooks/usePrev';
 import useDebounce from './hooks/useDebounce';
 
 /*  
-//custom hook inplace 
+//custom hook in-place 
 function useIncrease() {
   const [value, setVal] = useState(0);
   function increment() {
