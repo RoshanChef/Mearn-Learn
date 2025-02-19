@@ -1,0 +1,21 @@
+.App {
+    background-color: #333;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    font-size: 2rem;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+button {
+    background-color: #df0f0f;
+    color: white;
+    padding: 1rem;
+    border: none;
+    cursor: pointer;
+    min-width: 10rem;
+}
