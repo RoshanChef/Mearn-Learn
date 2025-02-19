@@ -1,11 +1,17 @@
-import React from 'react'
+import { createContext, useState } from "react";
 
-function Main() {
-    return (
-        <div>
-            Main element
-        </div>
-    )
+export const AppContext = createContext();
+
+
+export function AppProvider({ children }) {
+
+    const [cnt, setCnt] = useState(0);
+    let val = 9;
+    let value = {
+        cnt, setCnt
+        , val
+    }
+    return <AppContext.Provider value={value}>
+        {children}
+    </AppContext.Provider>
 }
-
-export default Main

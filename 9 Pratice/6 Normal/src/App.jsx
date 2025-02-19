@@ -1,18 +1,23 @@
-import { useForm } from 'react-hook-form';
+import { useEffect, useState } from "react";
+import { AppProvider } from "./components/Main";
+import Home from "./components/Home";
+
 function App() {
 
-	const { register, handleSubmit } = useForm();
-	function sum(data) {
-		console.log('Data is ', data);
-	}
+	const [value, setValue] = useState(0);
+
+	useEffect(() => {
+
+	})
 
 	return (
 		<div>
-			<form onSubmit={handleSubmit(sum)}>
-
-			</form>
-
-
+			<AppProvider>
+				<div>
+					<Home />
+				</div>
+			</AppProvider>
+			<button onClick={() => setValue(e => e + 1)}>Current Value {value} </button>
 		</div>
 	)
 }

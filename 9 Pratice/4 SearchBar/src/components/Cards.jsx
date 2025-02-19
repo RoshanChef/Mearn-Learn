@@ -17,7 +17,10 @@ function Cards({ data }) {
 
     return (
         <div>
-            <SearchBar input={input} setInput={setInput} enter={enter} setEnter={setEnter} />
+            <div>
+                <SearchBar input={input} data={data} setInput={setInput} enter={enter} setEnter={setEnter} />
+
+            </div>
             {enter &&
                 <div className='pl-8 shadow-2xl max-w-screen'>{enter}</div>
             }

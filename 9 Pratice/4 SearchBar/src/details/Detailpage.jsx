@@ -2,15 +2,14 @@ import { useParams } from 'react-router-dom';
 
 function Detailpage() {
     let { ele } = useParams();
-    let value = (ele);
-
-
-    console.log(JSON.parse(value));
+    let value = JSON.parse(ele);
+    console.log(value);
+    
 
 
     return (
         <div>
-            <h1>Detail Page for {(ele)}</h1>
+            <h1>Detail Page for {value}</h1>
         </div>
     );
 }

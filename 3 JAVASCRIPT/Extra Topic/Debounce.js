@@ -4,12 +4,17 @@ function search() {
 }
 
 let timer;
+
 function DebounceSerach() {
     clearTimeout(timer);
-    timer= setTimeout(() => {
-         search();
+    timer = setTimeout(() => {
+        search();
     }, 30);
 }
+
+input.addEventListner('change', () => {
+    DebounceSerach();
+})
 
 DebounceSerach();
 DebounceSerach();

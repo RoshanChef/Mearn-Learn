@@ -1,7 +1,8 @@
 import React from "react";
-import { Route, Routes } from "react-router-dom";
+import { data, Route, Routes } from "react-router-dom";
 import Dashboard from "./components/Dashboard";
 import Signup from "./components/Signup";
+import { useEffect } from "react";
 
 
 const App = () => {
