@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useRef } from 'react';
 import { BiHappyBeaming } from "react-icons/bi";
 
+
 function CommentSec({ comments, setComments }) {
     const cnt = useRef(0);
     const text = useRef();
@@ -24,12 +25,12 @@ function CommentSec({ comments, setComments }) {
         cnt.current += 1;
         setInput((prev) => ({ ...prev, ["id"]: cnt.current }));
         const date = new Date();
-        inputData = { ...inputData, ['id']: cnt.current, ['date']: date.getDate(), ["like"]: 0, "dislike": 0 };
+        inputData = { ...inputData, ['id']: cnt.current, ['date']: date.getDate(), ["like"]: 0, "dislike": 0, reply: [] };
 
 
         setComments((prev) => {
             let value = [...prev, inputData]
-            value.sort((prev, cur) => (prev.id - cur.id));
+            value.sort((prev, cur) => (cur.id - prev.id));
             return value;
         });
         setInput({});
@@ -37,13 +38,9 @@ function CommentSec({ comments, setComments }) {
     }
 
     return <div>
-        <div className="flex gap-2 font-bold p-4 text-xl">
-            <p>{cnt.current}</p>
-            <p>Comments</p>
-        </div>
         <div className="p-4 gap-4 flex w-screen items-center">
             <p className="rounded-full border-1 w-12 h-12 bg-blue-400"></p>
-            <div className="">
+            <div>
                 <textarea
                     ref={text}
                     className="left-3 top-[-1rem] w-[calc(100vw-6rem)] outline-0 min-h-[16px] h-auto p-2 border-b-2  resize-none overflow-hidden"
@@ -57,10 +54,14 @@ function CommentSec({ comments, setComments }) {
                         <BiHappyBeaming className="text-gray-600 " />
                         <div className="flex gap-3">
                             <button onClick={makeItem} className={color ? ("bg-blue-500 border py-1 px-3 cursor-pointer rounded-full text-white") : ("bg-gray-800 border py-1 px-3 cursor-pointer rounded-full text-white")} >comment</button>
-                            <button onClick={() => setColor(false)} className="border py-1 px-3 cursor-pointer bg-gray-800 text-white rounded-full">cancel</button>
+                            <button onClick={() => {
+                                setColor(false);
+                                text.current.value = '';
+                            }} className="border py-1 px-3 cursor-pointer bg-gray-800 text-white rounded-full">cancel</button>
                         </div>
                     </div>
                 }
+
             </div>
         </div>
 
