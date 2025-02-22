@@ -15,11 +15,13 @@ app.use(cors());// Enables CORS for cross-origin requests
 By Default CORS are not allowed
     It's about background request
 
-    If you want to allow specific domains then 
+    If you want to allow specific domains with specific method then 
         
         app.use(cors({
-            domains: ["http://localhost:3000"]
+            origin: ["http://localhost:3000", 'http://localhost:59068'],
+            methods: ["GET"],
         }));
+        
 */
 // Serve the HTML file
 app.get('/', (req, res) => {
