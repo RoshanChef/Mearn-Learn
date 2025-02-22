@@ -7,7 +7,7 @@ const user = new schema({
     username: String,
     password: String,
     email: { type: String, unique: true }
-})
+}, { timestamps: true })
 
 const userModel = mongoose.model('users', user);
 
