@@ -8,19 +8,91 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            font-family: "Comic Sans MS", "Comic Sans", cursive;
         }
 
         html,
         body {
             width: 100%;
             height: 100%;
-            background-color: #333;
+            background-color: royalblue;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .con {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            border-radius: .7rem;
+            background-color: #fff;
+            height: 20rem;
+            width: 20rem;
+        }
+
+        input {
+            margin: 2rem auto;
+            width: 90%;
+            height: 3rem;
+            padding-left: 1rem;
+            font-size: 1rem;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS';
+        }
+
+        .btn {
+            margin: 0 auto;
+            background-color: royalblue;
+            color: white;
+            width: 80%;
+            height: max-content;
+            border-radius: .5rem;
+            font-size: 1rem;
+            font-weight: 500;
+            padding: 1rem 2rem;
+            cursor: pointer;
+        }
+
+        p {
+            font-weight: 300;
+            color: rgb(24, 36, 6);
+            padding: 2rem;
+        }
+
+        h1 {
+            text-align: center;
+            font-family: "Comic Sans MS", "Comic Sans", cursive;
         }
     </style>
 </head>
 
 <body>
 
+    <div class="con">
+        <h1>Enter the location</h1>
+        <input type="text">
+        <button class="btn" onclick="clickHand()">Check Weather</button>
+        <p></p>
+    </div>
+    <script>
+        function clickHand() {
+            let input = document.querySelector('input').value;
+            let para = document.querySelector('p');
+
+
+            (async function () {
+                try {
+                    let res = await fetch(`http://api.weatherapi.com/v1/current.json?key=9bb1892a8a3443139cc145903252202&q=${input}&aqi=no`);
+                    let data = await res.json();
+                    console.log(res.status);
+                    para.innerHTML = `<h4>Celsius : ${data.current.temp_c}&#x2103;</h4> <h4>Fahrenheit : ${data.current.temp_f}&#x2109;</h4> `;
+                } catch (error) {
+                    para.innerHTML = "Enter the correct Country name";
+                }
+            })()
+
+        }
+    </script>
 </body>
 
 </html>

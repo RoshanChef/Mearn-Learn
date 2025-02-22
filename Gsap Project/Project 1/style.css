@@ -160,6 +160,20 @@ nav .nav_part2 {
         font-size: 1.21vw;
         font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     }
+
+    .pen {
+        animation: scalling 1.5s linear infinite alternate;
+    }
+}
+
+@keyframes scalling {
+    0% {
+        scale: .81;
+    }
+
+    100% {
+        scale: 1;
+    }
 }
 
 #moving_div {
@@ -438,7 +452,8 @@ nav .nav_part2 {
     #page5_right {
         width: 70%;
         color: white;
-        font-family: Arial; 
+        font-family: Arial;
+
         p {
             font-weight: 100;
             font-size: 2.1vw;
@@ -458,10 +473,12 @@ nav .nav_part2 {
             margin-top: 5vh;
             padding: 5vh 0;
             border-top: .12rem solid #fff;
+
             .uiux {
-                h1{
+                h1 {
                     font-size: 3vw;
                 }
+
                 #flex {
                     display: flex;
                     gap: 0.2rem;
