@@ -1,0 +1,33 @@
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th,
+td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+thead {
+    background-color: #181C14;
+    color: #ECDFCC;
+    th{
+        cursor: pointer;
+    }
+}
+
+.table-container {
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 1000px;
+}
+
+tbody tr {
+    background-color: #FFFAEC;
+}
+
+tbody tr:hover {
+    background-color: #F5ECD5;
+}
