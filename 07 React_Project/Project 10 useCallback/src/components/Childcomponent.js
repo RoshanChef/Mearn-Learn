@@ -1,15 +1,10 @@
-import React from 'react'
+import React, { memo } from 'react'
 
-const Childcomponent = React.memo(({ buttonName, handler }) => {
-    console.log('child component rendered ... ')
-    return (
-        <div>
-            <button onClick={handler}>
-                {buttonName}
-            </button>
-        </div>
-    )
-});
+function Childcomponent({ btnCnt, setbtnCnt, fnx }) {
+    console.log('child is called ... ');
+    return <div>
+        <button className="bg-[#333] p-3 m-6 text-white  rounded-md" onClick={fnx}>Another {btnCnt}</button>
+    </div>
+}
 
-
-export default Childcomponent
+export default memo(Childcomponent)

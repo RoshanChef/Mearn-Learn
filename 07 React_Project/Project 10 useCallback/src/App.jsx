@@ -1,9 +1,9 @@
-import { useCallback, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import Childcomponent from "./components/Childcomponent";
 
 const App = () => {
   const [cnt, setCnt] = useState(0);
-
+  const [btnCnt, setbtnCnt] = useState(0);
   /*
    syntext
     useCallback(fn, [dependcylist])
@@ -11,27 +11,31 @@ const App = () => {
 
    1. it freeze the function re-creation 
    2. handles expensive operation
-   3. function memoaization
+   3. memoaize the function defination
   */
 
-  const handler = useCallback(() => {
-    setCnt(cnt + 1);
-  }, [])
+  useEffect(() => {
+    console.log('render happend ... ', cnt);
+  })
+
+  // re-create
+  // function fnx() {
+  //   console.log('function called here ');
+  //   setbtnCnt(btnCnt + 1);
+  // }
+
+
+  const fnx = useCallback(() => {
+    setbtnCnt(btnCnt + 1);
+  }, [btnCnt])
 
   return (
-    <div className="flex flex-col gap-12">
-
-      <div className="inline-flex gap-10">
-        <p>Count : {cnt}</p>
-        <button className="bg-blue-500 p-3" onClick={handler}>Increament</button>
+    <div className="flex flex-col gap-12 overflow-hidden">
+      <div className="flex items-center w-screen h-screen justify-center">
+        <button className="bg-[#333] p-3 text-white  rounded-md" onClick={() => setCnt(cnt => cnt + 1)}> Increase {cnt}</button>
+        <Childcomponent btnCnt={btnCnt} setbtnCnt={setbtnCnt} fnx={fnx} />
       </div>
-
-      <div className="bg-violet-500 p-3">
-        <Childcomponent buttonName={"child btn"} handler={handler} />
-      </div>
-
     </div>)
 }
-
 
 export default App; 
