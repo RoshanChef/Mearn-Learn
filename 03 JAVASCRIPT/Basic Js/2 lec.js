@@ -64,8 +64,10 @@ console.log(home.constructor);
 
     Primitive 
         Number 
-        string 
+        String 
         Boolean 
+        Symbol 
+        Bigint
         undefine 
         Null 
 
@@ -130,7 +132,7 @@ array
 // console.log(Object.values(em));
 // console.log(Object.entries(em));
 
-// console.log("object are those value to learn new thing like that .. ");
+// console.log("********* break *********");
 
 
 // //for-of loop useful for iterable eg. array , maps
@@ -151,8 +153,8 @@ else
     console.log('NO');
 
 
-//cloing of object  
-let src = { val: 10 };  
+//cloning of object  
+let src = { val: 10 };
 
 // //1 iterable
 // let dest = {};
@@ -172,7 +174,7 @@ let src = { val: 10 };
 
 
 // //3 spread
-let a_obj = { val: 12, grade: 'A' };    
+let a_obj = { val: 12, grade: 'A' };
 let b_obj = { ...a_obj };
 console.log('copy value is ', b_obj.val, '\n', b_obj.grade);
 

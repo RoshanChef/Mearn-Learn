@@ -9,6 +9,40 @@ document
 
 
 
+function fnx(event_obj) {
+    // // add => similar to append
+    // element.classList.add('wheat');
+    // console.log('HTML content ', element);
+
+    // // reomove => removes specific class
+    // element.classList.remove('text');
+    // console.log('HTML content ', element);
+
+    // toggle => it switch the class
+    element.classList.toggle('text');
+    console.log('HTML content ', element);
+
+
+    console.log(element.classList.contains('text'));
+}
+
+// classList 
+let element = document.querySelector('.text');
+element.addEventListener('click', fnx);
+element.className = "yellowgreen";
+
+let ele = document.querySelector('.para');
+
+ele.addEventListener('click', () => {
+    console.log('pehila');
+})
+
+ele.addEventListener('click', () => {
+    console.log('dusra');
+    console.log(ele);
+})
+
+
 // // // Add tag only 
 // let boxer = document.querySelector('.box');
 // // let content = document.createElement('p');

@@ -25,6 +25,17 @@ let sign = stand;
 sign();
 stand();
 
+// return a function
+function add() {
+    return function (a, b, c) {
+        return a + b + c;
+    }
+}
+
+let sum = add();
+
+console.log(sum(30, 20));
+
 // Dynamic typed 
 function sum(a, b) {
     // special obj
@@ -115,59 +126,29 @@ console.log('concept of ', ab);
 
 
 // sorting without digit wise
-let arr = [10, 5, 4, 20, 30, 35];
-arr.sort();
+let arr = [15, 5, 4, 20, 30, 10];
+// asending order
+arr.sort((a, b) => a - b);
+console.log("asending ", arr);
+
+// descending order
+arr.sort((a, b) => b - a);
+console.log("descending ", arr);
+
+arr.reverse();
+
+console.log("Reverse ", arr);
+
+let obj = [{ id: 1, val: 'abc' }, { id: 2, val: 'ayz' }];
+
+obj.sort((a, b) => (b.val).localeCompare(a.val));
+console.log(obj);
+
+obj.sort((a, b) => (a.val).localeCompare(b.val));
+console.log(obj);
 
 console.log(arr);
 
-arr.sort((v1, v2) => {
-    console.log(v1 - v2);
-    return v1 - v2;
-})
-
-console.log(arr);
-
-function fnx(event_obj) {
-    // // add => similar to append
-    // element.classList.add('wheat');
-    // console.log('HTML content ', element);
-
-    // // reomove => removes specific class
-    // element.classList.remove('text');
-    // console.log('HTML content ', element);
-
-    // toggle => it switch the class
-    element.classList.toggle('text');
-    console.log('HTML content ', element);
-
-
-    console.log(element.classList.contains('text'));
-}
-
-// classList 
-let element = document.querySelector('.text');
-element.addEventListener('click', fnx);
-element.className = "yellowgreen";
-
-let ele = document.querySelector('.para');
-
-ele.addEventListener('click', () => {
-    console.log('pehila');
-})
-
-ele.addEventListener('click', () => {
-    console.log('dusra');
-    console.log(ele);
-})
-
-
-
-
-// how can you call static method
-animal.myType();
-
-let dog = new animal('dog', 22);
-dog.speak();
 
 // setTimout and clearTimout
 let timerId = setTimeout(print, (4000));

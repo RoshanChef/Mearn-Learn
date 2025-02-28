@@ -1,7 +1,7 @@
-let obj = [{ id: 1, val: 'abc' }, { id: 2, val: 'ayz' }];
+console.log(Math.floor(10.999999999));
 
-obj.sort((a, b) => (b.val).localeCompare(a.val));
-console.log(obj);
+console.log(Math.ceil(12.000009));
 
-obj.sort((a, b) => (a.val).localeCompare(b.val));
-console.log(obj);
+
+let num = 3.14159265;
+console.log(num.toFixed(5));

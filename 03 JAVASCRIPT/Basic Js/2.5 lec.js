@@ -21,7 +21,7 @@ console.log('sum is ', align(100, 20));
 
 
 //function printing ... 
-console.log(sumision);
+console.log(sumision); //defination of function
 
 let log = () => console.log('Welcome Roshan Kalmathe');
 
@@ -55,7 +55,8 @@ let no_vowel_arrow = (a) => {
 let vowel = no_vowel_arrow('aeiou');
 console.log(vowel);
 
-//In JS functiion can be passed as an argument and also can be return 
+//In JS functiion can be passed as an argument and also assigned and returned 
+ 
 //  ........ example ..........
 function sum(a, b) { return a + b }
 
@@ -178,3 +179,24 @@ ar = [4, 10, 33, 5, 6, 7, 8];
 
 console.log(ar.some((a) => a > 10));
 console.log(ar.every((a) => a > 3));
+
+
+let cnt = 'a';
+
+switch (cnt) {
+    case 1.2:
+        console.log("float number");
+        break;
+    case "roshan":
+        console.log("String value")
+        break;
+    case 2:
+        console.log("Number value");
+        break;
+    case 'a':
+        console.log("char value");
+        break;
+    default:
+        console.log("default value ");
+        break;
+}
