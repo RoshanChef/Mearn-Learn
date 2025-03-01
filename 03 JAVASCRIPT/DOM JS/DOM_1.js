@@ -1,7 +1,7 @@
 /*
 window
     window object created by browser  
-    represent browser windos 
+    represent browser window
 
 document 
     entire html code converted into object called as document

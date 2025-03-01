@@ -9,6 +9,23 @@
 // document.cookie = 'name=roshan';
 // document.cookie = 'name2=radha';
 
+/*
+Session Cookies : 
+    => These cookies are temporary and exist only for the duration of the user's browsing session. 
+    => They are deleted when the user closes their browser.
+    => They are created when neither the max-age nor the expires attribute is set in the Set-Cookie header.
+
+Persistent Cookies:
+    => These cookies remain on the user's computer for a specified period of time.
+    => They are not deleted when the browser is closed.
+    => They are created when either the max-age or the expires attribute is set in the Set-Cookie header.
+    => max-age defines the lifespan in seconds.
+    => expires defines the lifespan using a specific date and time.
+*/
+
+// let date = new Date(); 
+// document.cookie = `age = 23; expires = ${date}; max-age=10;`; 
+
 // // update the cookie
 // document.cookie = 'name=Aakash';
 

@@ -17,12 +17,21 @@ Infinite currying
 
 function add(a) {
     return function (b) {
-        if (b) { return add(a + b); }
-        else { return a; }
+        if (b) {
+            let sum = a + b;
+            return add(sum); //without call it doesn't work
+        }
+        else
+            return a;
     }
 }
 
-let fn = add(10);  
+
+let fn = add(10);
 let res = fn(20);
 
-console.log(add(30));
+console.log("result: ", res());
+
+console.log(add(30)());
+
+console.log(add(10)(20)(30)());

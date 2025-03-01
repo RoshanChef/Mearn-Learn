@@ -3,7 +3,8 @@ let local = document.querySelector('.local');
 let session = document.querySelector('.session');
 
 cookie.addEventListener('click', (e) => {
-    document.cookie = 'name = dhara ';
+    let date = new Date();
+    document.cookie = `name = dhara; expires = ${date}; max-age=10;`;
 })
 
 local.addEventListener('click', (e) => {

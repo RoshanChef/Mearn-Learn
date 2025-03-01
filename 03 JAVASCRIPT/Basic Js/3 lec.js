@@ -195,7 +195,7 @@ let arry = [23, 24, 22, 12, 211];
 let arry2 = arry;
 
 console.log(arry);
-console.log('Array 2 is ', arry);
+console.log('Array 2 is ', arry2);
 
 // arry = [];
 // arry.length = 0;
@@ -257,7 +257,7 @@ num = [{ no: 3, sub: 'os' }, { no: 1, sub: 'cn' }, { no: 2, sub: 'coa' }];
 num.sort((prev, cur) => {
     return prev.no > cur.no ? prev : cur;
 })
-num.sort((cur, prev) => cur.no - prev.no);
+num.sort((a, b) => a.no - b.no);
 
 
 console.log('value is ', num);
@@ -266,7 +266,7 @@ num.sort();
 console.log(num);
 
 num = [40, 30, 20, 10];
-num.sort((cur, prev) => prev - cur);
+num.sort((a, b) => b - a);
 console.log(num);
 num = num.map((val) => {
     return { value: val };

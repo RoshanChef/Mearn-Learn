@@ -8,12 +8,10 @@ function sum(num) {
     return value;
 }
 
-
-
 // using Memoization
 function memo(fnx) {
-    let cache = {};
-    return function (n) {
+ 
+   let cache = {};    return function (n) {
         if (n in cache) {
             return cache[n];
         }
@@ -26,6 +24,7 @@ function memo(fnx) {
     }
 }
 
+
 let fnxs = memo(sum); 
 console.time('Memo')
 console.log(fnxs(10000));
@@ -37,6 +36,4 @@ console.timeEnd('Time');
 
 console.time('Memo'); 
 console.log(fnxs(10000));
-console.timeEnd('Memo'); 
-
-
+console.timeEnd('Memo');
