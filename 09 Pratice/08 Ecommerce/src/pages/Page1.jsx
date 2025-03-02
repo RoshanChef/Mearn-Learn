@@ -11,6 +11,25 @@ export default function Page1() {
             scale: .9,
             transform: 'translatey(50px)'
         })
+        gsap.from('.imo', {
+            y: -50,
+            duration: 2.5,
+            ease: 'elastic',
+            repeat: -1,
+            yoyo: true
+        })
+        gsap.from('.imo', {
+            x: -100,
+            duration: 5,
+            ease: 'elastic'
+        });
+        gsap.from('.imo2', {
+            y: 50,
+            duration: 2,
+            ease: 'power3.out',
+            repeat: -1,
+            yoyo: true
+        });
     });
 
     return (
@@ -21,6 +40,12 @@ export default function Page1() {
                 <h2 className='flex items-center gap-8'>
                     <p className='text-purple-400 text-3xl font-semibold one'>1 Day </p> Delivery
                 </h2>
+            </div>
+            <div className='absolute right-18 top-20 scale-200 rotate-[-20deg]'>
+                <img src="/Images/front.png" className='imo' alt="" />
+            </div>
+            <div className='absolute left-0 top-20 scale-100 rotate-[20deg] z-[1]'>
+                <img src="/Images/image 3.png" className='imo2' alt="" />
             </div>
         </div>
     );
