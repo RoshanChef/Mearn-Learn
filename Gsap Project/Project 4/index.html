@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+        }
+
+        .main {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .image {
+            border-radius: 50%;
+            height: 25vw;
+            width: 25vw;
+
+            background-color: royalblue;
+            display: flex;
+            cursor: pointer;
+            position: relative;
+
+            img {
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                position: absolute;
+                border-radius: 50%;
+                background-color: white;
+                object-fit: contain;
+                width: 20vw;
+                height: 20vw;
+            }
+
+            .header {
+                opacity: 0;
+                color: #ffff76;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                width: 100%;
+                height: 100%;
+
+                .top {
+                    padding: 2rem;
+                    display: flex;
+                    width: 100%;
+                    justify-content: space-between;
+                }
+
+                .bottom {
+                    padding: 2rem;
+                    justify-content: space-between;
+                    width: 100%;
+                    display: flex;
+                }
+
+                h3 {
+                    width: 20vw;
+                    font-weight: 400;
+                    font-size: .9rem;
+                }
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="main">
+        <div class="image" onclick="main()">
+            <img src="beers.png" alt="">
+            <div class="header">
+                <div class="top">
+                    <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus magni et rem? Dolores iure
+                        laboriosam omnis itaque quia voluptatum adipisci quae nihil dolore? Est alias repudiandae
+                        aliquam
+                        doloremque et rerum.</h3>
+                    <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus magni et rem? Dolores iure
+                        laboriosam omnis itaque quia voluptatum adipisci quae nihil dolore? Est alias repudiandae
+                        aliquam
+                        doloremque et rerum.</h3>
+                </div>
+                <div class="bottom">
+
+                    <h3>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit, delectus id! Ut impedit
+                        ipsa assumenda quod, sed ipsam nesciunt, temporibus voluptas, possimus iure dolorem alias odio
+                        unde porro quaerat iusto.
+                    </h3>
+                    <h3>
+                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Doloribus aperiam eos dolorum placeat
+                        non nobis ipsa porro adipisci tempore soluta maiores dolore, delectus, accusantium asperiores
+                        ducimus harum sed, ea odio.
+                    </h3>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../gsap_lib.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
