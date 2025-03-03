@@ -1,9 +1,9 @@
 let data = [
     {
         "id": 1,
-        "title": "Fjallraven - Foldsack Wine",
+        "title": "Foldsack Wine",
         "price": 109.95,
-        "description": "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
+        "description": "Wine is an elegant alcoholic beverage made from fermented grapes or other fruits. Its flavor, aroma, and color are influenced by the grape variety, climate, and winemaking techniques. Ranging from bold reds to crisp whites and delicate rosés, wine offers a complex tasting experience, often with notes of fruits, spices, and earthy undertones. Perfect for pairing with meals or savoring on its own, wine embodies both tradition and artistry.",
         "category": "Wine Legend",
         "image": "/Images/image 1.png",
         "rating": {
@@ -25,10 +25,10 @@ let data = [
     },
     {
         "id": 3,
-        "title": "Mens Cotton Jacket",
+        "title": "Champagne",
         "price": 55.99,
-        "description": "great outerwear jackets for Spring/Autumn/Winter, suitable for many occasions, such as working, hiking, camping, mountain/rock climbing, cycling, traveling or other outdoors. Good gift choice for you or your family member. A warm hearted love to Father, husband or son in this thanksgiving or Christmas Day.",
-        "category": "",
+        "description": "Champagne is a prestigious sparkling wine exclusively produced in the Champagne region of France. Renowned for its fine bubbles and crisp acidity, it is crafted from a blend of Chardonnay, Pinot Noir, and Pinot Meunier grapes. Champagne boasts a delicate balance of flavors — from citrus and green apple to brioche and almond — often with subtle minerality. Its signature effervescence and luxurious character make it the drink of choice for celebrations, while its versatility allows for pairings with everything from seafood and soft cheeses to light desserts. Every sip captures sophistication and celebration in a glass.",
+        "category": "Royal wine",
         "image": "/Images/image 2.png",
         "rating": {
             "rate": 4.7,
@@ -37,7 +37,7 @@ let data = [
     },
     {
         "id": 4,
-        "title": "Mens Casual Slim Fit",
+        "title": "Sangiovese",
         "price": 15.99,
         "description": "The color could be slightly different between on the screen and in practice. / Please note that body builds vary by person, therefore, detailed size information should be reviewed below on the product description.",
         "category": "wine of cool ",
@@ -61,10 +61,10 @@ let data = [
     },
     {
         "id": 6,
-        "title": "Solid Gold Petite Micropave ",
+        "title": "Sauvignon Blanc",
         "price": 168,
         "description": "Satisfaction Guaranteed. Return or exchange any order within 30 days.Designed and sold by Hafeez Center in the United States. Satisfaction Guaranteed. Return or exchange any order within 30 days.",
-        "category": "Blue Dark",
+        "category": "Fortified Wine",
         "image": "/Images/image 4.png",
         "rating": {
             "rate": 3.9,
@@ -73,7 +73,7 @@ let data = [
     },
     {
         "id": 7,
-        "title": "White Gold Plated Princess",
+        "title": "Syrah (Shiraz)",
         "price": 9.99,
         "description": "Classic Created Wedding Engagement Solitaire Diamond Promise Ring for Her. Gifts to spoil your love more for Engagement, Wedding, Anniversary, Valentine's Day...",
         "category": "jewelery",
@@ -85,10 +85,10 @@ let data = [
     },
     {
         "id": 8,
-        "title": "Pierced Owl Rose Gold Plated",
+        "title": "Tempranillo",
         "price": 10.99,
-        "description": "Rose Gold Plated Double Flared Tunnel Plug Earrings. Made of 316L Stainless Steel",
-        "category": "jewelery",
+        "description": "Tempranillo is a bold and versatile red wine originating from Spain, often associated with the famous Rioja region. It is known for its deep ruby color and complex flavor profile, blending notes of red berries like cherry and plum with subtle hints of leather, tobacco, vanilla, and earthy undertones. With medium to full body, moderate acidity, and smooth tannins, Tempranillo pairs beautifully with grilled meats, cured cheeses, and rustic dishes. Whether aged in oak barrels for a velvety richness or enjoyed young for its bright fruitiness, Tempranillo embodies the essence of Spanish winemaking tradition.",
+        "category": "Supreme",
         "image": "/Images/image 5.png",
         "rating": {
             "rate": 1.9,
