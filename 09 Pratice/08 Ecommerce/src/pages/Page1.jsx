@@ -34,9 +34,9 @@ export default function Page1() {
 
     return (
         <div className='relative w-full h-screen'>
-            <div className='text-white pt-[3rem] font-mono w-full flex justify-center items-center flex-col h-full bg-[#000] absolute backdrop-blur-3xl'>
+            <div className='text-purple-700 pt-[3rem] font-mono w-full flex justify-center items-center flex-col h-fullabsolute backdrop-blur-3xl'>
                 <div className='page1 absolute z-0'></div>
-                <h1 className='text-[#ffff76] text-6xl font-bold'>Buy at your Trusted Shop</h1>
+                <h1 className='text-purple-700 text-6xl font-bold'>Buy at your Trusted Shop</h1>
                 <h2 className='flex items-center gap-8'>
                     <p className='text-purple-400 text-3xl font-semibold one'>1 Day </p> Delivery
                 </h2>
