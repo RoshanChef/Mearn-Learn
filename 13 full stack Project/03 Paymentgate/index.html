@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="This is a demo of Web integration of Razorpay in NodeJS" />
+    <meta name="author" content="Mr. Twinkle Sharma" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Razorpay Web-Integration</title>
+</head>
+
+<body>
+    <hr />
+    <h2>Advanced Data Structures & Algorithms Course</h2>
+    <h3>Description</h3>
+
+    <ul>
+        <li>Best Course for SDE placements</li>
+        <li>Available in 4 major Languages: JAVA, C/C++, Python, JavaScript</li>
+        <li>Lifetime Access</li>
+    </ul>
+
+    <p>Cost: <strong>499 Rupees</strong></p>
+    <button id="paybutton">Pay Now & Get Access</button>
+    <hr />
+
+    <!-- Razorpay Checkout Script -->
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+
+    <script>
+        async function main() {
+            try {
+                const response = await fetch('http://localhost/createorder', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    }
+                });
+
+                if (!response.ok) {
+                    throw new Error('Failed to create order');
+                }
+
+                const data = await response.json();
+                console.log("daata " , data);
+
+                const options = {
+                    "key": "rzp_test_H7LO8MErswTHQT",
+                    "amount": data.amount,
+                    "currency": data.currency,
+                    "name": "Dummy Academy",
+                    "description": "Pay & Checkout this Course, Upgrade your DSA Skill",
+                    "order_id": data.id, // Real order_id from the server
+                    "handler": function (response) {
+                        alert("Payment successful! Payment ID: " + response.razorpay_payment_id);
+                    },
+                    "theme": {
+                        "color": "#ffff076"
+                    }
+                };
+
+                const razorpayObject = new Razorpay(options);
+                razorpayObject.open();
+            } catch (error) {
+                console.error('Error:', error.message);
+                alert('Something went wrong. Please try again.');
+            }
+        }
+
+        document.getElementById('paybutton').addEventListener('click', main);
+    </script>
+</body>
+
+</html>
