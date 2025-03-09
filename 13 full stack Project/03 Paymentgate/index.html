@@ -2,14 +2,11 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="description" content="This is a demo of Web integration of Razorpay in NodeJS" />
-    <meta name="author" content="Mr. Twinkle Sharma" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Razorpay Web-Integration</title>
 </head>
 
 <body>
+
     <hr />
     <h2>Advanced Data Structures & Algorithms Course</h2>
     <h3>Description</h3>
@@ -42,17 +39,24 @@
                 }
 
                 const data = await response.json();
-                console.log("daata " , data);
+                console.log("daata ", data);
 
                 const options = {
                     "key": "rzp_test_H7LO8MErswTHQT",
                     "amount": data.amount,
                     "currency": data.currency,
+                    "image": "https://media.geeksforgeeks.org/wp-content/uploads/20210806114908/dummy-200x200.png",
                     "name": "Dummy Academy",
                     "description": "Pay & Checkout this Course, Upgrade your DSA Skill",
                     "order_id": data.id, // Real order_id from the server
-                    "handler": function (response) {
-                        alert("Payment successful! Payment ID: " + response.razorpay_payment_id);
+                    "handler": async function (response) {
+                        const verify = await fetch('http://localhost/verify-order', {
+                            method: 'POST',
+                            headers: { 'Content-Type': 'application/json' },
+                            body: JSON.stringify(response)
+                        }).then(res => res.json());
+
+                        alert(verify.status || verify.error);
                     },
                     "theme": {
                         "color": "#ffff076"
