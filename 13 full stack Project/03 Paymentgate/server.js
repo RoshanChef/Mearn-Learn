@@ -7,7 +7,6 @@ import crypto from 'crypto';
 app.use(express.json());
 app.use(cors());
 
-
 const instance = new Razorpay({
     key_id: "rzp_test_H7LO8MErswTHQT",
     key_secret: "PK2lmjOR161RqkKbi8LRJ6hD"
@@ -48,8 +47,7 @@ app.get('/hello', (req, res) => {
     res.json({ "hello": "Namste" });
 })
 
-
-
 app.listen(80, () => {
     console.log('server is running on port 80');
 })
+
