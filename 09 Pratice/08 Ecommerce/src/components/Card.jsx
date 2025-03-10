@@ -2,21 +2,14 @@ import React from 'react'
 import DetailPage from '../pages/DetailPage';
 import { useNavigate } from 'react-router-dom';
 
-export default function Card({ val, navcolor, setColor , id}) {
+export default function Card({ val,id , setColor}) {
   const navigate = useNavigate();
-  function clickHandler(e) {
-    console.log(id);
-    if (val.id == id) {
-      console.log(val.image);
-    console.log("yes");
-        
-    }
+  function clickHandler() {
     navigate(`/detail/${id}`);
-    setColor(true);
   }
   
   return (
-    <div onClick={clickHandler} className='check_bottle h-full  shadow-xl hover:shadow-2xl cursor-pointer duration-75 translate-1 rounded-2xl  flex flex-col justify-center items-center font-["Comic Sans MS", "Comic Sans", cursive] py-6'>
+    <div onClick={clickHandler} className='check_bottle h-[100%]  shadow-xl hover:shadow-2xl cursor-pointer duration-75 translate-1 rounded-2xl  flex flex-col justify-center items-center font-["Comic Sans MS", "Comic Sans", cursive] py-6'>
       <div className=' h-[100%] w-[100%] rounded-2xl relative flex flex-col'>
         <div className='relative h-[65%] w-[100%] m-auto'>
           <img src={val.image} className='h-full w-full object-contain' draggable={false} alt="" />
