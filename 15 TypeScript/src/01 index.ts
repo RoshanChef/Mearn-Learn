@@ -19,7 +19,7 @@ console.log(val);
 function sum(a: number, b: number) { return a + b; }
 console.log("sum ", sum(10, 20));
 
-function isLegal(age: number): void {
+function isLegall(age: number): void {
     if (age > 18) {
         console.log("you are eligible");
     } else {
@@ -27,7 +27,7 @@ function isLegal(age: number): void {
     }
 }
 
-isLegal(20);
+isLegall(20);
 
 function min(a: number, b: number): number { return a - b; }
 
