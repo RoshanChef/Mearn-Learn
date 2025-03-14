@@ -2,20 +2,46 @@
 // let now = () => {
 //     console.log('hi there ');
 // }
-// function useSome(a: number): [a: number, b: number] {
-//     let val = 10, val2 = 30;
-//     return [val, val2];
-// }
-// const ar = useSome(10);
-// console.log(ar);    
-function great(user) {
-    console.log("Hello ", user.name);
+function info(user) {
+    console.log(user.firstName);
+    console.log(user.lastName);
 }
-great({ name: "Roshan", age: 18 });
-// object 
-var user = {
-    name: "Roshan",
-    age: 23
+var obj = {
+    firstName: "Govind",
+    lastName: "Guru",
+    age: 10
 };
-console.log("Name : ", user.name);
-console.log("Age : ", user.age);
+info(obj);
+var mohan = {
+    name: 'Rekha',
+    age: 23,
+    salary: 50000
+};
+console.log(mohan);
+;
+;
+var user2 = {
+    name: "Rahim",
+    age: 22,
+    gender: "male"
+};
+var user = {
+    name: "roshan",
+    age: 22,
+    gender: "male",
+    address: {
+        city: "pune",
+        state: "maharashtra",
+        country: "india"
+    }
+};
+function isLegal(user) {
+    if (user.age >= 18) {
+        console.log("user is legal");
+    }
+    else {
+        console.log("user is not legal");
+    }
+}
+isLegal(user);
+isLegal(user2);

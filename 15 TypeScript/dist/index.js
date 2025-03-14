@@ -13,7 +13,7 @@ console.log(val);
 // return Type is infered by compiler itself
 function sum(a, b) { return a + b; }
 console.log("sum ", sum(10, 20));
-function isLegal(age) {
+function isLegall(age) {
     if (age > 18) {
         console.log("you are eligible");
     }
@@ -21,7 +21,7 @@ function isLegal(age) {
         console.log("you are not eligible");
     }
 }
-isLegal(20);
+isLegall(20);
 function min(a, b) { return a - b; }
 var ans = min(30, 10);
 console.log("minus is ", ans);
