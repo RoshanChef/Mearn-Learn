@@ -4,6 +4,8 @@ window
     represent browser window
 
 document 
+
+    In a browser environment, the document object is a part of the window object. The window object represents the browser window, and it contains various properties and methods, including the document object, which represents the loaded web page (DOM — Document Object Model).
     entire html code converted into object called as document
 */
 

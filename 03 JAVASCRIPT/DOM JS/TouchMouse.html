@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Touch Event Example</title>
+    <style>
+        #touchArea {
+            width: 100px;
+            height: 100px;
+            background-color: lightblue;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            user-select: none;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        #status {
+            position: absolute;
+            bottom: 20px;
+            width: 100%;
+            text-align: center;
+            font-size: 18px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="touchArea">Touch Me!</div>
+    <p id="status">Touch status will appear here</p>
+
+    <script>
+        const touchArea = document.getElementById("touchArea");
+        const status = document.getElementById("status");
+
+        // Touch Start Event
+        touchArea.addEventListener("touchstart", (event) => {
+            status.innerText = "Touch started!";
+            console.log("Touch started:", event.touches[0]);
+        });
+
+        // Touch Move Event
+        touchArea.addEventListener("touchmove", (event) => {
+            event.preventDefault();
+            touchArea.style.cssText = `left: ${event.touches[0].clientX}px; top: ${event.touches[0].clientY}px;`;
+            status.innerText = "Touch moving...";
+            console.log("Touch moving:", event.touches[0]);
+        });
+
+        // Touch End Event
+        touchArea.addEventListener("touchend", (event) => {
+            status.innerText = "Touch ended!";
+            console.log("Touch ended");
+        });
+        document.addEventListener('mousemove', e => {
+            touchArea.style.cssText = `left: ${event.clientX}px; top: ${event.clientY}px;`;
+        })
+    </script>
+
+</body>
+
+</html>

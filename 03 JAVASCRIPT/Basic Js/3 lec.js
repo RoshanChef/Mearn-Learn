@@ -197,8 +197,8 @@ let arry2 = arry;
 console.log(arry);
 console.log('Array 2 is ', arry2);
 
-// arry = [];
-// arry.length = 0;
+
+// arry.length = 0;// arry = [];
 // arry.splice(0 , arry.length); 
 console.log('length ', arry.length);
 const n = arry.length

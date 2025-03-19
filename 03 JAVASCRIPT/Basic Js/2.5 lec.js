@@ -56,7 +56,7 @@ let vowel = no_vowel_arrow('aeiou');
 console.log(vowel);
 
 //In JS functiion can be passed as an argument and also assigned and returned 
- 
+
 //  ........ example ..........
 function sum(a, b) { return a + b }
 
@@ -115,12 +115,13 @@ let filtered = num.filter((val) => {
 console.log(filtered);
 
 // reduce method : Reduce the array and gives the single value
-num = [1, 2, 3, 4];
-console.log(num);
-const output = num.reduce((res, current_val) => {
-    return res + current_val;
-})
-console.log(output);
+const numbers = [1, 2, 3, 4, 5];
+
+const sum = numbers.reduce((accumulator, currentValue) => {
+    return accumulator + currentValue;
+}, 0);
+
+console.log(sum); // 15
 
 
 // Question 
