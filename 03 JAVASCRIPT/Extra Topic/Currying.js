@@ -35,3 +35,6 @@ console.log("result: ", res());
 console.log(add(30)());
 
 console.log(add(10)(20)(30)());
+
+const sum = (a) => (b) => (c) => a + b + c;
+console.log("sum is ", sum(10)(20)(30));

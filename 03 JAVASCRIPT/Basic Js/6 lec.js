@@ -23,11 +23,21 @@ Persistent Cookies:
     => expires defines the lifespan using a specific date and time.
 */
 
-// let date = new Date(); 
-// document.cookie = `age = 23; expires = ${date}; max-age=10;`; 
+// set expires
+document.cookie = "username=JohnDoe; expires=Fri, 19 Apr 2025 12:00:00 UTC"; // expires after date
+
+// // set max-age
+document.cookie = "username=JohnDoe; max-age=3600"; // Expires in 1 hour
+
+document.cookie = "username=mithoon; expires=Thu, 18 Dec 2026 12:00:00 UTC; path=/ele; HttpOnly; Secure; SameSite=Strict";
+
+// let date = new Date();
+// document.cookie = `age = 23; expires = ${date}; max-age=10;`;
 
 // // update the cookie
 // document.cookie = 'name=Aakash';
+
+
 
 // alert(document.cookie);
 
@@ -79,14 +89,17 @@ Local Storage
 
 // storage event => update in one tab and changes notified in another tab of the same page
 
+// The window.onstorage event is only triggered when a change to localStorage or sessionStorage is made
+//  in another tab or window.
+
 // window.onstorage = (event_obj) => {
 //     alert('change');
 //     console.log(event_obj);
 // }
 
 /*
-localstorage : can survive refresh , reload and closing broser window/tab
-sessionstorage : can survive refresh , reload , not aclosing broser window/tab 
+localstorage : can survive refresh/reload , repaste and closing broser window/tab
+sessionstorage : can survive refresh/ reload , not a closing broser window/tab 
 cookie : can survive survive refresh , reload 
     session cookie : which don't have expires
     persistent cookie : which has expires 

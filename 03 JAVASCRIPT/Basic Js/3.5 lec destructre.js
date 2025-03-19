@@ -47,3 +47,17 @@ console.log(val);
 
 let { length } = 'calling work';
 console.log('len ', length);
+
+obj = {
+    Name: 'Roshan',
+    age: 21,
+    gender: 'male',
+    address: {
+        city: 'Mumbai',
+        state: 'Maharashtra'
+    }
+}
+
+let { Name, age: aggge, gender, address: { city, state } } = obj;
+
+console.log(Name, ' ', aggge, ' ', gender, ' ', city, ' ', state);
