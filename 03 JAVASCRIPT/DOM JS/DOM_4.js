@@ -40,7 +40,6 @@ let meraPromise = new Promise(function (resolve, reject) {
         resolve(value);
     }
     else {
-
         reject(new Error('less than .5'));
     }
 
@@ -55,10 +54,8 @@ meraPromise.catch((error) => {
 })
 
 // // then and catch in one line
-// meraPromise.then((val) => {
-//      console.log("resolve val is ", val); },
-//     (error) => { console.log('error aayo .. ')
-//  }
+// meraPromise.then((val) => {console.log("resolve val is ", val); },
+//     (error) => { console.log('error aayo .. ')  }
 // )
 
 // // other way 
@@ -71,9 +68,9 @@ meraPromise.catch((error) => {
 // // ******* Promises ***********
 // let promise_1 = new Promise((resolve, reject) => {
 //     setTimeout(function () {
-//         console.log("First Promise ... ");
-//     }, 4000)
 //     resolve("first resolve");
+//     }, 4000)
+//         console.log("First Promise ... ");
 // })
 
 // let output = promise_1.then(() => {

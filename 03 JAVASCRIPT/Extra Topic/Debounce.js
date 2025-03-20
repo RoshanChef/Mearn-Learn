@@ -6,7 +6,8 @@ function search() {
 let timer;
 
 function DebounceSerach() {
-    clearTimeout(timer);
+    if (timer)
+        clearTimeout(timer);
     timer = setTimeout(() => {
         search();
     }, 30);
