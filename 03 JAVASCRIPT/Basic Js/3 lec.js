@@ -217,6 +217,20 @@ let second = [4, 5, 6];
 // let combine = first.concat(second);
 let combine = [...first, ...second];
 
+// flatten a array 
+/*
+    array.flat(depth);
+    doesn't modify the original array
+    depth => how many level of nested array to flatten
+*/
+let ar= [1, 2, [3, 4, [5, 6]]];
+let flatArr = ar.flat(1);
+console.log(flatArr); // [1, 2, 3, 4, [5, 6]]\
+
+ar = [10, 20, [30,[ 40, [50, 60]], 70]];
+flatArr = ar.flat(Infinity); 
+console.log(flatArr); // [10, 20, 30, 40, 50, 60, 70]
+
 /*
 spread vs rest
 spread => 
