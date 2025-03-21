@@ -28,3 +28,10 @@ throttledSendMessage("Hi");
 throttledSendMessage("Hello");
 throttledSendMessage("How are you?");
 throttledSendMessage("Goodbye take care");
+
+setTimeout(() => {
+    throttledSendMessage("Facebook send the request there");
+}, 500);
+setTimeout(() => {
+    throttledSendMessage("Google send the request there");
+}, 1000);
