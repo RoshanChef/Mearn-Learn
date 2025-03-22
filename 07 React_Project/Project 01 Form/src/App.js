@@ -89,7 +89,10 @@ const App = () => {
 				<br />
 				<label>
 					Offline Mode
-					<input name="mode" onChange={changeHandler} value="Offline Mode" checked={formData.mode === "Offline Mode"} type="radio" />
+					<input name="mode" 
+					onChange={changeHandler} 
+					value="Offline Mode" 
+					checked={formData.mode === "Offline Mode"} type="radio" />
 				</label>
 				<br />
 				<br />

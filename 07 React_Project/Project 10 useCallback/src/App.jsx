@@ -15,8 +15,9 @@ const App = () => {
   */
 
   useEffect(() => {
-    console.log('render happend ... ', cnt);
   })
+  
+  console.log('render happend ... ', cnt);
 
   // re-create
   // function fnx() {
@@ -33,7 +34,7 @@ const App = () => {
     <div className="flex flex-col gap-12 overflow-hidden">
       <div className="flex items-center w-screen h-screen justify-center">
         <button className="bg-[#333] p-3 text-white  rounded-md" onClick={() => setCnt(cnt => cnt + 1)}> Increase {cnt}</button>
-        <Childcomponent btnCnt={btnCnt} setbtnCnt={setbtnCnt} fnx={fnx} />
+        <Childcomponent btnCnt={btnCnt} fnx={fnx} />
       </div>
     </div>)
 }

@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { Link, NavLink, Route, Routes } from "react-router-dom";
+import React from "react";
+import { NavLink, Route, Routes } from "react-router-dom";
 import About from './components/About';
 import Support from './components/Support';
 import NotFound from './components/NotFound';
@@ -9,7 +9,6 @@ import MainHeader from "./components/MainHeader";
 const App = () => {
 	return (
 		<div>
-
 			<ul >
 				<li className="flex justify-end text-yellow-100 text-2xl font-semibold gap-4 bg-blue-500 ">
 					<NavLink to="/" >Home</NavLink>
