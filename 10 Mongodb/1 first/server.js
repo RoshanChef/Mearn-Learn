@@ -84,10 +84,11 @@ app.post('/todo', auth, async function (req, res) {
 app.get('/todos', auth, async function (req, res) {
     let userId = req.userId;
 
-    // array of objects
-    let Todos = await TodoModel.find({ userId: userId });
 
     if (userId) {
+        // array of objects
+        let Todos = await TodoModel.find({ userId: userId });
+
         res.json(Todos)
     } else {
         res.json({ message: 'signin in again' });

@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Card-like Swiper</title>
+	<!-- Add Swiper CSS -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.css" />
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+
+		html,
+		body {
+			width: 100%;
+			height: 100%;
+		}
+
+		/* Styling the swiper container */
+		.swiper {
+			width: 100%;
+			height: 100%;
+			padding: 50px 0;
+			/* Add padding for better visibility */
+		}
+
+		.swiper-wrapper {
+			display: flex;
+			justify-content: center;
+		}
+
+		/* Card-like design for slides */
+		.swiper-slide {
+			transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+			z-index: 1;
+			transform-origin: center;
+			width: 250px;
+			/* Card width */
+			height: 350px;
+			/* Card height */
+			margin: 0 10px;
+			/* Space between cards */
+			border-radius: 15px;
+			/* Rounded corners */
+			box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+			/* Shadow effect */
+			background-color: #fff;
+			/* White background for each card */
+			overflow: hidden;
+			/* Ensure the image doesn't overflow the card */
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			position: relative;
+		}
+
+		/* Active slide (center card) styling */
+		.swiper-slide-active {
+			transform: scale(1.1);
+			/* Scale up the center slide */
+			opacity: 1;
+			/* Full opacity for the center */
+			z-index: 3;
+			/* Ensure it is on top */
+			box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+			/* Stronger shadow for the active card */
+		}
+
+		/* Next and previous slides (side cards) */
+		.swiper-slide-next,
+		.swiper-slide-prev {
+			opacity: 0.7;
+			transform: scale(0.9);
+			/* Smaller scale for next and previous slides */
+			z-index: 2;
+			box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+			/* Light shadow */
+		}
+
+		.content {
+			display: grid;
+			place-items: center;
+		}
+
+		/* Card content */
+		.content img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			/* Ensure the image fills the card without stretching */
+		}
+
+		/* Navigation buttons styling */
+		.swiper-button-next,
+		.swiper-button-prev {
+			color: #fff;
+			font-size: 20px;
+			z-index: 10;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="swiper_con">
+		<!-- Swiper container -->
+		<div class="swiper">
+			<div class="swiper-wrapper">
+				<div class="swiper-slide">
+					<div class="content">
+						<img src="pika (1).png" alt="Card 1" />
+						<h4>Hello World !</h4>
+					</div>
+				</div>
+				<div class="swiper-slide">
+					<div class="content">
+						<img src="pika (2).png" alt="Card 2" />
+					</div>
+				</div>
+				<div class="swiper-slide">
+					<div class="content">
+						<img src="pika (3).png" alt="Card 3" />
+					</div>
+				</div>
+				<div class="swiper-slide">
+					<div class="content">
+						<img src="pika (4).png" alt="Card 4" />
+					</div>
+				</div>
+				<div class="swiper-slide">
+					<div class="content">
+						<img src="pika (5).png" alt="Card 5" />
+					</div>
+				</div>
+			</div>
+			<!-- Navigation buttons -->
+			<div class="swiper-button-next"></div>
+			<div class="swiper-button-prev"></div>
+		</div>
+	</div>
+
+	<!-- Swiper JS -->
+	<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.js"></script> -->
+	 <!-- same as above -->
+	 <script src="swiper.js"></script> 
+	<script>
+		const swiper = new Swiper(".swiper", {
+			effect: "slide", // Basic sliding effect for card-like structure
+			// effect: "fade",
+			// effect: "cube",
+			// effect: "coverflow",
+			// effect: "flip",
+			grabCursor: true,
+			centeredSlides: true, // Keep the active slide in the center
+			slidesPerView: "auto", // Display slides with auto width
+			loop: true, // Loop through the slides
+			autoplay: {
+				delay: 2500, // Auto-scroll every 3 seconds
+				disableOnInteraction: false, // Keep autoplay even after user interaction
+			},
+			navigation: {
+				nextEl: ".swiper-button-next",
+				prevEl: ".swiper-button-prev",
+			},
+			keyboard: {
+				enabled: true,
+			},
+			mousewheel: {
+				thresholdDelta: 70,
+			},
+		});
+	</script>
+</body>
+
+</html>

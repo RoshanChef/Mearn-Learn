@@ -44,7 +44,6 @@ export default function App() {
             </h2>
             <Title title={res[0].title} >
                 Title is here
-
             </Title>
             <DateT day={res[0].day} month={res[0].month} year={res[0].year}></DateT>
             <Title title={res[1].title}></Title>

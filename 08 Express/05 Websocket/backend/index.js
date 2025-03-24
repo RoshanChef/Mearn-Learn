@@ -9,7 +9,10 @@ ws.on("connection", function (socket) {
     // }, 500);
     socket.on("message", function (msg) {
         console.log("message : ", msg.toString());
-        if (msg == 'ping')
-            socket.send('pong');
+        if (msg == 'ping') {
+            setTimeout(function () {
+                socket.send('pong');
+            }, 2000);
+        }
     });
 });

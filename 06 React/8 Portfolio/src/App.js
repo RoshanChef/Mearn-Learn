@@ -13,7 +13,6 @@ const App = () => {
 			<Testmonial reviews={reviews} />
 		</div>
 	)
-
 };
 
 export default App;

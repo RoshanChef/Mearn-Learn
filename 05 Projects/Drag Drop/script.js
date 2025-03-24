@@ -3,7 +3,7 @@ let dragViiew = document.querySelector('.drag_view');
 
 inputfile.addEventListener('change', upload);
 
-function upload(e) {
+function upload() {
     let obj = inputfile.files[0];
     let url = URL.createObjectURL(obj);
     dragViiew.style.backgroundImage = `url(${url})`;

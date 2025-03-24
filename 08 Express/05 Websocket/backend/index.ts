@@ -11,8 +11,12 @@ ws.on("connection", (socket) => {
     socket.on("message", (msg) => {
         console.log("message : ", msg.toString());
 
-        if (msg == 'ping')
-            socket.send('pong');
+
+        if (msg == 'ping') {
+            setTimeout(() => {
+                socket.send('pong');
+            }, 2000);
+        }
     })
 
 })

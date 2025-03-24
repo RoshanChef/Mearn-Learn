@@ -14,9 +14,9 @@ function App() {
     unmount : component ui per thi remove keri didhu 
 
     useEffect hook 
-	    Allows you to perfom side effect in your components 
-	    accept two args useEffect(function, dependency)
-	    Runs after rendering components
+        Allows you to perfom side effect in your components 
+        accept two args useEffect(function, dependency)
+        Runs after rendering components
 
     useEffect(()=>{
         //second
@@ -24,6 +24,7 @@ function App() {
              //first
         }
     } , [third])
+
 
         second  : side effect function or runs on mount(render the component)
         first   : runs when unmount the component

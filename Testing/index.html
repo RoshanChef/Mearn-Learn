@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Touch Event Example</title>
     <style>
         * {
             margin: 0;
@@ -14,59 +14,29 @@
 
         html,
         body {
-            display: flex;
-            justify-content: ; 
-            align-items: center;
             width: 100%;
             height: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
         }
 
-        .box {
-            position: relative;
-            width: 15vw;
-            height: 15vw;
-            border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+        div {
+            width: 200px;
+            height: 100px;
+            background-color: #ffff76;
+            cursor: pointer;
         }
 
-        .text {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            animation: rota 12s linear infinite;
-            font-size: larger;
-        }
-
-        .text span {
-            position: absolute;
-            left: 50%;
-            font-size: 1.2rem;
-            transform: translate(-50%, -50%);
-            transform-origin: 0vw 7.5vw;
-        }
-
-        @keyframes rota {
-            0% {
-                transform: rotate(0deg);
-            }
-
-            100% {
-                transform: rotate(360deg);
-            }
-        }
+        
     </style>
 </head>
 
 <body>
-    <div class="box">
-        <p class="text">some basic circle is there circle is there</p>
-    </div>
+    <button class="btn" style="background-color: blue; color: white; padding: 10px 20px; border: none; cursor: pointer;">
+        Click Me
+    </button>
+    
+
     <script src="script.js"></script>
+
 </body>
 
 </html>

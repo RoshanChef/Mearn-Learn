@@ -1,8 +1,12 @@
-let bx = document.querySelector('.box');
-let text = document.querySelector('.text');
-text.innerHTML = text.innerText.split('').map((val, inx) =>
-    `<span style="transform:rotate(${inx * 8.3}deg)">${val}</span>`
-).join('');
+let btn = document.querySelector('.btn');
 
 
-
+btn.addEventListener('click', async e => {
+    let res = await fetch('http://localhost', {
+        method: "POST",
+        headers: {},
+        body: JSON.stringify({ name: "Roshan" })
+    });
+    let data = await res.text();
+    console.log(data);
+})

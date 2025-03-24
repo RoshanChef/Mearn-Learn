@@ -10,7 +10,11 @@ function loggerMiddleware(req, res, next) {
     console.log("Method is " + req.method);
     console.log("Hostname is " + req.hostname);
     console.log("Route is " + req.url);
-    console.log(new Date());
+    console.log("host : ", req.host);
+    console.log("path : ", req.path);
+    console.log("protocol : ", req.protocol);
+    console.log("route : ", req.route);
+    console.log("Timestamp: ", new Date().toLocaleString());
     next();
 }
 

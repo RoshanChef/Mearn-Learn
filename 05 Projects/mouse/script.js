@@ -40,7 +40,7 @@ frames.forEach(frame => {
     frame.addEventListener('mouseleave', (event) => {
         gsap.to(circle, {
             scale: 1,
-            opacity: 1
+            // opacity: 1
         })
         gsap.to(frame.children, {
             color: "#000",
