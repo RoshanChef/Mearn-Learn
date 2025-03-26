@@ -22,7 +22,7 @@ const auth = getAuth(app);
 
 const google_provider = new GoogleAuthProvider();
 const github_provider = new GithubAuthProvider();
-const facebookProvider = new FacebookAuthProvider();
+const facebook_provider = new FacebookAuthProvider();
 
 
-export { auth, google_provider, github_provider,facebookProvider }
+export { auth, google_provider, github_provider,facebook_provider }

@@ -34,8 +34,6 @@ app.post('/signup', async function (req, res) {
     // */
 
     const parsedDataWithSuccess = requiredBody.safeParse(req.body);
-    
-
 
     if (!parsedDataWithSuccess.success) {
         res.json({
@@ -45,14 +43,12 @@ app.post('/signup', async function (req, res) {
         return;
     }
 
-    const email = req.body.email;
-    const password = req.body.password;
-    const name = req.body.name;
+    const { email, password, name } = req.body;
 
     try {
         // salting the password
         let hashPassword = await bcrypt.hash(password, 5);
-        console.log(hashPassword); 
+        console.log(hashPassword);
 
         await UserModel.create({ email: email, password: hashPassword, name: name });
     } catch (e) {
