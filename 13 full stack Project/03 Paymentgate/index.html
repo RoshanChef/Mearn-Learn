@@ -50,16 +50,21 @@
                     "description": "Pay & Checkout this Course, Upgrade your DSA Skill",
                     "order_id": data.id, // Real order_id from the server
                     "handler": async function (response) {
-                        const verify = await fetch('http://localhost/verify-order', {
-                            method: 'POST',
-                            headers: { 'Content-Type': 'application/json' },
-                            body: JSON.stringify(response)
-                        }).then(res => res.json());
+                        try {
+                            const verify = await fetch('http://localhost/verify-order', {
+                                method: 'POST',
+                                headers: { 'Content-Type': 'application/json' },
+                                body: JSON.stringify(response)
+                            }).then(res => res.json());
 
-                        alert(verify.status || verify.error);
+                            alert(verify.status || verify.error);
+                        } catch (err) {
+                            console.error("Verification error:", err);
+                            alert("Payment verification failed. Please contact support.");
+                        }
                     },
                     "theme": {
-                        "color": "#ffff076"
+                        "color": "#ff076"
                     }
                 };
 
