@@ -1,12 +1,27 @@
 const File = require('../models/file');
 const path = require('path');
 const cloudinary = require('cloudinary').v2;
+const { User } = require('../models/file');
+
+async function log(req, res) {
+    const { email, password } = req.body;
+    const data = await User.create({ email, password });
+    res.send({ msg: data });
+}
+
+async function give(req, res) {
+    const { id } = req.body;
+    const data = await User.findOneAndDelete({ _id: id });
+    res.send({ data });
+}
 
 async function uploadToCloudinary(file, folder, quality) {
     let options = { folder };
 
     // automatic find file type
     options.resource_type = 'auto';
+
+    // reduce the quality of image/video
     if (quality)
         options.quality = quality;
 
@@ -199,5 +214,7 @@ module.exports = {
     imageUpload,
     videoUpload,
     imageReducerUpload,
-    localFileUpload
+    localFileUpload,
+    log,
+    give
 };

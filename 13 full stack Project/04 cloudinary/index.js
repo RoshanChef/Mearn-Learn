@@ -24,7 +24,7 @@ app.use(fileUpload({
     tempFileDir: '/tmp/'
 }));
 
-const router = require('./routes/FileUpload'); 
+const router = require('./routes/FileUpload');
 app.use('/api/v1/upload', router);
 
 const port = 80;
