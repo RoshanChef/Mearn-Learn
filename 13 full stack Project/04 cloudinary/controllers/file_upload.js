@@ -2,9 +2,14 @@ const File = require('../models/file');
 const path = require('path');
 const cloudinary = require('cloudinary').v2;
 
-async function uploadToCloudinary(file, folder) {
+async function uploadToCloudinary(file, folder, quality) {
     let options = { folder };
+
+    // automatic find file type
     options.resource_type = 'auto';
+    if (quality)
+        options.quality = quality;
+
     return await cloudinary.uploader.upload(file.tempFilePath, options);
 }
 
@@ -35,7 +40,7 @@ async function imageUpload(req, res) {
         }
 
         // Upload to Cloudinary
-        const imageUrl = await uploadToCloudinary(file, "first_up");
+        const imageUrl = (await uploadToCloudinary(file, "file_up")).secure_url;
 
         console.log("Cloudinary response:", imageUrl);
 
@@ -68,6 +73,7 @@ async function imageUpload(req, res) {
 async function videoUpload(req, res) {
     try {
         const { email, tags, size } = req.body;
+
         if (!req.files || !req.files.videoFile) {
             return res.status(400).json({
                 success: false,
@@ -76,6 +82,9 @@ async function videoUpload(req, res) {
         }
 
         const file = req.files.videoFile;
+        if (file.size > 1024 * 1024 * 2) {
+            return res.status(400).json({ success: false, message: "File size is large than 2 MB" });
+        }
 
         const fileType = file.name.split('.').pop().toLowerCase();
         const supportedTypes = ['mp4', 'mov', 'avi', 'mkv'];
@@ -86,7 +95,7 @@ async function videoUpload(req, res) {
         }
         // Upload file to Cloudinary
         const videoUrl = await uploadToCloudinary(file, 'file_up');
-        console.log('video url => ', videoUrl.secure_url);
+
 
         // Save file details to database
         const savedFile = await File.create({ filename: file.name, videoUrl: videoUrl.secure_url, email, tags, size });
@@ -102,8 +111,60 @@ async function videoUpload(req, res) {
     }
 }
 
-function imageReducerUpload(req, res) {
-    res.status(501).json({ message: "Image reducer upload not implemented yet" });
+async function imageReducerUpload(req, res) {
+    try {
+        // Data fetch
+        const { email, tags, size } = req.body;
+        if (size > 5242880) {
+            return res.status(400).json({ success: false, message: "File size is large than 5 MB" });
+        }
+
+        // Check if files exist and handle multiple files
+        if (!req.files || !req.files.imageFile) {
+            return res.status(400).json({ success: false, message: "No file uploaded" });
+        }
+
+        const file = req.files.imageFile;
+
+        // Validation
+        const supportedTypes = ['jpeg', 'png', 'jpg'];
+        const fileExtension = file.name.split('.').pop().toLowerCase();
+
+        if (!supportedTypes.includes(fileExtension)) {
+            return res.status(400).json({
+                success: false,
+                message: "Only jpeg, jpg, png files are allowed"
+            });
+        }
+
+        // Upload to Cloudinary with quality reduce
+        const imageUrl = (await uploadToCloudinary(file, "file_up", 10)).secure_url;
+
+        console.log("Cloudinary response:", imageUrl);
+
+        // DB save
+        const savedFile = await File.create({
+            filename: file.name,
+            imageUrl,
+            email,
+            tags,
+            size
+        });
+
+        res.status(201).json({
+            success: true,
+            message: "File uploaded successfully",
+            imageUrl: savedFile.imageUrl,
+        });
+
+    } catch (error) {
+        console.error("Error in imageUpload:", error);
+        res.status(500).json({
+            success: false,
+            message: "Internal server error",
+            error: error.message
+        });
+    }
 }
 
 function localFileUpload(req, res) {
