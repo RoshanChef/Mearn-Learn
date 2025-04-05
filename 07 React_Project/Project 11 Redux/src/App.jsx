@@ -1,43 +1,34 @@
-import React from 'react'
-import { useState } from 'react';
+import { useState } from 'react'
+import reactLogo from './assets/react.svg'
+import viteLogo from '/vite.svg'
+import './App.css'
 
 function App() {
-
-  function Counter() {
-    const [cnt, setCnt] = useState(0);
-    return (
-      <div className='flex gap-2 flex-col'>
-        <ShowVal cnt={cnt} />
-        <Increase setCnt={setCnt}></Increase>
-        <Decrease setCnt={setCnt}></Decrease>
-      </div>
-    )
-  }
-
-  function ShowVal({ cnt }) {
-    return <div>{cnt}</div>
-  }
-
-  function Decrease({ setCnt }) {
-    return (
-      <div onClick={() => setCnt(prev => prev - 1)} className='bg-blue-500 p-2 w-80 text-white'>
-        Decrease
-      </div>
-    )
-  }
-
-  function Increase({ setCnt }) {
-    return (
-      <div onClick={() => setCnt(val => val + 1)} className='bg-blue-500 p-2 w-80 text-white'>
-        Increase
-      </div>
-    )
-  }
+  const [count, setCount] = useState(0)
 
   return (
-    <div className='text-white bg-[#333] w-full h-screen'>
-      <Counter />
-    </div>
+    <>
+      <div>
+        <a href="https://vite.dev" target="_blank">
+          <img src={viteLogo} className="logo" alt="Vite logo" />
+        </a>
+        <a href="https://react.dev" target="_blank">
+          <img src={reactLogo} className="logo react" alt="React logo" />
+        </a>
+      </div>
+      <h1>Vite + React</h1>
+      <div className="card">
+        <button onClick={() => setCount((count) => count + 1)}>
+          count is {count}
+        </button>
+        <p>
+          Edit <code>src/App.jsx</code> and save to test HMR
+        </p>
+      </div>
+      <p className="read-the-docs">
+        Click on the Vite and React logos to learn more
+      </p>
+    </>
   )
 }
 

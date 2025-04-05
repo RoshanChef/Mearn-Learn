@@ -5,6 +5,7 @@ const app = express();
 app.use(express.json());
 
 // for the users array (InMemory storage)
+// statefull 
 const users = [];
 
 function generateToken(length = 16) {
