@@ -2,7 +2,6 @@ import { useSelector } from "react-redux";
 
 function Products() {
     const post = useSelector((state) => state.product);
-    console.log(post);
 
     const ele = post.map(item => (
         <div key={item.id} style={{ display: 'flex', alignItems: 'center' }}>

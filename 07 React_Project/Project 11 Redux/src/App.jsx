@@ -1,13 +1,11 @@
 import React from 'react'
-import Counter from './components/Counter'
-import Products from './components/Products'
+import Cart from './components/Cart'
 
 export default function App() {
 
   return (
     <>
-      <Counter />
-      <Products />
+      <Cart />
     </>
   )
 }
