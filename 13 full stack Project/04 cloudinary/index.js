@@ -27,7 +27,7 @@ app.use(fileUpload({
 const router = require('./routes/FileUpload');
 app.use('/api/v1/upload', router);
 
-const port = 80;
+const port = 800;
 app.listen(port, () => {
     console.log("Server is running on port", port);
 });

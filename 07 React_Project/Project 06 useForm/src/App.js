@@ -2,12 +2,12 @@ import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 
 const App = () => {
-	const { register, handleSubmit, watch, formState: {  errors, isSubmitting } } = useForm();
+	const { register, handleSubmit, watch, formState: { errors, isSubmitting } } = useForm();
 	async function onSubmit(data) {
-		await new Promise((resolve, reject) => setTimeout(resolve, 5000)); 
+		await new Promise((resolve, reject) => setTimeout(resolve, 5000));
 		console.log(data);
 	}
-	
+
 	return (
 		<div>
 			<form onSubmit={handleSubmit(onSubmit)} className="flex flex-col max-w-max">

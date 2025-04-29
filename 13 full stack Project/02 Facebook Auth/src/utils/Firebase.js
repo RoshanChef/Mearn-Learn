@@ -24,5 +24,4 @@ const google_provider = new GoogleAuthProvider();
 const github_provider = new GithubAuthProvider();
 const facebook_provider = new FacebookAuthProvider();
 
-w
 export { auth, google_provider, github_provider,facebook_provider }

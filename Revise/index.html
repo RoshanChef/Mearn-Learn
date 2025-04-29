@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Touch Event Example</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+        }
+
+        div {
+            width: 200px;
+            height: 100px;
+            background-color: #ffff76;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <button class="btn"
+        style="background-color: blue; color: white; padding: 10px 20px; border: none; cursor: pointer;">
+        Click Me
+    </button>
+
+
+    <script>
+        let btn = document.querySelector('.btn');
+
+        btn.addEventListener('click', async e => {
+            let res = await fetch('http://localhost');
+            let data = await res.json();
+            console.log(data);
+        })
+    </script>
+
+</body>
+
+</html>
