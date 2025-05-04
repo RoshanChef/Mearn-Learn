@@ -1,6 +1,6 @@
 import express from 'express';
 const app = express();
-import cors from "cors";
+import cors from 'cors';
 import Razorpay from 'razorpay';
 import crypto from 'crypto';
 
@@ -8,8 +8,8 @@ app.use(express.json());
 app.use(cors());
 
 const instance = new Razorpay({
-    key_id: "rzp_test_H7LO8MErswTHQT",
-    key_secret: "PK2lmjOR161RqkKbi8LRJ6hD"
+    key_id: "rzp_test_tdj3haTldKOnCw",
+    key_secret: "cKeFoaXrPH4mcxRzmSRWOMfy"
 });
 
 app.post('/createorder', async (req, res) => {
@@ -26,7 +26,7 @@ app.post('/createorder', async (req, res) => {
     try {
         // create state
         const order = await instance.orders.create(options);
-        res.status(200).json({order, options});
+        res.status(200).json({ order, options });
     } catch (err) {
         console.error('Error creating order:', err);
         res.status(500).json({ error: err.message });
@@ -38,7 +38,7 @@ app.post('/verify-order', (req, res) => {
     console.log('body i got ', req.body);
     const { razorpay_order_id, razorpay_payment_id, razorpay_signature } = req.body;
 
-    const hmac = crypto.createHmac('sha256', "PK2lmjOR161RqkKbi8LRJ6hD");
+    const hmac = crypto.createHmac('sha256', "cKeFoaXrPH4mcxRzmSRWOMfy");
     hmac.update(razorpay_order_id + "|" + razorpay_payment_id);
     const calculatedSignature = hmac.digest('hex');
 
@@ -54,7 +54,7 @@ app.get('/hello', (req, res) => {
     res.json({ "hello": "Namste" });
 })
 
-app.listen(80, () => {
-    console.log('server is running on port 80');
+app.listen(5000, () => {
+    console.log('server is running on port 800');
 })
 

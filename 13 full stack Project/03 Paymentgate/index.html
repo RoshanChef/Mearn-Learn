@@ -20,14 +20,20 @@
     <p>Cost: <strong>499 Rupees</strong></p>
     <button id="paybutton">Pay Now & Get Access</button>
     <hr />
+    <button onclick="hello()">get check</button>
 
     <!-- Razorpay Checkout Script -->
     <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
 
     <script>
+        async function hello() {
+            const response = await fetch('http://localhost:5000');
+            console.log(response);
+        }
+
         async function main() {
             try {
-                const response = await fetch('http://localhost/createorder', {
+                const response = await fetch('http://localhost:5000/createorder', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'
@@ -42,7 +48,7 @@
                 console.log("daata ", data);
 
                 const options = {
-                    "key": "rzp_test_H7LO8MErswTHQT",
+                    "key": "cKeFoaXrPH4mcxRzmSRWOMfy",
                     "amount": data.amount,
                     "currency": data.currency,
                     "image": "https://media.geeksforgeeks.org/wp-content/uploads/20210806114908/dummy-200x200.png",
@@ -51,7 +57,7 @@
                     "order_id": data.id, // Real order_id from the server
                     "handler": async function (response) {
                         try {
-                            const verify = await fetch('http://localhost/verify-order', {
+                            const verify = await fetch('http://localhost:800/verify-order', {
                                 method: 'POST',
                                 headers: { 'Content-Type': 'application/json' },
                                 body: JSON.stringify(response)
