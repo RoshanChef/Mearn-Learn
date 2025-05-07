@@ -30,7 +30,8 @@ const Template = ({ title, des1, des2, image, formtype, setIsLoggedIn }) => {
                     <p className='text-white'>OR</p>
                     <div className='h-[1px] w-full bg-gray-800'></div>
                 </div>
-                <button className='text-white items-center gap-2 border-gray-800 p-1 rounded-[8px] gap-x-2 mt-5 border flex justify-center w-[100%]'>
+                <button
+                    className='text-white items-center gap-2 border-gray-800 p-1 rounded-[8px] gap-x-2 mt-5 border flex justify-center w-[100%]'>
                     <FcGoogle />
                     <p >
                         Sign Up with Google
