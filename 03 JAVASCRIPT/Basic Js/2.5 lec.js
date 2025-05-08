@@ -73,6 +73,21 @@ function call(sum) {
 let value = give(sum(100, 20));
 console.log("value is ", value);
 
+function arithmethic(a, b, fnx) {
+    return fnx(a, b);
+}
+
+let add = arithmethic(20, 10, (a, b) => a + b);
+let min = arithmethic(20, 10, (a, b) => a - b);
+let mul = arithmethic(20, 10, (a, b) => a * b);
+let div = arithmethic(20, 10, (a, b) => a / b);
+
+console.log('sum ', add);
+console.log('minus ', min);
+console.log('mul ', mul);
+console.log('division ', div);
+
+
 // forEach method
 // Array.forEach(fn(value , index , Array)); 
 
