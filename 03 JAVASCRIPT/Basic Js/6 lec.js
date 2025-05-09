@@ -98,8 +98,8 @@ Local Storage
 // }
 
 /*
-localstorage : can survive refresh/reload , repaste and closing broser window/tab
-sessionstorage : can survive refresh/ reload , not a closing broser window/tab 
+localstorage : can survive refresh/reload , repaste and closing browser window/tab
+sessionstorage : can survive refresh/ reload , not a closing broser window/tab and repaste
 cookie : can survive survive refresh , reload 
     session cookie : which don't have expires
     persistent cookie : which has expires 

@@ -91,7 +91,6 @@ console.log(test_case);
 
 
 
-
 // Date and Time
 let date = new Date();
 console.log(date);
@@ -228,6 +227,7 @@ let flatArr = ar.flat(1);
 console.log(flatArr); // [1, 2, 3, 4, [5, 6]]\
 
 ar = [10, 20, [30,[ 40, [50, 60]], 70]];
+
 flatArr = ar.flat(Infinity); 
 console.log(flatArr); // [10, 20, 30, 40, 50, 60, 70]
 

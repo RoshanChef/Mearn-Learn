@@ -156,7 +156,7 @@ function print() {
     console.log('printing the values of the class I have to see');
 }
 
-setTimeout(clearTimeout(timerId), 2000);
+setTimeout(() =>clearTimeout(timerId), 2000);
 setTimeout(() => {
     console.log('still working ');
 }, 5000);
