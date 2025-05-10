@@ -87,4 +87,3 @@ id.addEventListener('click', (event) => {
         console.log('value is ', event.target.textContent);
     event.stopPropagation();
 })
-

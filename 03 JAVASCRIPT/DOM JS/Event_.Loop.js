@@ -44,4 +44,3 @@ console.log('two');
 
 // axios => script cdn 
 // axios.get('url').then(result=>console.log(result.data);)
-

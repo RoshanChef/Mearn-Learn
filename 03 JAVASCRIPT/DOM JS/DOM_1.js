@@ -90,4 +90,3 @@ let child_ele = document.querySelector('.childy');
 
 //Remove child element using parent
 parent_ele.removeChild(child_ele);
-

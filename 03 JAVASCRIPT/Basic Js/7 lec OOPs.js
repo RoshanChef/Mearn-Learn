@@ -1,6 +1,5 @@
 /*
 OOP is JS
-
 */
 
 // Classes and objects
