@@ -2,7 +2,7 @@
 Promises handles any asynchronous tasks like api calls,
                                              file loading, etc.. 
 
-Note : we handle asynchronous code that runs after synchronous code it will be run
+Note : we handle asynchronous code that runs after synchronous code.
 
 
 Contains three states

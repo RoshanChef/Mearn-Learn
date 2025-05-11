@@ -8,6 +8,7 @@ Repaint
     - faster than reflow
 */
 
+
 //task 1 
 let t1 = performance.now();
 for (let i = 0; i < 100; i++) {
@@ -28,7 +29,7 @@ let div = document.createElement('div');
 for (let j = 0; j < 100; j++) {
     let para = document.createElement('p');
     para.textContent = 'Para' + (j + 100);
-    
+
     // didn't append yet 
     div.appendChild(para);
 }

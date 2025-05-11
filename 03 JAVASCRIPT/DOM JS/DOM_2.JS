@@ -53,8 +53,6 @@ goo.addEventListener('click', (event) => {
     console.log("Prevent Default is working my darling ... ");
 })
 
-console.log("document object is ... ' ", document);
-
 // add multiple event
 let my_parent_div = document.createElement('div');
 
@@ -73,10 +71,6 @@ function fnx(event) {
     console.log(event.target);
     console.log('This is an event Number .. ', event.target.textContent);
 }
-
-/*
-Better understanding will be next file 
-*/
 
 console.log(dcs.nodeName);
 

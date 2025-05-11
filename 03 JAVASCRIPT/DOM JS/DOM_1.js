@@ -90,3 +90,9 @@ let child_ele = document.querySelector('.childy');
 
 //Remove child element using parent
 parent_ele.removeChild(child_ele);
+
+let new_ele = document.createElement('h1');
+new_ele.textContent = "You will";
+
+// Replace child
+parent_ele.replaceChild(new_ele, child_ele); 
