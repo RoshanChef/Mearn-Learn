@@ -40,3 +40,56 @@ module.exports = {
     TodoModel: TodoModel
 } 
 ```
+
+### Modal Methods
+#### read methods
+```
+Model.find(conditions)
+Model.findOne(conditions)
+Model.findById(id)
+Model.countDocuments(filter)
+Model.create(doc)
+```
+
+#### update methods
+```
+- Updates one document
+updateOne(filter, update[, options][, callback]) 
+
+- Updates many documents
+updateMany(filter, update[, options][, callback]) 
+
+- Finds by ID and updates
+findByIdAndUpdate(id, update[, options][, callback]) 
+
+- Finds one and updates
+findOneAndUpdate([conditions], update[, options][, callback]) 
+
+- Replaces one document
+replaceOne(filter, doc[, options][, callback]) 
+
+```
+Delete Methods
+
+```
+- Deletes one document
+deleteOne([conditions][, callback]) 
+
+- Deletes many documents
+deleteMany([conditions][, callback]) 
+
+- Finds by ID and deletes
+findByIdAndDelete(id[, options][, callback]) 
+
+- Finds one and deletes
+findOneAndDelete([conditions][, options][, callback]) 
+```
+
+
+### Example of Custom Instance Method:
+
+```
+userSchema.methods.sayHello = function() {
+  console.log(`Hello, my name is ${this.name}`);
+};
+```

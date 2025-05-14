@@ -1,7 +1,6 @@
 const express = require('express');
 const fileUpload = require('express-fileupload');
 const mongoose = require('mongoose');
-const db = require('./config/database');
 const cloudinary = require('./config/cloudinary');
 
 cloudinary.cloudinaryConnect();
