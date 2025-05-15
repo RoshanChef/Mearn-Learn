@@ -1,6 +1,5 @@
 const jwt = require('jsonwebtoken');
 const jwt_secret = 'random23$44';
-const {z} = require('zod');
 
 const bankAccount = {
     user: 'Roshan',
