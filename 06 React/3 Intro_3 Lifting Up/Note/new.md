@@ -11,7 +11,7 @@ function Component(){
   }
   return (
     <div className='ProductItem'>
-      <A />  
+      <A fnx={clickHandler}/>  
     </div>
   )
 }
