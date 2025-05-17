@@ -1,4 +1,3 @@
-import React from "react";
 import { NavLink, Route, Routes } from "react-router-dom";
 import About from './components/About';
 import Support from './components/Support';
