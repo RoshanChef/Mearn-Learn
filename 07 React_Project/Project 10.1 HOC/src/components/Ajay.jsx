@@ -1,4 +1,3 @@
-import React from 'react';
 import Loc from './Loc';
 
 function Ajay(props) {

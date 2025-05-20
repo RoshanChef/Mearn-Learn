@@ -1,7 +1,6 @@
 import React, { memo } from 'react'
 /*
-    memo : only runs when props get changed otherwise it 
-    doesn't get affected
+    memo : only runs when props get changed otherwise it doesn't get affected
 */
 
 

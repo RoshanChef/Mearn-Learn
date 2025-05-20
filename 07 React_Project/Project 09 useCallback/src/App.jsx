@@ -15,9 +15,9 @@ const App = () => {
   */
 
   useEffect(() => {
+    console.log('render happend ... ', cnt);
   })
   
-  console.log('render happend ... ', cnt);
 
   // re-create
   // function fnx() {
